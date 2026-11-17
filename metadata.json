@@ -1,0 +1,6 @@
+{
+  "name": "Global Flame",
+  "description": "Plataforma centralizada de comparación de ofertas y precios de videojuegos para el mercado de Colombia en pesos colombianos (COP).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
