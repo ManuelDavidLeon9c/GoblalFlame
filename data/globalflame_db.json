@@ -178,7 +178,9 @@
           "themeVariant": "elden-map"
         }
       ],
-      "isFeatured": true
+      "isFeatured": true,
+      "cheapSharkDealId": "7uWDeqtvJFuw%2BJxO3176Lf3NbqvIahsS6PplDm%2BPS0Q%3D",
+      "cheapSharkGameId": "236717"
     },
     {
       "id": "game-gow",
@@ -1388,7 +1390,7 @@
       ],
       "isFeatured": false,
       "isFromCheapShark": true,
-      "cheapSharkDealId": "ZLniwdY%2BXppO6gBCgyKEBZHHPbgDOGqeHSSJOzYSTbo%3D",
+      "cheapSharkDealId": "Y4Ig3TxogTnj2Ny%2F18X5TjWcKlzA3%2FPBuquowYHoMtI%3D",
       "cheapSharkGameId": "102249"
     },
     {
@@ -1660,8 +1662,3136 @@
       ],
       "isFeatured": false,
       "isFromCheapShark": true,
-      "cheapSharkDealId": "g%2BqhS9gSM%2BnWLMVW%2B1km4Tys%2FmPDa%2F9R5dnFQR6CmhE%3D",
+      "cheapSharkDealId": "DbCLoFftyFNLwCYV2Kf2svpu3YBQf%2FgZ3HZrg9SAh%2Bw%3D",
       "cheapSharkGameId": "311528"
+    },
+    {
+      "id": "cs-169242",
+      "slug": "far-cry-5-gold-edition",
+      "title": "Far Cry 5 Gold Edition",
+      "developer": "Uplay",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2025,
+      "genre": "Aventura",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Bundle",
+      "originalPriceCop": 382500,
+      "discountPercent": 85,
+      "finalPriceCop": 57400,
+      "rating": 4.2,
+      "popularityScore": 99,
+      "bestStore": "Uplay",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=xJtJJ4rDQo5wJG8e2eby5aSomScreI%252BfKH%252FLr%252FB9CDg%253D",
+      "synopsis": "Far Cry 5 Gold Edition forma parte del catálogo en vivo de ofertas de CheapShark en Uplay. Precio convertido automáticamente a pesos colombianos (COP) desde 13.50 USD (precio regular 89.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (Uplay)",
+        "Ahorro verificado del 85% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://images.greenmangaming.com/343728a3ccce4911b335aad397b6cae3/a3b2074aa80e4e81b525aa0ec4a3acdc.jpg",
+      "artworkTheme": "elden",
+      "gallery": [
+        {
+          "id": "cs-169242-1",
+          "title": "Far Cry 5 Gold Edition",
+          "caption": "Oferta activa en Uplay vía CheapShark",
+          "imageUrl": "https://images.greenmangaming.com/343728a3ccce4911b335aad397b6cae3/a3b2074aa80e4e81b525aa0ec4a3acdc.jpg",
+          "themeVariant": "elden"
+        },
+        {
+          "id": "cs-169242-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 85% verificado",
+          "themeVariant": "elden"
+        },
+        {
+          "id": "cs-169242-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "elden"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "xJtJJ4rDQo5wJG8e2eby5aSomScreI%2BfKH%2FLr%2FB9CDg%3D",
+      "cheapSharkGameId": "169242"
+    },
+    {
+      "id": "cs-283725",
+      "slug": "for-honor-ultimate-edition",
+      "title": "FOR HONOR  Ultimate Edition",
+      "developer": "Uplay",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2025,
+      "genre": "Indie",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Bundle",
+      "originalPriceCop": 382500,
+      "discountPercent": 85,
+      "finalPriceCop": 57400,
+      "rating": 4.2,
+      "popularityScore": 99,
+      "bestStore": "Uplay",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=92vczbOy2iGlFO1ggHTIxk8d1CVBVjsc26U4alik0f8%253D",
+      "synopsis": "FOR HONOR  Ultimate Edition forma parte del catálogo en vivo de ofertas de CheapShark en Uplay. Precio convertido automáticamente a pesos colombianos (COP) desde 13.50 USD (precio regular 89.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (Uplay)",
+        "Ahorro verificado del 85% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://store.ubisoft.com/dw/image/v2/ABBS_PRD/on/demandware.static/-/Sites-masterCatalog/default/dw8a5d2786/images/large/659ea86929c01c38968dce15.jpg?sw=197&amp;sh=261&amp;sm=fit",
+      "artworkTheme": "gow",
+      "gallery": [
+        {
+          "id": "cs-283725-1",
+          "title": "FOR HONOR  Ultimate Edition",
+          "caption": "Oferta activa en Uplay vía CheapShark",
+          "imageUrl": "https://store.ubisoft.com/dw/image/v2/ABBS_PRD/on/demandware.static/-/Sites-masterCatalog/default/dw8a5d2786/images/large/659ea86929c01c38968dce15.jpg?sw=197&amp;sh=261&amp;sm=fit",
+          "themeVariant": "gow"
+        },
+        {
+          "id": "cs-283725-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 85% verificado",
+          "themeVariant": "gow"
+        },
+        {
+          "id": "cs-283725-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "gow"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "92vczbOy2iGlFO1ggHTIxk8d1CVBVjsc26U4alik0f8%3D",
+      "cheapSharkGameId": "283725"
+    },
+    {
+      "id": "cs-204911",
+      "slug": "valfaris",
+      "title": "Valfaris",
+      "developer": "GOG",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2019,
+      "genre": "Mundo Abierto",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 106200,
+      "discountPercent": 90,
+      "finalPriceCop": 10600,
+      "rating": 4.3,
+      "popularityScore": 99,
+      "bestStore": "GOG",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=hesZl0YEEz4TlFRvpAlgjG94Q0F9wWmMGOSmDFpddPU%253D",
+      "synopsis": "Valfaris forma parte del catálogo en vivo de ofertas de CheapShark en GOG. Precio convertido automáticamente a pesos colombianos (COP) desde 2.49 USD (precio regular 24.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (GOG)",
+        "Ahorro verificado del 90% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/600130/capsule_231x87.jpg?t=1738686818",
+      "artworkTheme": "rdr2",
+      "gallery": [
+        {
+          "id": "cs-204911-1",
+          "title": "Valfaris",
+          "caption": "Oferta activa en GOG vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/600130/capsule_231x87.jpg?t=1738686818",
+          "themeVariant": "rdr2"
+        },
+        {
+          "id": "cs-204911-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 90% verificado",
+          "themeVariant": "rdr2"
+        },
+        {
+          "id": "cs-204911-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "rdr2"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "hesZl0YEEz4TlFRvpAlgjG94Q0F9wWmMGOSmDFpddPU%3D",
+      "cheapSharkGameId": "204911"
+    },
+    {
+      "id": "cs-170045",
+      "slug": "assassins-creed-origins-gold-edition",
+      "title": "Assassins Creed Origins Gold Edition",
+      "developer": "Uplay",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2025,
+      "genre": "Indie",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Bundle",
+      "originalPriceCop": 425000,
+      "discountPercent": 85,
+      "finalPriceCop": 63800,
+      "rating": 4.2,
+      "popularityScore": 99,
+      "bestStore": "Uplay",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=WbC87qEAdKQLKFxyUUMcvN%252BJcRaP%252Bne1aKs2Nl6qEiE%253D",
+      "synopsis": "Assassins Creed Origins Gold Edition forma parte del catálogo en vivo de ofertas de CheapShark en Uplay. Precio convertido automáticamente a pesos colombianos (COP) desde 15.00 USD (precio regular 99.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (Uplay)",
+        "Ahorro verificado del 85% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://images.greenmangaming.com/e6797d37de1243a1a79b5fede824bda3/da9b336eecab4f57b33543893d426051.jpg",
+      "artworkTheme": "witcher",
+      "gallery": [
+        {
+          "id": "cs-170045-1",
+          "title": "Assassins Creed Origins Gold Edition",
+          "caption": "Oferta activa en Uplay vía CheapShark",
+          "imageUrl": "https://images.greenmangaming.com/e6797d37de1243a1a79b5fede824bda3/da9b336eecab4f57b33543893d426051.jpg",
+          "themeVariant": "witcher"
+        },
+        {
+          "id": "cs-170045-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 85% verificado",
+          "themeVariant": "witcher"
+        },
+        {
+          "id": "cs-170045-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "witcher"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "WbC87qEAdKQLKFxyUUMcvN%2BJcRaP%2Bne1aKs2Nl6qEiE%3D",
+      "cheapSharkGameId": "170045"
+    },
+    {
+      "id": "cs-320573",
+      "slug": "riders-republic-premium-edition",
+      "title": "Riders Republic Premium Edition",
+      "developer": "Uplay",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2025,
+      "genre": "RPG",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 425000,
+      "discountPercent": 85,
+      "finalPriceCop": 63800,
+      "rating": 4.2,
+      "popularityScore": 99,
+      "bestStore": "Uplay",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=90anVCbngJUsNyRWQbCJpEA40cTAj3t6GAM3YbdS%252FyQ%253D",
+      "synopsis": "Riders Republic Premium Edition forma parte del catálogo en vivo de ofertas de CheapShark en Uplay. Precio convertido automáticamente a pesos colombianos (COP) desde 15.00 USD (precio regular 99.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (Uplay)",
+        "Ahorro verificado del 85% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://store.ubisoft.com/dw/image/v2/ABBS_PRD/on/demandware.static/-/Sites-masterCatalog/default/dwc78bc080/images/large/699e98252f25b911ef69dea2.jpg?sw=197&amp;sh=261&amp;sm=fit",
+      "artworkTheme": "hollow",
+      "gallery": [
+        {
+          "id": "cs-320573-1",
+          "title": "Riders Republic Premium Edition",
+          "caption": "Oferta activa en Uplay vía CheapShark",
+          "imageUrl": "https://store.ubisoft.com/dw/image/v2/ABBS_PRD/on/demandware.static/-/Sites-masterCatalog/default/dwc78bc080/images/large/699e98252f25b911ef69dea2.jpg?sw=197&amp;sh=261&amp;sm=fit",
+          "themeVariant": "hollow"
+        },
+        {
+          "id": "cs-320573-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 85% verificado",
+          "themeVariant": "hollow"
+        },
+        {
+          "id": "cs-320573-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "hollow"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "90anVCbngJUsNyRWQbCJpEA40cTAj3t6GAM3YbdS%2FyQ%3D",
+      "cheapSharkGameId": "320573"
+    },
+    {
+      "id": "cs-229583",
+      "slug": "the-forgotten-city",
+      "title": "The Forgotten City",
+      "developer": "IndieGala",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2021,
+      "genre": "Indie",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 106200,
+      "discountPercent": 90,
+      "finalPriceCop": 10600,
+      "rating": 4.8,
+      "popularityScore": 99,
+      "bestStore": "IndieGala",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=K7TX%252BU7UEm9u%252BqEKuHvlWMyWNzZLTg1RKObY%252FShIXdI%253D",
+      "synopsis": "The Forgotten City forma parte del catálogo en vivo de ofertas de CheapShark en IndieGala. Precio convertido automáticamente a pesos colombianos (COP) desde 2.49 USD (precio regular 24.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (IndieGala)",
+        "Ahorro verificado del 90% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/874260/capsule_231x87.jpg?t=1769440598",
+      "artworkTheme": "hades2",
+      "gallery": [
+        {
+          "id": "cs-229583-1",
+          "title": "The Forgotten City",
+          "caption": "Oferta activa en IndieGala vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/874260/capsule_231x87.jpg?t=1769440598",
+          "themeVariant": "hades2"
+        },
+        {
+          "id": "cs-229583-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 90% verificado",
+          "themeVariant": "hades2"
+        },
+        {
+          "id": "cs-229583-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "hades2"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "K7TX%2BU7UEm9u%2BqEKuHvlWMyWNzZLTg1RKObY%2FShIXdI%3D",
+      "cheapSharkGameId": "229583"
+    },
+    {
+      "id": "cs-228789",
+      "slug": "lacuna-a-sci-fi-noir-adventure",
+      "title": "Lacuna  A Sci-Fi Noir Adventure",
+      "developer": "GOG",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2021,
+      "genre": "Aventura",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 68000,
+      "discountPercent": 90,
+      "finalPriceCop": 6800,
+      "rating": 4.6,
+      "popularityScore": 99,
+      "bestStore": "GOG",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=w5%252Fj0I5ToPSnuQErvQ7GznyqiXeL9n4TpaObgAGl6Fg%253D",
+      "synopsis": "Lacuna  A Sci-Fi Noir Adventure forma parte del catálogo en vivo de ofertas de CheapShark en GOG. Precio convertido automáticamente a pesos colombianos (COP) desde 1.59 USD (precio regular 15.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (GOG)",
+        "Ahorro verificado del 90% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1364100/2f141b70398ce62fb98c1d849a56a05267f917a7/capsule_231x87.jpg?t=1794218067",
+      "artworkTheme": "cyberpunk",
+      "gallery": [
+        {
+          "id": "cs-228789-1",
+          "title": "Lacuna  A Sci-Fi Noir Adventure",
+          "caption": "Oferta activa en GOG vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1364100/2f141b70398ce62fb98c1d849a56a05267f917a7/capsule_231x87.jpg?t=1794218067",
+          "themeVariant": "cyberpunk"
+        },
+        {
+          "id": "cs-228789-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 90% verificado",
+          "themeVariant": "cyberpunk"
+        },
+        {
+          "id": "cs-228789-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "cyberpunk"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "w5%2Fj0I5ToPSnuQErvQ7GznyqiXeL9n4TpaObgAGl6Fg%3D",
+      "cheapSharkGameId": "228789"
+    },
+    {
+      "id": "cs-307340",
+      "slug": "knightica",
+      "title": "Knightica",
+      "developer": "Epic Games Store",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2025,
+      "genre": "Acción",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Juego gratis",
+      "originalPriceCop": 63700,
+      "discountPercent": 99,
+      "finalPriceCop": 0,
+      "rating": 3.7,
+      "popularityScore": 85,
+      "bestStore": "Epic Games Store",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=REe9mfdT3TdLdJWWX2dgNfk69WQiyQRifFoydZms2A4%253D",
+      "synopsis": "Knightica forma parte del catálogo en vivo de ofertas de CheapShark en Epic Games Store. Precio convertido automáticamente a pesos colombianos (COP) desde 0.00 USD (precio regular 14.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (Epic Games Store)",
+        "Ahorro verificado del 99% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3093400/7b0ebe2cc1c7fd1fe219f4fce68edc5003b19a89/capsule_231x87.jpg?t=1794501426",
+      "artworkTheme": "elden",
+      "gallery": [
+        {
+          "id": "cs-307340-1",
+          "title": "Knightica",
+          "caption": "Oferta activa en Epic Games Store vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3093400/7b0ebe2cc1c7fd1fe219f4fce68edc5003b19a89/capsule_231x87.jpg?t=1794501426",
+          "themeVariant": "elden"
+        },
+        {
+          "id": "cs-307340-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 99% verificado",
+          "themeVariant": "elden"
+        },
+        {
+          "id": "cs-307340-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "elden"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "REe9mfdT3TdLdJWWX2dgNfk69WQiyQRifFoydZms2A4%3D",
+      "cheapSharkGameId": "307340"
+    },
+    {
+      "id": "cs-87751",
+      "slug": "stronghold-3-gold",
+      "title": "Stronghold 3 Gold",
+      "developer": "WinGameStore",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2025,
+      "genre": "RPG",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 127500,
+      "discountPercent": 96,
+      "finalPriceCop": 4600,
+      "rating": 3.5,
+      "popularityScore": 82,
+      "bestStore": "WinGameStore",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=L5LaXC7q2hA6HKAQ%252BEasvCyAzNXnYdmT%252BDe50HrwiEo%253D",
+      "synopsis": "Stronghold 3 Gold forma parte del catálogo en vivo de ofertas de CheapShark en WinGameStore. Precio convertido automáticamente a pesos colombianos (COP) desde 1.09 USD (precio regular 29.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (WinGameStore)",
+        "Ahorro verificado del 96% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/47400/capsule_231x87.jpg?t=1758726085",
+      "artworkTheme": "gow",
+      "gallery": [
+        {
+          "id": "cs-87751-1",
+          "title": "Stronghold 3 Gold",
+          "caption": "Oferta activa en WinGameStore vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/47400/capsule_231x87.jpg?t=1758726085",
+          "themeVariant": "gow"
+        },
+        {
+          "id": "cs-87751-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 96% verificado",
+          "themeVariant": "gow"
+        },
+        {
+          "id": "cs-87751-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "gow"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "L5LaXC7q2hA6HKAQ%2BEasvCyAzNXnYdmT%2BDe50HrwiEo%3D",
+      "cheapSharkGameId": "87751"
+    },
+    {
+      "id": "cs-185150",
+      "slug": "sentinels-of-the-multiverse-season-pass-2",
+      "title": "Sentinels of the Multiverse - Season Pass 2",
+      "developer": "WinGameStore",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2025,
+      "genre": "Aventura",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 127500,
+      "discountPercent": 96,
+      "finalPriceCop": 4600,
+      "rating": 4.2,
+      "popularityScore": 82,
+      "bestStore": "WinGameStore",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=Ng%252BUanUPWDcJ1IVZGPNsjm4BfSsoEvq1lh0xRWSLI3k%253D",
+      "synopsis": "Sentinels of the Multiverse - Season Pass 2 forma parte del catálogo en vivo de ofertas de CheapShark en WinGameStore. Precio convertido automáticamente a pesos colombianos (COP) desde 1.09 USD (precio regular 29.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (WinGameStore)",
+        "Ahorro verificado del 96% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://cdn.fanatical.com/production/product/400x225/ddccd59e-59e0-4514-a27e-f8e35968929f.jpg",
+      "artworkTheme": "rdr2",
+      "gallery": [
+        {
+          "id": "cs-185150-1",
+          "title": "Sentinels of the Multiverse - Season Pass 2",
+          "caption": "Oferta activa en WinGameStore vía CheapShark",
+          "imageUrl": "https://cdn.fanatical.com/production/product/400x225/ddccd59e-59e0-4514-a27e-f8e35968929f.jpg",
+          "themeVariant": "rdr2"
+        },
+        {
+          "id": "cs-185150-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 96% verificado",
+          "themeVariant": "rdr2"
+        },
+        {
+          "id": "cs-185150-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "rdr2"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "Ng%2BUanUPWDcJ1IVZGPNsjm4BfSsoEvq1lh0xRWSLI3k%3D",
+      "cheapSharkGameId": "185150"
+    },
+    {
+      "id": "cs-167643",
+      "slug": "club-manager-2017",
+      "title": "Club Manager 2017",
+      "developer": "WinGameStore",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2017,
+      "genre": "Deportes",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 127500,
+      "discountPercent": 96,
+      "finalPriceCop": 4600,
+      "rating": 3.5,
+      "popularityScore": 82,
+      "bestStore": "WinGameStore",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=%252FfVK%252BLWLR1uuJhbqNEr%252F24h%252FLzYxhJmcJKRfEgC32lw%253D",
+      "synopsis": "Club Manager 2017 forma parte del catálogo en vivo de ofertas de CheapShark en WinGameStore. Precio convertido automáticamente a pesos colombianos (COP) desde 1.09 USD (precio regular 29.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (WinGameStore)",
+        "Ahorro verificado del 96% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://sttc.gamersgate.com/images/product/club-manager-2017/cover-180-132eab.jpg",
+      "artworkTheme": "witcher",
+      "gallery": [
+        {
+          "id": "cs-167643-1",
+          "title": "Club Manager 2017",
+          "caption": "Oferta activa en WinGameStore vía CheapShark",
+          "imageUrl": "https://sttc.gamersgate.com/images/product/club-manager-2017/cover-180-132eab.jpg",
+          "themeVariant": "witcher"
+        },
+        {
+          "id": "cs-167643-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 96% verificado",
+          "themeVariant": "witcher"
+        },
+        {
+          "id": "cs-167643-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "witcher"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "%2FfVK%2BLWLR1uuJhbqNEr%2F24h%2FLzYxhJmcJKRfEgC32lw%3D",
+      "cheapSharkGameId": "167643"
+    },
+    {
+      "id": "cs-106360",
+      "slug": "the-book-of-legends",
+      "title": "The Book of Legends",
+      "developer": "Humble Store",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2012,
+      "genre": "Mundo Abierto",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 63700,
+      "discountPercent": 96,
+      "finalPriceCop": 2500,
+      "rating": 3.5,
+      "popularityScore": 82,
+      "bestStore": "Humble Store",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=nlp3qDJuphBKbhB375Uh1maMvh4fQqKur9BHFfgLZqI%253D",
+      "synopsis": "The Book of Legends forma parte del catálogo en vivo de ofertas de CheapShark en Humble Store. Precio convertido automáticamente a pesos colombianos (COP) desde 0.59 USD (precio regular 14.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (Humble Store)",
+        "Ahorro verificado del 96% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/277470/capsule_231x87.jpg?t=1730488403",
+      "artworkTheme": "hollow",
+      "gallery": [
+        {
+          "id": "cs-106360-1",
+          "title": "The Book of Legends",
+          "caption": "Oferta activa en Humble Store vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/277470/capsule_231x87.jpg?t=1730488403",
+          "themeVariant": "hollow"
+        },
+        {
+          "id": "cs-106360-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 96% verificado",
+          "themeVariant": "hollow"
+        },
+        {
+          "id": "cs-106360-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "hollow"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "nlp3qDJuphBKbhB375Uh1maMvh4fQqKur9BHFfgLZqI%3D",
+      "cheapSharkGameId": "106360"
+    },
+    {
+      "id": "cs-2277",
+      "slug": "3-stars-of-destiny",
+      "title": "3 Stars of Destiny",
+      "developer": "Humble Store",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2009,
+      "genre": "Acción",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 63700,
+      "discountPercent": 96,
+      "finalPriceCop": 2500,
+      "rating": 3.5,
+      "popularityScore": 82,
+      "bestStore": "Humble Store",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=6Aub49GWdswiskFpaRZO5RAmunYBStZzD0B4wnwhbW8%253D",
+      "synopsis": "3 Stars of Destiny forma parte del catálogo en vivo de ofertas de CheapShark en Humble Store. Precio convertido automáticamente a pesos colombianos (COP) desde 0.59 USD (precio regular 14.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (Humble Store)",
+        "Ahorro verificado del 96% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/278530/capsule_231x87.jpg?t=1723878860",
+      "artworkTheme": "re4",
+      "gallery": [
+        {
+          "id": "cs-2277-1",
+          "title": "3 Stars of Destiny",
+          "caption": "Oferta activa en Humble Store vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/278530/capsule_231x87.jpg?t=1723878860",
+          "themeVariant": "re4"
+        },
+        {
+          "id": "cs-2277-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 96% verificado",
+          "themeVariant": "re4"
+        },
+        {
+          "id": "cs-2277-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "re4"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "6Aub49GWdswiskFpaRZO5RAmunYBStZzD0B4wnwhbW8%3D",
+      "cheapSharkGameId": "2277"
+    },
+    {
+      "id": "cs-2378",
+      "slug": "asguaard",
+      "title": "Asguaard",
+      "developer": "Humble Store",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2009,
+      "genre": "RPG",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 63700,
+      "discountPercent": 96,
+      "finalPriceCop": 2500,
+      "rating": 3.5,
+      "popularityScore": 82,
+      "bestStore": "Humble Store",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=K1MyHIH8RzjWZr%252FdjEB7fmgXCmF4mFwnlW2wZgCa5mc%253D",
+      "synopsis": "Asguaard forma parte del catálogo en vivo de ofertas de CheapShark en Humble Store. Precio convertido automáticamente a pesos colombianos (COP) desde 0.59 USD (precio regular 14.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (Humble Store)",
+        "Ahorro verificado del 96% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/332380/3644b8c12f7936c45d032e0286c94d38a3d36fc1/capsule_231x87.jpg?t=1730487357",
+      "artworkTheme": "hades2",
+      "gallery": [
+        {
+          "id": "cs-2378-1",
+          "title": "Asguaard",
+          "caption": "Oferta activa en Humble Store vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/332380/3644b8c12f7936c45d032e0286c94d38a3d36fc1/capsule_231x87.jpg?t=1730487357",
+          "themeVariant": "hades2"
+        },
+        {
+          "id": "cs-2378-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 96% verificado",
+          "themeVariant": "hades2"
+        },
+        {
+          "id": "cs-2378-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "hades2"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "K1MyHIH8RzjWZr%2FdjEB7fmgXCmF4mFwnlW2wZgCa5mc%3D",
+      "cheapSharkGameId": "2378"
+    },
+    {
+      "id": "cs-278985",
+      "slug": "cyber-avenger",
+      "title": "Cyber Avenger",
+      "developer": "Humble Store",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2023,
+      "genre": "Aventura",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 76500,
+      "discountPercent": 96,
+      "finalPriceCop": 3000,
+      "rating": 4.2,
+      "popularityScore": 82,
+      "bestStore": "Humble Store",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=l%252FF5BpsRT4wNh0cdyDv0PSWFzTvOmohwiE4KBIXimww%253D",
+      "synopsis": "Cyber Avenger forma parte del catálogo en vivo de ofertas de CheapShark en Humble Store. Precio convertido automáticamente a pesos colombianos (COP) desde 0.71 USD (precio regular 17.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (Humble Store)",
+        "Ahorro verificado del 96% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2606270/999f5dd68c940b281def83a4b261698afd44c442/capsule_231x87.jpg?t=1791544359",
+      "artworkTheme": "cyberpunk",
+      "gallery": [
+        {
+          "id": "cs-278985-1",
+          "title": "Cyber Avenger",
+          "caption": "Oferta activa en Humble Store vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2606270/999f5dd68c940b281def83a4b261698afd44c442/capsule_231x87.jpg?t=1791544359",
+          "themeVariant": "cyberpunk"
+        },
+        {
+          "id": "cs-278985-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 96% verificado",
+          "themeVariant": "cyberpunk"
+        },
+        {
+          "id": "cs-278985-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "cyberpunk"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "l%2FF5BpsRT4wNh0cdyDv0PSWFzTvOmohwiE4KBIXimww%3D",
+      "cheapSharkGameId": "278985"
+    },
+    {
+      "id": "cs-287469",
+      "slug": "the-black-within",
+      "title": "The Black Within",
+      "developer": "Humble Store",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2024,
+      "genre": "Indie",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 54200,
+      "discountPercent": 96,
+      "finalPriceCop": 2200,
+      "rating": 4.1,
+      "popularityScore": 70,
+      "bestStore": "Humble Store",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=mvIusXluS%252FFOwQgIGAEQTWNytAnNG01xIAa61Nu4sQ8%253D",
+      "synopsis": "The Black Within forma parte del catálogo en vivo de ofertas de CheapShark en Humble Store. Precio convertido automáticamente a pesos colombianos (COP) desde 0.51 USD (precio regular 12.75 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (Humble Store)",
+        "Ahorro verificado del 96% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2372870/capsule_231x87.jpg?t=1793798297",
+      "artworkTheme": "elden",
+      "gallery": [
+        {
+          "id": "cs-287469-1",
+          "title": "The Black Within",
+          "caption": "Oferta activa en Humble Store vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2372870/capsule_231x87.jpg?t=1793798297",
+          "themeVariant": "elden"
+        },
+        {
+          "id": "cs-287469-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 96% verificado",
+          "themeVariant": "elden"
+        },
+        {
+          "id": "cs-287469-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "elden"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "mvIusXluS%2FFOwQgIGAEQTWNytAnNG01xIAa61Nu4sQ8%3D",
+      "cheapSharkGameId": "287469"
+    },
+    {
+      "id": "cs-315523",
+      "slug": "the-green-light",
+      "title": "The Green Light",
+      "developer": "Humble Store",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2026,
+      "genre": "Mundo Abierto",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 54200,
+      "discountPercent": 96,
+      "finalPriceCop": 2200,
+      "rating": 3.8,
+      "popularityScore": 70,
+      "bestStore": "Humble Store",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=X3BLxjTtXbfVTduCnYPvAZ1g1UE9Yz8QkWvMYKK6f%252FQ%253D",
+      "synopsis": "The Green Light forma parte del catálogo en vivo de ofertas de CheapShark en Humble Store. Precio convertido automáticamente a pesos colombianos (COP) desde 0.51 USD (precio regular 12.75 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (Humble Store)",
+        "Ahorro verificado del 96% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1962950/af76a3615c892059a8d74fddc2e761c4855baf22/capsule_231x87.jpg?t=1770198609",
+      "artworkTheme": "gow",
+      "gallery": [
+        {
+          "id": "cs-315523-1",
+          "title": "The Green Light",
+          "caption": "Oferta activa en Humble Store vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1962950/af76a3615c892059a8d74fddc2e761c4855baf22/capsule_231x87.jpg?t=1770198609",
+          "themeVariant": "gow"
+        },
+        {
+          "id": "cs-315523-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 96% verificado",
+          "themeVariant": "gow"
+        },
+        {
+          "id": "cs-315523-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "gow"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "X3BLxjTtXbfVTduCnYPvAZ1g1UE9Yz8QkWvMYKK6f%2FQ%3D",
+      "cheapSharkGameId": "315523"
+    },
+    {
+      "id": "cs-282429",
+      "slug": "crown-wars-the-black-prince-sacred-edition",
+      "title": "Crown Wars: The Black Prince - Sacred Edition",
+      "developer": "Gamesplanet",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2025,
+      "genre": "Acción",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 212500,
+      "discountPercent": 96,
+      "finalPriceCop": 9000,
+      "rating": 4.2,
+      "popularityScore": 78,
+      "bestStore": "Gamesplanet",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=nV7LkStRg8OATNak05kjP%252BiDwIc3vUXWnFl%252FAQ4ORLk%253D",
+      "synopsis": "Crown Wars: The Black Prince - Sacred Edition forma parte del catálogo en vivo de ofertas de CheapShark en Gamesplanet. Precio convertido automáticamente a pesos colombianos (COP) desde 2.12 USD (precio regular 49.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (Gamesplanet)",
+        "Ahorro verificado del 96% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://sttc.gamersgate.com/images/product/crown-wars-the-black-prince-sacred-edition/cover-180-9251bf.jpg",
+      "artworkTheme": "rdr2",
+      "gallery": [
+        {
+          "id": "cs-282429-1",
+          "title": "Crown Wars: The Black Prince - Sacred Edition",
+          "caption": "Oferta activa en Gamesplanet vía CheapShark",
+          "imageUrl": "https://sttc.gamersgate.com/images/product/crown-wars-the-black-prince-sacred-edition/cover-180-9251bf.jpg",
+          "themeVariant": "rdr2"
+        },
+        {
+          "id": "cs-282429-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 96% verificado",
+          "themeVariant": "rdr2"
+        },
+        {
+          "id": "cs-282429-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "rdr2"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "nV7LkStRg8OATNak05kjP%2BiDwIc3vUXWnFl%2FAQ4ORLk%3D",
+      "cheapSharkGameId": "282429"
+    },
+    {
+      "id": "cs-282430",
+      "slug": "crown-wars-the-black-prince",
+      "title": "Crown Wars: The Black Prince",
+      "developer": "Gamesplanet",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2024,
+      "genre": "RPG",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 170000,
+      "discountPercent": 96,
+      "finalPriceCop": 7300,
+      "rating": 3.5,
+      "popularityScore": 90,
+      "bestStore": "Gamesplanet",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=HIAWe8%252B%252FN%252F6l4s5JdqqW1DB0nv%252BHDth7wRRmlnC8qbI%253D",
+      "synopsis": "Crown Wars: The Black Prince forma parte del catálogo en vivo de ofertas de CheapShark en Gamesplanet. Precio convertido automáticamente a pesos colombianos (COP) desde 1.71 USD (precio regular 39.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (Gamesplanet)",
+        "Ahorro verificado del 96% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1658920/capsule_231x87.jpg?t=1778173233",
+      "artworkTheme": "witcher",
+      "gallery": [
+        {
+          "id": "cs-282430-1",
+          "title": "Crown Wars: The Black Prince",
+          "caption": "Oferta activa en Gamesplanet vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1658920/capsule_231x87.jpg?t=1778173233",
+          "themeVariant": "witcher"
+        },
+        {
+          "id": "cs-282430-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 96% verificado",
+          "themeVariant": "witcher"
+        },
+        {
+          "id": "cs-282430-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "witcher"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "HIAWe8%2B%2FN%2F6l4s5JdqqW1DB0nv%2BHDth7wRRmlnC8qbI%3D",
+      "cheapSharkGameId": "282430"
+    },
+    {
+      "id": "cs-153168",
+      "slug": "planar-conquest",
+      "title": "Planar Conquest",
+      "developer": "WinGameStore",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2016,
+      "genre": "RPG",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 106200,
+      "discountPercent": 96,
+      "finalPriceCop": 4600,
+      "rating": 3.5,
+      "popularityScore": 82,
+      "bestStore": "WinGameStore",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=DGRC36Prmy02TX3i6RpTTyvVz1PMS1CJAGS2GwjbcYc%253D",
+      "synopsis": "Planar Conquest forma parte del catálogo en vivo de ofertas de CheapShark en WinGameStore. Precio convertido automáticamente a pesos colombianos (COP) desde 1.09 USD (precio regular 24.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (WinGameStore)",
+        "Ahorro verificado del 96% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/449300/capsule_231x87.jpg?t=1782168871",
+      "artworkTheme": "hollow",
+      "gallery": [
+        {
+          "id": "cs-153168-1",
+          "title": "Planar Conquest",
+          "caption": "Oferta activa en WinGameStore vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/449300/capsule_231x87.jpg?t=1782168871",
+          "themeVariant": "hollow"
+        },
+        {
+          "id": "cs-153168-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 96% verificado",
+          "themeVariant": "hollow"
+        },
+        {
+          "id": "cs-153168-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "hollow"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "DGRC36Prmy02TX3i6RpTTyvVz1PMS1CJAGS2GwjbcYc%3D",
+      "cheapSharkGameId": "153168"
+    },
+    {
+      "id": "cs-150176",
+      "slug": "paws-pitter-patter-edition",
+      "title": "Paws: Pitter Patter Edition",
+      "developer": "WinGameStore",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2025,
+      "genre": "Indie",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 106200,
+      "discountPercent": 96,
+      "finalPriceCop": 4600,
+      "rating": 4.2,
+      "popularityScore": 82,
+      "bestStore": "WinGameStore",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=kREYY3U9v64BdyGR49%252B15OYU79epiUo3QvQO%252BZJiAYw%253D",
+      "synopsis": "Paws: Pitter Patter Edition forma parte del catálogo en vivo de ofertas de CheapShark en WinGameStore. Precio convertido automáticamente a pesos colombianos (COP) desde 1.09 USD (precio regular 24.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (WinGameStore)",
+        "Ahorro verificado del 96% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://images.gog-statics.com/676a646aacdbbb862d2c15f225ea4390c02a4691c9027572a5d7389f84e84df2_product_tile_117h.webp",
+      "artworkTheme": "re4",
+      "gallery": [
+        {
+          "id": "cs-150176-1",
+          "title": "Paws: Pitter Patter Edition",
+          "caption": "Oferta activa en WinGameStore vía CheapShark",
+          "imageUrl": "https://images.gog-statics.com/676a646aacdbbb862d2c15f225ea4390c02a4691c9027572a5d7389f84e84df2_product_tile_117h.webp",
+          "themeVariant": "re4"
+        },
+        {
+          "id": "cs-150176-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 96% verificado",
+          "themeVariant": "re4"
+        },
+        {
+          "id": "cs-150176-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "re4"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "kREYY3U9v64BdyGR49%2B15OYU79epiUo3QvQO%2BZJiAYw%3D",
+      "cheapSharkGameId": "150176"
+    },
+    {
+      "id": "cs-197886",
+      "slug": "sentinels-of-the-multiverse-season-pass-1",
+      "title": "Sentinels of the Multiverse - Season Pass 1",
+      "developer": "WinGameStore",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2025,
+      "genre": "Mundo Abierto",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 106200,
+      "discountPercent": 96,
+      "finalPriceCop": 4600,
+      "rating": 4.2,
+      "popularityScore": 82,
+      "bestStore": "WinGameStore",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=yi9uaQNYF70Vwmwvwx4ESFIbIG7dB5r2MepnACHPq0g%253D",
+      "synopsis": "Sentinels of the Multiverse - Season Pass 1 forma parte del catálogo en vivo de ofertas de CheapShark en WinGameStore. Precio convertido automáticamente a pesos colombianos (COP) desde 1.09 USD (precio regular 24.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (WinGameStore)",
+        "Ahorro verificado del 96% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://www.wingamestore.com/images_boxshots/master/sentinels-of-the-multiverse-season-pass-1-1550381788.jpg",
+      "artworkTheme": "hades2",
+      "gallery": [
+        {
+          "id": "cs-197886-1",
+          "title": "Sentinels of the Multiverse - Season Pass 1",
+          "caption": "Oferta activa en WinGameStore vía CheapShark",
+          "imageUrl": "https://www.wingamestore.com/images_boxshots/master/sentinels-of-the-multiverse-season-pass-1-1550381788.jpg",
+          "themeVariant": "hades2"
+        },
+        {
+          "id": "cs-197886-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 96% verificado",
+          "themeVariant": "hades2"
+        },
+        {
+          "id": "cs-197886-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "hades2"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "yi9uaQNYF70Vwmwvwx4ESFIbIG7dB5r2MepnACHPq0g%3D",
+      "cheapSharkGameId": "197886"
+    },
+    {
+      "id": "cs-171524",
+      "slug": "age-of-fear-3-the-legend",
+      "title": "Age of Fear 3: The Legend",
+      "developer": "WinGameStore",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2017,
+      "genre": "Acción",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 106200,
+      "discountPercent": 96,
+      "finalPriceCop": 4600,
+      "rating": 4.7,
+      "popularityScore": 82,
+      "bestStore": "WinGameStore",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=BF%252FFS8Tu2r9U8Fm5nxjqPUc5lPmB7u%252BhdoVa%252Fy0k6ts%253D",
+      "synopsis": "Age of Fear 3: The Legend forma parte del catálogo en vivo de ofertas de CheapShark en WinGameStore. Precio convertido automáticamente a pesos colombianos (COP) desde 1.09 USD (precio regular 24.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (WinGameStore)",
+        "Ahorro verificado del 96% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/431700/capsule_231x87.jpg?t=1730542191",
+      "artworkTheme": "cyberpunk",
+      "gallery": [
+        {
+          "id": "cs-171524-1",
+          "title": "Age of Fear 3: The Legend",
+          "caption": "Oferta activa en WinGameStore vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/431700/capsule_231x87.jpg?t=1730542191",
+          "themeVariant": "cyberpunk"
+        },
+        {
+          "id": "cs-171524-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 96% verificado",
+          "themeVariant": "cyberpunk"
+        },
+        {
+          "id": "cs-171524-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "cyberpunk"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "BF%2FFS8Tu2r9U8Fm5nxjqPUc5lPmB7u%2BhdoVa%2Fy0k6ts%3D",
+      "cheapSharkGameId": "171524"
+    },
+    {
+      "id": "cs-159375",
+      "slug": "1775-rebellion",
+      "title": "1775: Rebellion",
+      "developer": "WinGameStore",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2016,
+      "genre": "RPG",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 106200,
+      "discountPercent": 96,
+      "finalPriceCop": 4600,
+      "rating": 3.8,
+      "popularityScore": 82,
+      "bestStore": "WinGameStore",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=Mv5bUBdVbELz9bvtQoJDX%252F2scke6aQFCMzsoQCEUNWs%253D",
+      "synopsis": "1775: Rebellion forma parte del catálogo en vivo de ofertas de CheapShark en WinGameStore. Precio convertido automáticamente a pesos colombianos (COP) desde 1.09 USD (precio regular 24.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (WinGameStore)",
+        "Ahorro verificado del 96% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/422610/capsule_231x87.jpg?t=1787369695",
+      "artworkTheme": "elden",
+      "gallery": [
+        {
+          "id": "cs-159375-1",
+          "title": "1775: Rebellion",
+          "caption": "Oferta activa en WinGameStore vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/422610/capsule_231x87.jpg?t=1787369695",
+          "themeVariant": "elden"
+        },
+        {
+          "id": "cs-159375-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 96% verificado",
+          "themeVariant": "elden"
+        },
+        {
+          "id": "cs-159375-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "elden"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "Mv5bUBdVbELz9bvtQoJDX%2F2scke6aQFCMzsoQCEUNWs%3D",
+      "cheapSharkGameId": "159375"
+    },
+    {
+      "id": "cs-253884",
+      "slug": "great-houses-of-calderia",
+      "title": "Great Houses of Calderia",
+      "developer": "Gamesplanet",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2024,
+      "genre": "Aventura",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 106200,
+      "discountPercent": 96,
+      "finalPriceCop": 4800,
+      "rating": 3.5,
+      "popularityScore": 79,
+      "bestStore": "Gamesplanet",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=ZfvFYzi5ySvyHATPHuaQ8Y1aisMpkqD23pGikPzYgfI%253D",
+      "synopsis": "Great Houses of Calderia forma parte del catálogo en vivo de ofertas de CheapShark en Gamesplanet. Precio convertido automáticamente a pesos colombianos (COP) desde 1.12 USD (precio regular 24.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (Gamesplanet)",
+        "Ahorro verificado del 96% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1812910/bd6763340dffed49728cf7a1a867b408e748dd35/capsule_231x87.jpg?t=1793952901",
+      "artworkTheme": "gow",
+      "gallery": [
+        {
+          "id": "cs-253884-1",
+          "title": "Great Houses of Calderia",
+          "caption": "Oferta activa en Gamesplanet vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1812910/bd6763340dffed49728cf7a1a867b408e748dd35/capsule_231x87.jpg?t=1793952901",
+          "themeVariant": "gow"
+        },
+        {
+          "id": "cs-253884-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 96% verificado",
+          "themeVariant": "gow"
+        },
+        {
+          "id": "cs-253884-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "gow"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "ZfvFYzi5ySvyHATPHuaQ8Y1aisMpkqD23pGikPzYgfI%3D",
+      "cheapSharkGameId": "253884"
+    },
+    {
+      "id": "cs-171313",
+      "slug": "project-first-contact",
+      "title": "Project First Contact",
+      "developer": "Epic Games Store",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2017,
+      "genre": "Indie",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 12700,
+      "discountPercent": 95,
+      "finalPriceCop": 600,
+      "rating": 3.5,
+      "popularityScore": 70,
+      "bestStore": "Epic Games Store",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=%252BE27EcK0pJphffINtw3iXpfjSPlmoc0p2tvFQ%252BqzizU%253D",
+      "synopsis": "Project First Contact forma parte del catálogo en vivo de ofertas de CheapShark en Epic Games Store. Precio convertido automáticamente a pesos colombianos (COP) desde 0.14 USD (precio regular 2.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (Epic Games Store)",
+        "Ahorro verificado del 95% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://images.greenmangaming.com/ebe565d1944a41cdb7b30d7fcc359660/3fe9db213f414b298214b9e7833ff175.jpg",
+      "artworkTheme": "rdr2",
+      "gallery": [
+        {
+          "id": "cs-171313-1",
+          "title": "Project First Contact",
+          "caption": "Oferta activa en Epic Games Store vía CheapShark",
+          "imageUrl": "https://images.greenmangaming.com/ebe565d1944a41cdb7b30d7fcc359660/3fe9db213f414b298214b9e7833ff175.jpg",
+          "themeVariant": "rdr2"
+        },
+        {
+          "id": "cs-171313-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 95% verificado",
+          "themeVariant": "rdr2"
+        },
+        {
+          "id": "cs-171313-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "rdr2"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "%2BE27EcK0pJphffINtw3iXpfjSPlmoc0p2tvFQ%2BqzizU%3D",
+      "cheapSharkGameId": "171313"
+    },
+    {
+      "id": "cs-227942",
+      "slug": "disco-elysium-the-final-cut",
+      "title": "Disco Elysium - The Final Cut",
+      "developer": "GOG",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2021,
+      "genre": "Mundo Abierto",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 170000,
+      "discountPercent": 75,
+      "finalPriceCop": 42500,
+      "rating": 4.6,
+      "popularityScore": 70,
+      "bestStore": "GOG",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=fo%252BHT27GrgZT0g2USsPLQ2dVGTnq%252Fb%252FBnY2L2%252Bi8BWk%253D",
+      "synopsis": "Disco Elysium - The Final Cut forma parte del catálogo en vivo de ofertas de CheapShark en GOG. Precio convertido automáticamente a pesos colombianos (COP) desde 9.99 USD (precio regular 39.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (GOG)",
+        "Ahorro verificado del 75% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/632470/e2afca9fe9b3e70e0da58b3006c893f6d07d10d6/capsule_231x87.jpg?t=1780913406",
+      "artworkTheme": "witcher",
+      "gallery": [
+        {
+          "id": "cs-227942-1",
+          "title": "Disco Elysium - The Final Cut",
+          "caption": "Oferta activa en GOG vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/632470/e2afca9fe9b3e70e0da58b3006c893f6d07d10d6/capsule_231x87.jpg?t=1780913406",
+          "themeVariant": "witcher"
+        },
+        {
+          "id": "cs-227942-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 75% verificado",
+          "themeVariant": "witcher"
+        },
+        {
+          "id": "cs-227942-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "witcher"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "AUvSqG%2BjgjZBM4JGg0dEDho7mk8Sxn2CpCvml8OEW40%3D",
+      "cheapSharkGameId": "227942"
+    },
+    {
+      "id": "cs-128",
+      "slug": "bioshock",
+      "title": "BioShock",
+      "developer": "GameBillet",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2007,
+      "genre": "Aventura",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 85000,
+      "discountPercent": 16,
+      "finalPriceCop": 71400,
+      "rating": 4.7,
+      "popularityScore": 70,
+      "bestStore": "GameBillet",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=et8hm7BwoAPZnyJpSAAehTMKS7M1aPlbLKSZDWmUtEo%253D",
+      "synopsis": "BioShock forma parte del catálogo en vivo de ofertas de CheapShark en GameBillet. Precio convertido automáticamente a pesos colombianos (COP) desde 16.79 USD (precio regular 19.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (GameBillet)",
+        "Ahorro verificado del 16% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/7670/capsule_231x87.jpg?t=1730172622",
+      "artworkTheme": "hades2",
+      "gallery": [
+        {
+          "id": "cs-128-1",
+          "title": "BioShock",
+          "caption": "Oferta activa en GameBillet vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/7670/capsule_231x87.jpg?t=1730172622",
+          "themeVariant": "hades2"
+        },
+        {
+          "id": "cs-128-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 16% verificado",
+          "themeVariant": "hades2"
+        },
+        {
+          "id": "cs-128-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "hades2"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "sih7CO1qZ1vUrVB%2BuKVccW82zOPd37fOjCi07Y5ip4k%3D",
+      "cheapSharkGameId": "128"
+    },
+    {
+      "id": "cs-252306",
+      "slug": "persona-5-royal",
+      "title": "Persona 5 Royal",
+      "developer": "GameBillet",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2022,
+      "genre": "RPG",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 255000,
+      "discountPercent": 70,
+      "finalPriceCop": 76500,
+      "rating": 4.8,
+      "popularityScore": 82,
+      "bestStore": "Steam",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=GU418B6WsDwRvIPiffA%252BQLq%252BoIKttwAodAF0ooBRdmw%253D",
+      "synopsis": "Persona 5 Royal forma parte del catálogo en vivo de ofertas de CheapShark en GameBillet. Precio convertido automáticamente a pesos colombianos (COP) desde 51.59 USD (precio regular 59.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (GameBillet)",
+        "Ahorro verificado del 14% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1687950/capsule_231x87.jpg?t=1783356822",
+      "artworkTheme": "elden",
+      "gallery": [
+        {
+          "id": "cs-252306-1",
+          "title": "Persona 5 Royal",
+          "caption": "Oferta activa en GameBillet vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1687950/capsule_231x87.jpg?t=1783356822",
+          "themeVariant": "elden"
+        },
+        {
+          "id": "cs-252306-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 14% verificado",
+          "themeVariant": "elden"
+        },
+        {
+          "id": "cs-252306-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "elden"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "GU418B6WsDwRvIPiffA%2BQLq%2BoIKttwAodAF0ooBRdmw%3D",
+      "cheapSharkGameId": "252306"
+    },
+    {
+      "id": "cs-126",
+      "slug": "sid-meier-s-civilization-iv",
+      "title": "Sid Meier's Civilization IV",
+      "developer": "Steam",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2005,
+      "genre": "Mundo Abierto",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 85000,
+      "discountPercent": 86,
+      "finalPriceCop": 11800,
+      "rating": 4.6,
+      "popularityScore": 83,
+      "bestStore": "WinGameStore",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=722MMT3nb71TKpZB4FJNgn4SRd6XWhEVmPvrM6H%252F5hU%253D",
+      "synopsis": "Sid Meier's Civilization IV forma parte del catálogo en vivo de ofertas de CheapShark en Steam. Precio convertido automáticamente a pesos colombianos (COP) desde 3.99 USD (precio regular 19.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (Steam)",
+        "Ahorro verificado del 80% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3900/capsule_231x87.jpg?t=1724341287",
+      "artworkTheme": "re4",
+      "gallery": [
+        {
+          "id": "cs-126-1",
+          "title": "Sid Meier's Civilization IV",
+          "caption": "Oferta activa en Steam vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3900/capsule_231x87.jpg?t=1724341287",
+          "themeVariant": "re4"
+        },
+        {
+          "id": "cs-126-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 80% verificado",
+          "themeVariant": "re4"
+        },
+        {
+          "id": "cs-126-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "re4"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "722MMT3nb71TKpZB4FJNgn4SRd6XWhEVmPvrM6H%2F5hU%3D",
+      "cheapSharkGameId": "126"
+    },
+    {
+      "id": "cs-93503",
+      "slug": "bioshock-infinite",
+      "title": "BioShock Infinite",
+      "developer": "GameBillet",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2013,
+      "genre": "Acción",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 127500,
+      "discountPercent": 16,
+      "finalPriceCop": 107100,
+      "rating": 4.5,
+      "popularityScore": 70,
+      "bestStore": "GameBillet",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=vb3EqB4KpKbSyV83DXQYAZCSBS60LaOMgLCXSt8pQxw%253D",
+      "synopsis": "BioShock Infinite forma parte del catálogo en vivo de ofertas de CheapShark en GameBillet. Precio convertido automáticamente a pesos colombianos (COP) desde 25.19 USD (precio regular 29.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (GameBillet)",
+        "Ahorro verificado del 16% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/8870/capsule_231x87.jpg?t=1728673518",
+      "artworkTheme": "hades2",
+      "gallery": [
+        {
+          "id": "cs-93503-1",
+          "title": "BioShock Infinite",
+          "caption": "Oferta activa en GameBillet vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/8870/capsule_231x87.jpg?t=1728673518",
+          "themeVariant": "hades2"
+        },
+        {
+          "id": "cs-93503-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 16% verificado",
+          "themeVariant": "hades2"
+        },
+        {
+          "id": "cs-93503-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "hades2"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "vb3EqB4KpKbSyV83DXQYAZCSBS60LaOMgLCXSt8pQxw%3D",
+      "cheapSharkGameId": "93503"
+    },
+    {
+      "id": "cs-165",
+      "slug": "quake",
+      "title": "QUAKE",
+      "developer": "Fanatical",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 1996,
+      "genre": "Aventura",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 42500,
+      "discountPercent": 15,
+      "finalPriceCop": 36100,
+      "rating": 4.8,
+      "popularityScore": 70,
+      "bestStore": "Fanatical",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=HYMI2cUkh8THgbD5eDtcrtQYPCzdPxRRHjVwQDN3YJ8%253D",
+      "synopsis": "QUAKE forma parte del catálogo en vivo de ofertas de CheapShark en Fanatical. Precio convertido automáticamente a pesos colombianos (COP) desde 8.49 USD (precio regular 9.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (Fanatical)",
+        "Ahorro verificado del 15% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2310/e8016ed5dfc63b124bbd108d3e46b1cb16e4ab83/capsule_231x87.jpg?t=1786035741",
+      "artworkTheme": "elden",
+      "gallery": [
+        {
+          "id": "cs-165-1",
+          "title": "QUAKE",
+          "caption": "Oferta activa en Fanatical vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2310/e8016ed5dfc63b124bbd108d3e46b1cb16e4ab83/capsule_231x87.jpg?t=1786035741",
+          "themeVariant": "elden"
+        },
+        {
+          "id": "cs-165-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 15% verificado",
+          "themeVariant": "elden"
+        },
+        {
+          "id": "cs-165-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "elden"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "vxoyOkdjV%2FhLXN7SxOeVZHb8ZscK2I0X8d1k3pDWCXs%3D",
+      "cheapSharkGameId": "165"
+    },
+    {
+      "id": "cs-284226",
+      "slug": "no-rest-for-the-wicked",
+      "title": "No Rest for the Wicked",
+      "developer": "Steam",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2027,
+      "genre": "Mundo Abierto",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 195400,
+      "discountPercent": 20,
+      "finalPriceCop": 156300,
+      "rating": 4.3,
+      "popularityScore": 70,
+      "bestStore": "Steam",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=XPn9cT5ayESSY2NK%252FT69EA1koE95Vdqod%252BbODizwHvc%253D",
+      "synopsis": "No Rest for the Wicked forma parte del catálogo en vivo de ofertas de CheapShark en Steam. Precio convertido automáticamente a pesos colombianos (COP) desde 36.78 USD (precio regular 45.98 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (Steam)",
+        "Ahorro verificado del 20% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1371980/9d2efe7754b0843dddbf7c495fe55ccc69e99b6c/capsule_231x87.jpg?t=1792498726",
+      "artworkTheme": "cyberpunk",
+      "gallery": [
+        {
+          "id": "cs-284226-1",
+          "title": "No Rest for the Wicked",
+          "caption": "Oferta activa en Steam vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1371980/9d2efe7754b0843dddbf7c495fe55ccc69e99b6c/capsule_231x87.jpg?t=1792498726",
+          "themeVariant": "cyberpunk"
+        },
+        {
+          "id": "cs-284226-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 20% verificado",
+          "themeVariant": "cyberpunk"
+        },
+        {
+          "id": "cs-284226-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "cyberpunk"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "XPn9cT5ayESSY2NK%2FT69EA1koE95Vdqod%2BbODizwHvc%3D",
+      "cheapSharkGameId": "284226"
+    },
+    {
+      "id": "cs-330460",
+      "slug": "gundam-rogue-orbit",
+      "title": "GUNDAM ROGUE ORBIT",
+      "developer": "Gamesplanet",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2027,
+      "genre": "Acción",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 255000,
+      "discountPercent": 15,
+      "finalPriceCop": 216700,
+      "rating": 4.2,
+      "popularityScore": 82,
+      "bestStore": "Gamesplanet",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=feHvQpJTJhYsIPaJDYMDrawz5YyUp1D0kmrjfrjZ9NU%253D",
+      "synopsis": "GUNDAM ROGUE ORBIT forma parte del catálogo en vivo de ofertas de CheapShark en Gamesplanet. Precio convertido automáticamente a pesos colombianos (COP) desde 50.99 USD (precio regular 59.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (Gamesplanet)",
+        "Ahorro verificado del 15% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1963680/7dfc8feeab68c4e0439980df4427f402a5e9dffb/capsule_231x87.jpg?t=1792422532",
+      "artworkTheme": "elden",
+      "gallery": [
+        {
+          "id": "cs-330460-1",
+          "title": "GUNDAM ROGUE ORBIT",
+          "caption": "Oferta activa en Gamesplanet vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1963680/7dfc8feeab68c4e0439980df4427f402a5e9dffb/capsule_231x87.jpg?t=1792422532",
+          "themeVariant": "elden"
+        },
+        {
+          "id": "cs-330460-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 15% verificado",
+          "themeVariant": "elden"
+        },
+        {
+          "id": "cs-330460-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "elden"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "eQwF7BCnDusos%2BV6WDF2KgFElntXQs%2BrXeYLXd0VVsQ%3D",
+      "cheapSharkGameId": "330460"
+    },
+    {
+      "id": "cs-324216",
+      "slug": "persona-4-revival",
+      "title": "Persona 4 Revival",
+      "developer": "GreenManGaming",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2027,
+      "genre": "RPG",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 297500,
+      "discountPercent": 13,
+      "finalPriceCop": 258700,
+      "rating": 4.2,
+      "popularityScore": 82,
+      "bestStore": "GameBillet",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=4hf6vFf6iqWMlYIrlDe1fl0ZOzqrOwF5QgTB9xtpKdg%253D",
+      "synopsis": "Persona 4 Revival forma parte del catálogo en vivo de ofertas de CheapShark en GreenManGaming. Precio convertido automáticamente a pesos colombianos (COP) desde 60.89 USD (precio regular 69.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (GreenManGaming)",
+        "Ahorro verificado del 13% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2963950/d3e6d91314eafa6af85d4b2295bfb1e02abc78c3/capsule_231x87.jpg?t=1794364839",
+      "artworkTheme": "witcher",
+      "gallery": [
+        {
+          "id": "cs-324216-1",
+          "title": "Persona 4 Revival",
+          "caption": "Oferta activa en GreenManGaming vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2963950/d3e6d91314eafa6af85d4b2295bfb1e02abc78c3/capsule_231x87.jpg?t=1794364839",
+          "themeVariant": "witcher"
+        },
+        {
+          "id": "cs-324216-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 13% verificado",
+          "themeVariant": "witcher"
+        },
+        {
+          "id": "cs-324216-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "witcher"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "4hf6vFf6iqWMlYIrlDe1fl0ZOzqrOwF5QgTB9xtpKdg%3D",
+      "cheapSharkGameId": "324216"
+    },
+    {
+      "id": "cs-333830",
+      "slug": "metro-2039",
+      "title": "METRO 2039",
+      "developer": "Gamesplanet",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2027,
+      "genre": "Aventura",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 297500,
+      "discountPercent": 14,
+      "finalPriceCop": 255000,
+      "rating": 4.2,
+      "popularityScore": 82,
+      "bestStore": "Gamesplanet",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=r90of57GLaXM81T770nETfQPhgA%252Fof3r5ec%252F6miPqbc%253D",
+      "synopsis": "METRO 2039 forma parte del catálogo en vivo de ofertas de CheapShark en Gamesplanet. Precio convertido automáticamente a pesos colombianos (COP) desde 59.99 USD (precio regular 69.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (Gamesplanet)",
+        "Ahorro verificado del 14% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2590240/051a72671d4ced926b06ea6eda0257970cd2def0/capsule_231x87.jpg?t=1792741532",
+      "artworkTheme": "cyberpunk",
+      "gallery": [
+        {
+          "id": "cs-333830-1",
+          "title": "METRO 2039",
+          "caption": "Oferta activa en Gamesplanet vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2590240/051a72671d4ced926b06ea6eda0257970cd2def0/capsule_231x87.jpg?t=1792741532",
+          "themeVariant": "cyberpunk"
+        },
+        {
+          "id": "cs-333830-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 14% verificado",
+          "themeVariant": "cyberpunk"
+        },
+        {
+          "id": "cs-333830-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "cyberpunk"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "mP8TY%2FrEhavODjm90lr33OcrAjYVkC1xqr6zvLBb%2BGk%3D",
+      "cheapSharkGameId": "333830"
+    },
+    {
+      "id": "cs-332735",
+      "slug": "elta-defy-all-gods",
+      "title": "Elta: Defy All Gods",
+      "developer": "Gamesplanet",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2027,
+      "genre": "Mundo Abierto",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 127500,
+      "discountPercent": 12,
+      "finalPriceCop": 112200,
+      "rating": 4.2,
+      "popularityScore": 82,
+      "bestStore": "Fanatical",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=7Mdb6mxSyGeRuSrr11mW0e6ZmfZrJMKtmYfcZpZGg9E%253D",
+      "synopsis": "Elta: Defy All Gods forma parte del catálogo en vivo de ofertas de CheapShark en Gamesplanet. Precio convertido automáticamente a pesos colombianos (COP) desde 26.99 USD (precio regular 29.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (Gamesplanet)",
+        "Ahorro verificado del 10% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2659410/3e29e5013ce99e6073d227266ddef12fd70ee234/capsule_231x87_alt_assets_0.jpg?t=1794230229",
+      "artworkTheme": "gow",
+      "gallery": [
+        {
+          "id": "cs-332735-1",
+          "title": "Elta: Defy All Gods",
+          "caption": "Oferta activa en Gamesplanet vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2659410/3e29e5013ce99e6073d227266ddef12fd70ee234/capsule_231x87_alt_assets_0.jpg?t=1794230229",
+          "themeVariant": "gow"
+        },
+        {
+          "id": "cs-332735-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 10% verificado",
+          "themeVariant": "gow"
+        },
+        {
+          "id": "cs-332735-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "gow"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "eFDaQD4oagnlM0rlL0XvbjhTewpLJ3VttLM6YH1BlLA%3D",
+      "cheapSharkGameId": "332735"
+    },
+    {
+      "id": "cs-308383",
+      "slug": "tropico-7",
+      "title": "Tropico 7",
+      "developer": "Steam",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2027,
+      "genre": "Indie",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 233700,
+      "discountPercent": 10,
+      "finalPriceCop": 210300,
+      "rating": 4.2,
+      "popularityScore": 82,
+      "bestStore": "Steam",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=yK7NEPZIRxs2GaR%252F1yFoi7jsxIksDwp7p87kjlJcmpM%253D",
+      "synopsis": "Tropico 7 forma parte del catálogo en vivo de ofertas de CheapShark en Steam. Precio convertido automáticamente a pesos colombianos (COP) desde 49.49 USD (precio regular 54.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (Steam)",
+        "Ahorro verificado del 10% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1853440/41afee7504dec99c9825bb1d82a1eecedd561c8d/capsule_231x87.jpg?t=1793722109",
+      "artworkTheme": "re4",
+      "gallery": [
+        {
+          "id": "cs-308383-1",
+          "title": "Tropico 7",
+          "caption": "Oferta activa en Steam vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1853440/41afee7504dec99c9825bb1d82a1eecedd561c8d/capsule_231x87.jpg?t=1793722109",
+          "themeVariant": "re4"
+        },
+        {
+          "id": "cs-308383-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 10% verificado",
+          "themeVariant": "re4"
+        },
+        {
+          "id": "cs-308383-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "re4"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "yK7NEPZIRxs2GaR%2F1yFoi7jsxIksDwp7p87kjlJcmpM%3D",
+      "cheapSharkGameId": "308383"
+    },
+    {
+      "id": "cs-158443",
+      "slug": "shadow-tactics-blades-of-the-shogun",
+      "title": "Shadow Tactics: Blades of the Shogun",
+      "developer": "WinGameStore",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2016,
+      "genre": "Mundo Abierto",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 170000,
+      "discountPercent": 90,
+      "finalPriceCop": 17000,
+      "rating": 4.7,
+      "popularityScore": 98,
+      "bestStore": "WinGameStore",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=n6QCiG9FKdQSNO3qxF9g2yOdez8wpOkbnc%252FhrgVXTDw%253D",
+      "synopsis": "Shadow Tactics: Blades of the Shogun forma parte del catálogo en vivo de ofertas de CheapShark en WinGameStore. Precio convertido automáticamente a pesos colombianos (COP) desde 3.99 USD (precio regular 39.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (WinGameStore)",
+        "Ahorro verificado del 90% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/418240/capsule_231x87.jpg?t=1789475696",
+      "artworkTheme": "hades2",
+      "gallery": [
+        {
+          "id": "cs-158443-1",
+          "title": "Shadow Tactics: Blades of the Shogun",
+          "caption": "Oferta activa en WinGameStore vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/418240/capsule_231x87.jpg?t=1789475696",
+          "themeVariant": "hades2"
+        },
+        {
+          "id": "cs-158443-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 90% verificado",
+          "themeVariant": "hades2"
+        },
+        {
+          "id": "cs-158443-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "hades2"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "n6QCiG9FKdQSNO3qxF9g2yOdez8wpOkbnc%2FhrgVXTDw%3D",
+      "cheapSharkGameId": "158443"
+    },
+    {
+      "id": "cs-141090",
+      "slug": "the-next-penelope",
+      "title": "The Next Penelope",
+      "developer": "Gamesplanet",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2015,
+      "genre": "Acción",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 55200,
+      "discountPercent": 91,
+      "finalPriceCop": 4900,
+      "rating": 3.8,
+      "popularityScore": 98,
+      "bestStore": "Gamesplanet",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=UcN3Ob27BNr%252FfGLh%252Buhd8tNyh5DW%252BrZs%252BHecbjrANQs%253D",
+      "synopsis": "The Next Penelope forma parte del catálogo en vivo de ofertas de CheapShark en Gamesplanet. Precio convertido automáticamente a pesos colombianos (COP) desde 1.16 USD (precio regular 12.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (Gamesplanet)",
+        "Ahorro verificado del 91% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/332250/capsule_231x87.jpg?t=1781884634",
+      "artworkTheme": "cyberpunk",
+      "gallery": [
+        {
+          "id": "cs-141090-1",
+          "title": "The Next Penelope",
+          "caption": "Oferta activa en Gamesplanet vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/332250/capsule_231x87.jpg?t=1781884634",
+          "themeVariant": "cyberpunk"
+        },
+        {
+          "id": "cs-141090-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 91% verificado",
+          "themeVariant": "cyberpunk"
+        },
+        {
+          "id": "cs-141090-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "cyberpunk"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "UcN3Ob27BNr%2FfGLh%2Buhd8tNyh5DW%2BrZs%2BHecbjrANQs%3D",
+      "cheapSharkGameId": "141090"
+    },
+    {
+      "id": "cs-143165",
+      "slug": "deus-ex-mankind-divided",
+      "title": "Deus Ex: Mankind Divided",
+      "developer": "WinGameStore",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2016,
+      "genre": "RPG",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 127500,
+      "discountPercent": 90,
+      "finalPriceCop": 12700,
+      "rating": 3.8,
+      "popularityScore": 97,
+      "bestStore": "WinGameStore",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=pLfGrv6mjaR7UOkc8UjfGhMrlaGLQEYkdnDUsQjhp68%253D",
+      "synopsis": "Deus Ex: Mankind Divided forma parte del catálogo en vivo de ofertas de CheapShark en WinGameStore. Precio convertido automáticamente a pesos colombianos (COP) desde 2.99 USD (precio regular 29.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (WinGameStore)",
+        "Ahorro verificado del 90% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/337000/96fc2a82c1820c77aae26304c62388841c2a93be/capsule_231x87.jpg?t=1780670420",
+      "artworkTheme": "elden",
+      "gallery": [
+        {
+          "id": "cs-143165-1",
+          "title": "Deus Ex: Mankind Divided",
+          "caption": "Oferta activa en WinGameStore vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/337000/96fc2a82c1820c77aae26304c62388841c2a93be/capsule_231x87.jpg?t=1780670420",
+          "themeVariant": "elden"
+        },
+        {
+          "id": "cs-143165-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 90% verificado",
+          "themeVariant": "elden"
+        },
+        {
+          "id": "cs-143165-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "elden"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "pLfGrv6mjaR7UOkc8UjfGhMrlaGLQEYkdnDUsQjhp68%3D",
+      "cheapSharkGameId": "143165"
+    },
+    {
+      "id": "cs-197097",
+      "slug": "bury-me-my-love",
+      "title": "Bury me, my Love",
+      "developer": "Gamesplanet",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2019,
+      "genre": "Aventura",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 21200,
+      "discountPercent": 91,
+      "finalPriceCop": 2000,
+      "rating": 3.6,
+      "popularityScore": 97,
+      "bestStore": "Gamesplanet",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=81B0PWjul%252Bp9GXoQdVNzHclvYwHRePDzCahlEEiFD0s%253D",
+      "synopsis": "Bury me, my Love forma parte del catálogo en vivo de ofertas de CheapShark en Gamesplanet. Precio convertido automáticamente a pesos colombianos (COP) desde 0.47 USD (precio regular 4.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (Gamesplanet)",
+        "Ahorro verificado del 91% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/808090/capsule_231x87.jpg?t=1781885052",
+      "artworkTheme": "gow",
+      "gallery": [
+        {
+          "id": "cs-197097-1",
+          "title": "Bury me, my Love",
+          "caption": "Oferta activa en Gamesplanet vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/808090/capsule_231x87.jpg?t=1781885052",
+          "themeVariant": "gow"
+        },
+        {
+          "id": "cs-197097-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 91% verificado",
+          "themeVariant": "gow"
+        },
+        {
+          "id": "cs-197097-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "gow"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "81B0PWjul%2Bp9GXoQdVNzHclvYwHRePDzCahlEEiFD0s%3D",
+      "cheapSharkGameId": "197097"
+    },
+    {
+      "id": "cs-99739",
+      "slug": "rogue-legacy",
+      "title": "Rogue Legacy",
+      "developer": "GOG",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2013,
+      "genre": "Indie",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 63700,
+      "discountPercent": 90,
+      "finalPriceCop": 6300,
+      "rating": 4.5,
+      "popularityScore": 96,
+      "bestStore": "GOG",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=wNjuHxmHnC40ibZzD%252BZ8DGxniOylfO3jy9rXt3Y8Rt8%253D",
+      "synopsis": "Rogue Legacy forma parte del catálogo en vivo de ofertas de CheapShark en GOG. Precio convertido automáticamente a pesos colombianos (COP) desde 1.49 USD (precio regular 14.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (GOG)",
+        "Ahorro verificado del 90% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/241600/capsule_231x87.jpg?t=1743078622",
+      "artworkTheme": "rdr2",
+      "gallery": [
+        {
+          "id": "cs-99739-1",
+          "title": "Rogue Legacy",
+          "caption": "Oferta activa en GOG vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/241600/capsule_231x87.jpg?t=1743078622",
+          "themeVariant": "rdr2"
+        },
+        {
+          "id": "cs-99739-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 90% verificado",
+          "themeVariant": "rdr2"
+        },
+        {
+          "id": "cs-99739-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "rdr2"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "wNjuHxmHnC40ibZzD%2BZ8DGxniOylfO3jy9rXt3Y8Rt8%3D",
+      "cheapSharkGameId": "99739"
+    },
+    {
+      "id": "cs-191008",
+      "slug": "metro-exodus",
+      "title": "Metro Exodus",
+      "developer": "GOG",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2019,
+      "genre": "Mundo Abierto",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 127500,
+      "discountPercent": 90,
+      "finalPriceCop": 12700,
+      "rating": 4.3,
+      "popularityScore": 96,
+      "bestStore": "GOG",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=wU0Nb%252B%252BYjnl3Q8mWou48wfy4kCTgJa4VuMUmASC4af0%253D",
+      "synopsis": "Metro Exodus forma parte del catálogo en vivo de ofertas de CheapShark en GOG. Precio convertido automáticamente a pesos colombianos (COP) desde 2.99 USD (precio regular 29.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (GOG)",
+        "Ahorro verificado del 90% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/412020/capsule_231x87.jpg?t=1750772804",
+      "artworkTheme": "witcher",
+      "gallery": [
+        {
+          "id": "cs-191008-1",
+          "title": "Metro Exodus",
+          "caption": "Oferta activa en GOG vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/412020/capsule_231x87.jpg?t=1750772804",
+          "themeVariant": "witcher"
+        },
+        {
+          "id": "cs-191008-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 90% verificado",
+          "themeVariant": "witcher"
+        },
+        {
+          "id": "cs-191008-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "witcher"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "wU0Nb%2B%2BYjnl3Q8mWou48wfy4kCTgJa4VuMUmASC4af0%3D",
+      "cheapSharkGameId": "191008"
+    },
+    {
+      "id": "cs-189778",
+      "slug": "impulsion",
+      "title": "Impulsion",
+      "developer": "Gamesplanet",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2018,
+      "genre": "Acción",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 55200,
+      "discountPercent": 91,
+      "finalPriceCop": 4800,
+      "rating": 4.3,
+      "popularityScore": 96,
+      "bestStore": "Gamesplanet",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=2oyvj72TWf3AQeCpl9Jan%252FCTOprrVn8Tau%252FgavIFaGc%253D",
+      "synopsis": "Impulsion forma parte del catálogo en vivo de ofertas de CheapShark en Gamesplanet. Precio convertido automáticamente a pesos colombianos (COP) desde 1.13 USD (precio regular 12.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (Gamesplanet)",
+        "Ahorro verificado del 91% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/811270/capsule_231x87.jpg?t=1722517971",
+      "artworkTheme": "hollow",
+      "gallery": [
+        {
+          "id": "cs-189778-1",
+          "title": "Impulsion",
+          "caption": "Oferta activa en Gamesplanet vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/811270/capsule_231x87.jpg?t=1722517971",
+          "themeVariant": "hollow"
+        },
+        {
+          "id": "cs-189778-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 91% verificado",
+          "themeVariant": "hollow"
+        },
+        {
+          "id": "cs-189778-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "hollow"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "2oyvj72TWf3AQeCpl9Jan%2FCTOprrVn8Tau%2FgavIFaGc%3D",
+      "cheapSharkGameId": "189778"
+    },
+    {
+      "id": "cs-145115",
+      "slug": "splasher",
+      "title": "Splasher",
+      "developer": "Gamesplanet",
+      "publisher": "Catálogo sincronizado vía CheapShark API",
+      "releaseYear": 2017,
+      "genre": "RPG",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 63700,
+      "discountPercent": 91,
+      "finalPriceCop": 5500,
+      "rating": 4.7,
+      "popularityScore": 96,
+      "bestStore": "Gamesplanet",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=4QXYiH6ahnbecoEyQBJb3o6f7wawXjpVvKKiNzvKzFo%253D",
+      "synopsis": "Splasher forma parte del catálogo en vivo de ofertas de CheapShark en Gamesplanet. Precio convertido automáticamente a pesos colombianos (COP) desde 1.29 USD (precio regular 14.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (Gamesplanet)",
+        "Ahorro verificado del 91% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/446840/capsule_231x87.jpg?t=1656581950",
+      "artworkTheme": "re4",
+      "gallery": [
+        {
+          "id": "cs-145115-1",
+          "title": "Splasher",
+          "caption": "Oferta activa en Gamesplanet vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/446840/capsule_231x87.jpg?t=1656581950",
+          "themeVariant": "re4"
+        },
+        {
+          "id": "cs-145115-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 91% verificado",
+          "themeVariant": "re4"
+        },
+        {
+          "id": "cs-145115-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "re4"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "4QXYiH6ahnbecoEyQBJb3o6f7wawXjpVvKKiNzvKzFo%3D",
+      "cheapSharkGameId": "145115"
     }
   ],
   "storeOffers": [
@@ -1938,7 +5068,7 @@
       "discountPercent": 35,
       "finalPriceCop": 110100,
       "url": "https://www.cheapshark.com/redirect?dealID=bB3LIPi1TbVmxJ0oe6mQawHpMzxTsHlVgmOTwPlxq%252BA%253D",
-      "lastUpdated": "2026-11-17T15:14:35.491Z"
+      "lastUpdated": "2026-11-17T16:35:28.490Z"
     },
     {
       "id": "so-cs-306050-23",
@@ -1949,7 +5079,7 @@
       "discountPercent": 88,
       "finalPriceCop": 39700,
       "url": "https://www.cheapshark.com/redirect?dealID=y2eiGKKAsTdsuj6iMUfytl3NwxJxOH0YKcrWpJKh98Q%253D",
-      "lastUpdated": "2026-11-17T15:14:35.491Z"
+      "lastUpdated": "2026-11-17T16:35:28.490Z"
     },
     {
       "id": "so-cs-306050-30",
@@ -1960,7 +5090,7 @@
       "discountPercent": 87,
       "finalPriceCop": 39900,
       "url": "https://www.cheapshark.com/redirect?dealID=ZxZxgeLkuP7Vy2s0c%252FutA9Bkn%252B6hIp%252BXFAQH%252Flyzbxg%253D",
-      "lastUpdated": "2026-11-17T15:14:35.491Z"
+      "lastUpdated": "2026-11-17T16:35:28.490Z"
     },
     {
       "id": "so-cs-306050-27",
@@ -1971,7 +5101,7 @@
       "discountPercent": 87,
       "finalPriceCop": 40300,
       "url": "https://www.cheapshark.com/redirect?dealID=c4eafQffkMm%252BBgemxjWHWauGLxPi6xvwpUtskhxINM4%253D",
-      "lastUpdated": "2026-11-17T15:14:35.491Z"
+      "lastUpdated": "2026-11-17T16:35:28.490Z"
     },
     {
       "id": "so-cs-326980-25",
@@ -1982,7 +5112,7 @@
       "discountPercent": 99,
       "finalPriceCop": 0,
       "url": "https://www.cheapshark.com/redirect?dealID=9C%252B2hwINwXpuTAKoxmx56nS29WPr5Tt9tH%252BCX7Ls1uQ%253D",
-      "lastUpdated": "2026-11-17T15:14:35.491Z"
+      "lastUpdated": "2026-11-17T16:35:28.490Z"
     },
     {
       "id": "so-cs-195476-21",
@@ -1993,7 +5123,7 @@
       "discountPercent": 85,
       "finalPriceCop": 51000,
       "url": "https://www.cheapshark.com/redirect?dealID=jUIksCf7OKL1gDeMjhT%252Fx%252Bi7HWhFLcE2qWzPWrrvzmI%253D",
-      "lastUpdated": "2026-11-17T15:14:35.491Z"
+      "lastUpdated": "2026-11-17T16:35:28.490Z"
     },
     {
       "id": "so-cs-336516-15",
@@ -2004,7 +5134,7 @@
       "discountPercent": 27,
       "finalPriceCop": 108500,
       "url": "https://www.cheapshark.com/redirect?dealID=3ajWjhNSwTN8Cn8cWRhrsfJStxKHKNeHCg7gnJcQetw%253D",
-      "lastUpdated": "2026-11-17T15:14:35.491Z"
+      "lastUpdated": "2026-11-17T16:35:28.490Z"
     },
     {
       "id": "so-cs-306050-2",
@@ -2015,7 +5145,7 @@
       "discountPercent": 85,
       "finalPriceCop": 47800,
       "url": "https://www.cheapshark.com/redirect?dealID=rv7mTddvgW%252BVLTcYryzxs1LC1YtSdOZUNYQK5rof25k%253D",
-      "lastUpdated": "2026-11-17T15:14:35.491Z"
+      "lastUpdated": "2026-11-17T16:35:28.490Z"
     },
     {
       "id": "so-cs-293628-27",
@@ -2026,7 +5156,7 @@
       "discountPercent": 90,
       "finalPriceCop": 29700,
       "url": "https://www.cheapshark.com/redirect?dealID=sRLxoWx7sqRIloa4OEm5coyZF8kRuBfKInGomtFNhkg%253D",
-      "lastUpdated": "2026-11-17T15:14:35.491Z"
+      "lastUpdated": "2026-11-17T16:35:28.490Z"
     },
     {
       "id": "so-cs-287418-27",
@@ -2037,7 +5167,7 @@
       "discountPercent": 84,
       "finalPriceCop": 54600,
       "url": "https://www.cheapshark.com/redirect?dealID=j6A5LXhuUxm9XH%252BQqKFi5vZar5VhRRJPG4XEgij0kwQ%253D",
-      "lastUpdated": "2026-11-17T15:14:35.491Z"
+      "lastUpdated": "2026-11-17T16:35:28.490Z"
     },
     {
       "id": "so-cs-102249-21",
@@ -2048,7 +5178,7 @@
       "discountPercent": 90,
       "finalPriceCop": 8500,
       "url": "https://www.cheapshark.com/redirect?dealID=ZLniwdY%252BXppO6gBCgyKEBZHHPbgDOGqeHSSJOzYSTbo%253D",
-      "lastUpdated": "2026-11-17T15:14:35.491Z"
+      "lastUpdated": "2026-11-17T16:35:28.491Z"
     },
     {
       "id": "so-cs-233561-21",
@@ -2059,7 +5189,7 @@
       "discountPercent": 95,
       "finalPriceCop": 14700,
       "url": "https://www.cheapshark.com/redirect?dealID=SmsaXTBWCcgJyOW0zG%252BuTbwH%252F1QL11rC2Yqb%252FMFqxCs%253D",
-      "lastUpdated": "2026-11-17T15:14:35.491Z"
+      "lastUpdated": "2026-11-17T16:35:28.491Z"
     },
     {
       "id": "so-cs-294665-7",
@@ -2070,7 +5200,7 @@
       "discountPercent": 87,
       "finalPriceCop": 55200,
       "url": "https://www.cheapshark.com/redirect?dealID=lx1Ldqb2ETEm0PJHIwoF8aVhlAvtMNpyHN%252B3M64aUek%253D",
-      "lastUpdated": "2026-11-17T15:14:35.491Z"
+      "lastUpdated": "2026-11-17T16:35:28.491Z"
     },
     {
       "id": "so-cs-287418-35",
@@ -2081,7 +5211,7 @@
       "discountPercent": 80,
       "finalPriceCop": 68000,
       "url": "https://www.cheapshark.com/redirect?dealID=%252BAy2P336b90tPBVMQrGWVFYhETPnIspqfcoc%252BOCdSR4%253D",
-      "lastUpdated": "2026-11-17T15:14:35.491Z"
+      "lastUpdated": "2026-11-17T16:35:28.491Z"
     },
     {
       "id": "so-cs-153679-13",
@@ -2092,7 +5222,7 @@
       "discountPercent": 85,
       "finalPriceCop": 51000,
       "url": "https://www.cheapshark.com/redirect?dealID=pGwiDdiyTGTBUh6qtuDI6Iq3cSdq4KNR1fIOIu2ULmk%253D",
-      "lastUpdated": "2026-11-17T15:14:35.491Z"
+      "lastUpdated": "2026-11-17T16:35:28.491Z"
     },
     {
       "id": "so-cs-311528-3",
@@ -2103,7 +5233,788 @@
       "discountPercent": 79,
       "finalPriceCop": 69700,
       "url": "https://www.cheapshark.com/redirect?dealID=g%252BqhS9gSM%252BnWLMVW%252B1km4Tys%252FmPDa%252F9R5dnFQR6CmhE%253D",
-      "lastUpdated": "2026-11-17T15:14:35.491Z"
+      "lastUpdated": "2026-11-17T16:35:28.491Z"
+    },
+    {
+      "id": "so-cs-311528-27",
+      "gameId": "cs-311528",
+      "storeName": "Gamesplanet (CheapShark)",
+      "platform": "PC",
+      "originalPriceCop": 340000,
+      "discountPercent": 79,
+      "finalPriceCop": 70000,
+      "url": "https://www.cheapshark.com/redirect?dealID=DbCLoFftyFNLwCYV2Kf2svpu3YBQf%252FgZ3HZrg9SAh%252Bw%253D",
+      "lastUpdated": "2026-11-17T16:35:28.491Z"
+    },
+    {
+      "id": "so-cs-169242-13",
+      "gameId": "cs-169242",
+      "storeName": "Uplay",
+      "platform": "PC",
+      "originalPriceCop": 382500,
+      "discountPercent": 85,
+      "finalPriceCop": 57400,
+      "url": "https://www.cheapshark.com/redirect?dealID=xJtJJ4rDQo5wJG8e2eby5aSomScreI%252BfKH%252FLr%252FB9CDg%253D",
+      "lastUpdated": "2026-11-17T16:35:28.491Z"
+    },
+    {
+      "id": "so-cs-283725-13",
+      "gameId": "cs-283725",
+      "storeName": "Uplay",
+      "platform": "PC",
+      "originalPriceCop": 382500,
+      "discountPercent": 85,
+      "finalPriceCop": 57400,
+      "url": "https://www.cheapshark.com/redirect?dealID=92vczbOy2iGlFO1ggHTIxk8d1CVBVjsc26U4alik0f8%253D",
+      "lastUpdated": "2026-11-17T16:35:28.491Z"
+    },
+    {
+      "id": "so-cs-204911-7",
+      "gameId": "cs-204911",
+      "storeName": "GOG",
+      "platform": "PC",
+      "originalPriceCop": 106200,
+      "discountPercent": 90,
+      "finalPriceCop": 10600,
+      "url": "https://www.cheapshark.com/redirect?dealID=hesZl0YEEz4TlFRvpAlgjG94Q0F9wWmMGOSmDFpddPU%253D",
+      "lastUpdated": "2026-11-17T16:35:28.491Z"
+    },
+    {
+      "id": "so-cs-170045-13",
+      "gameId": "cs-170045",
+      "storeName": "Uplay",
+      "platform": "PC",
+      "originalPriceCop": 425000,
+      "discountPercent": 85,
+      "finalPriceCop": 63800,
+      "url": "https://www.cheapshark.com/redirect?dealID=WbC87qEAdKQLKFxyUUMcvN%252BJcRaP%252Bne1aKs2Nl6qEiE%253D",
+      "lastUpdated": "2026-11-17T16:35:28.491Z"
+    },
+    {
+      "id": "so-cs-320573-13",
+      "gameId": "cs-320573",
+      "storeName": "Uplay",
+      "platform": "PC",
+      "originalPriceCop": 425000,
+      "discountPercent": 85,
+      "finalPriceCop": 63800,
+      "url": "https://www.cheapshark.com/redirect?dealID=90anVCbngJUsNyRWQbCJpEA40cTAj3t6GAM3YbdS%252FyQ%253D",
+      "lastUpdated": "2026-11-17T16:35:28.491Z"
+    },
+    {
+      "id": "so-cs-102249-35",
+      "gameId": "cs-102249",
+      "storeName": "DreamGame (CheapShark)",
+      "platform": "PC",
+      "originalPriceCop": 85000,
+      "discountPercent": 85,
+      "finalPriceCop": 12800,
+      "url": "https://www.cheapshark.com/redirect?dealID=Y4Ig3TxogTnj2Ny%252F18X5TjWcKlzA3%252FPBuquowYHoMtI%253D",
+      "lastUpdated": "2026-11-17T16:35:28.491Z"
+    },
+    {
+      "id": "so-cs-229583-30",
+      "gameId": "cs-229583",
+      "storeName": "IndieGala",
+      "platform": "PC",
+      "originalPriceCop": 106200,
+      "discountPercent": 90,
+      "finalPriceCop": 10600,
+      "url": "https://www.cheapshark.com/redirect?dealID=K7TX%252BU7UEm9u%252BqEKuHvlWMyWNzZLTg1RKObY%252FShIXdI%253D",
+      "lastUpdated": "2026-11-17T16:35:28.491Z"
+    },
+    {
+      "id": "so-cs-228789-7",
+      "gameId": "cs-228789",
+      "storeName": "GOG",
+      "platform": "PC",
+      "originalPriceCop": 68000,
+      "discountPercent": 90,
+      "finalPriceCop": 6800,
+      "url": "https://www.cheapshark.com/redirect?dealID=w5%252Fj0I5ToPSnuQErvQ7GznyqiXeL9n4TpaObgAGl6Fg%253D",
+      "lastUpdated": "2026-11-17T16:35:28.491Z"
+    },
+    {
+      "id": "so-cs-307340-25",
+      "gameId": "cs-307340",
+      "storeName": "Epic Games Store",
+      "platform": "PC",
+      "originalPriceCop": 63700,
+      "discountPercent": 99,
+      "finalPriceCop": 0,
+      "url": "https://www.cheapshark.com/redirect?dealID=REe9mfdT3TdLdJWWX2dgNfk69WQiyQRifFoydZms2A4%253D",
+      "lastUpdated": "2026-11-17T16:35:28.491Z"
+    },
+    {
+      "id": "so-cs-87751-21",
+      "gameId": "cs-87751",
+      "storeName": "WinGameStore",
+      "platform": "PC",
+      "originalPriceCop": 127500,
+      "discountPercent": 96,
+      "finalPriceCop": 4600,
+      "url": "https://www.cheapshark.com/redirect?dealID=L5LaXC7q2hA6HKAQ%252BEasvCyAzNXnYdmT%252BDe50HrwiEo%253D",
+      "lastUpdated": "2026-11-17T16:35:28.491Z"
+    },
+    {
+      "id": "so-cs-185150-21",
+      "gameId": "cs-185150",
+      "storeName": "WinGameStore",
+      "platform": "PC",
+      "originalPriceCop": 127500,
+      "discountPercent": 96,
+      "finalPriceCop": 4600,
+      "url": "https://www.cheapshark.com/redirect?dealID=Ng%252BUanUPWDcJ1IVZGPNsjm4BfSsoEvq1lh0xRWSLI3k%253D",
+      "lastUpdated": "2026-11-17T16:35:28.491Z"
+    },
+    {
+      "id": "so-cs-167643-21",
+      "gameId": "cs-167643",
+      "storeName": "WinGameStore",
+      "platform": "PC",
+      "originalPriceCop": 127500,
+      "discountPercent": 96,
+      "finalPriceCop": 4600,
+      "url": "https://www.cheapshark.com/redirect?dealID=%252FfVK%252BLWLR1uuJhbqNEr%252F24h%252FLzYxhJmcJKRfEgC32lw%253D",
+      "lastUpdated": "2026-11-17T16:35:28.491Z"
+    },
+    {
+      "id": "so-cs-106360-11",
+      "gameId": "cs-106360",
+      "storeName": "Humble Store",
+      "platform": "PC",
+      "originalPriceCop": 63700,
+      "discountPercent": 96,
+      "finalPriceCop": 2500,
+      "url": "https://www.cheapshark.com/redirect?dealID=nlp3qDJuphBKbhB375Uh1maMvh4fQqKur9BHFfgLZqI%253D",
+      "lastUpdated": "2026-11-17T16:35:28.491Z"
+    },
+    {
+      "id": "so-cs-2277-11",
+      "gameId": "cs-2277",
+      "storeName": "Humble Store",
+      "platform": "PC",
+      "originalPriceCop": 63700,
+      "discountPercent": 96,
+      "finalPriceCop": 2500,
+      "url": "https://www.cheapshark.com/redirect?dealID=6Aub49GWdswiskFpaRZO5RAmunYBStZzD0B4wnwhbW8%253D",
+      "lastUpdated": "2026-11-17T16:35:28.491Z"
+    },
+    {
+      "id": "so-cs-2378-11",
+      "gameId": "cs-2378",
+      "storeName": "Humble Store",
+      "platform": "PC",
+      "originalPriceCop": 63700,
+      "discountPercent": 96,
+      "finalPriceCop": 2500,
+      "url": "https://www.cheapshark.com/redirect?dealID=K1MyHIH8RzjWZr%252FdjEB7fmgXCmF4mFwnlW2wZgCa5mc%253D",
+      "lastUpdated": "2026-11-17T16:35:28.491Z"
+    },
+    {
+      "id": "so-cs-278985-11",
+      "gameId": "cs-278985",
+      "storeName": "Humble Store",
+      "platform": "PC",
+      "originalPriceCop": 76500,
+      "discountPercent": 96,
+      "finalPriceCop": 3000,
+      "url": "https://www.cheapshark.com/redirect?dealID=l%252FF5BpsRT4wNh0cdyDv0PSWFzTvOmohwiE4KBIXimww%253D",
+      "lastUpdated": "2026-11-17T16:35:28.491Z"
+    },
+    {
+      "id": "so-cs-287469-11",
+      "gameId": "cs-287469",
+      "storeName": "Humble Store",
+      "platform": "PC",
+      "originalPriceCop": 54200,
+      "discountPercent": 96,
+      "finalPriceCop": 2200,
+      "url": "https://www.cheapshark.com/redirect?dealID=mvIusXluS%252FFOwQgIGAEQTWNytAnNG01xIAa61Nu4sQ8%253D",
+      "lastUpdated": "2026-11-17T16:35:28.491Z"
+    },
+    {
+      "id": "so-cs-315523-11",
+      "gameId": "cs-315523",
+      "storeName": "Humble Store",
+      "platform": "PC",
+      "originalPriceCop": 54200,
+      "discountPercent": 96,
+      "finalPriceCop": 2200,
+      "url": "https://www.cheapshark.com/redirect?dealID=X3BLxjTtXbfVTduCnYPvAZ1g1UE9Yz8QkWvMYKK6f%252FQ%253D",
+      "lastUpdated": "2026-11-17T16:35:28.491Z"
+    },
+    {
+      "id": "so-cs-282429-27",
+      "gameId": "cs-282429",
+      "storeName": "Gamesplanet",
+      "platform": "PC",
+      "originalPriceCop": 212500,
+      "discountPercent": 96,
+      "finalPriceCop": 9000,
+      "url": "https://www.cheapshark.com/redirect?dealID=nV7LkStRg8OATNak05kjP%252BiDwIc3vUXWnFl%252FAQ4ORLk%253D",
+      "lastUpdated": "2026-11-17T16:35:28.491Z"
+    },
+    {
+      "id": "so-cs-282430-27",
+      "gameId": "cs-282430",
+      "storeName": "Gamesplanet",
+      "platform": "PC",
+      "originalPriceCop": 170000,
+      "discountPercent": 96,
+      "finalPriceCop": 7300,
+      "url": "https://www.cheapshark.com/redirect?dealID=HIAWe8%252B%252FN%252F6l4s5JdqqW1DB0nv%252BHDth7wRRmlnC8qbI%253D",
+      "lastUpdated": "2026-11-17T16:35:28.491Z"
+    },
+    {
+      "id": "so-cs-153168-21",
+      "gameId": "cs-153168",
+      "storeName": "WinGameStore",
+      "platform": "PC",
+      "originalPriceCop": 106200,
+      "discountPercent": 96,
+      "finalPriceCop": 4600,
+      "url": "https://www.cheapshark.com/redirect?dealID=DGRC36Prmy02TX3i6RpTTyvVz1PMS1CJAGS2GwjbcYc%253D",
+      "lastUpdated": "2026-11-17T16:35:28.491Z"
+    },
+    {
+      "id": "so-cs-150176-21",
+      "gameId": "cs-150176",
+      "storeName": "WinGameStore",
+      "platform": "PC",
+      "originalPriceCop": 106200,
+      "discountPercent": 96,
+      "finalPriceCop": 4600,
+      "url": "https://www.cheapshark.com/redirect?dealID=kREYY3U9v64BdyGR49%252B15OYU79epiUo3QvQO%252BZJiAYw%253D",
+      "lastUpdated": "2026-11-17T16:35:28.491Z"
+    },
+    {
+      "id": "so-cs-197886-21",
+      "gameId": "cs-197886",
+      "storeName": "WinGameStore",
+      "platform": "PC",
+      "originalPriceCop": 106200,
+      "discountPercent": 96,
+      "finalPriceCop": 4600,
+      "url": "https://www.cheapshark.com/redirect?dealID=yi9uaQNYF70Vwmwvwx4ESFIbIG7dB5r2MepnACHPq0g%253D",
+      "lastUpdated": "2026-11-17T16:35:28.491Z"
+    },
+    {
+      "id": "so-cs-171524-21",
+      "gameId": "cs-171524",
+      "storeName": "WinGameStore",
+      "platform": "PC",
+      "originalPriceCop": 106200,
+      "discountPercent": 96,
+      "finalPriceCop": 4600,
+      "url": "https://www.cheapshark.com/redirect?dealID=BF%252FFS8Tu2r9U8Fm5nxjqPUc5lPmB7u%252BhdoVa%252Fy0k6ts%253D",
+      "lastUpdated": "2026-11-17T16:35:28.491Z"
+    },
+    {
+      "id": "so-cs-159375-21",
+      "gameId": "cs-159375",
+      "storeName": "WinGameStore",
+      "platform": "PC",
+      "originalPriceCop": 106200,
+      "discountPercent": 96,
+      "finalPriceCop": 4600,
+      "url": "https://www.cheapshark.com/redirect?dealID=Mv5bUBdVbELz9bvtQoJDX%252F2scke6aQFCMzsoQCEUNWs%253D",
+      "lastUpdated": "2026-11-17T16:35:28.491Z"
+    },
+    {
+      "id": "so-cs-253884-27",
+      "gameId": "cs-253884",
+      "storeName": "Gamesplanet",
+      "platform": "PC",
+      "originalPriceCop": 106200,
+      "discountPercent": 96,
+      "finalPriceCop": 4800,
+      "url": "https://www.cheapshark.com/redirect?dealID=ZfvFYzi5ySvyHATPHuaQ8Y1aisMpkqD23pGikPzYgfI%253D",
+      "lastUpdated": "2026-11-17T16:35:28.491Z"
+    },
+    {
+      "id": "so-cs-171313-25",
+      "gameId": "cs-171313",
+      "storeName": "Epic Games Store",
+      "platform": "PC",
+      "originalPriceCop": 12700,
+      "discountPercent": 95,
+      "finalPriceCop": 600,
+      "url": "https://www.cheapshark.com/redirect?dealID=%252BE27EcK0pJphffINtw3iXpfjSPlmoc0p2tvFQ%252BqzizU%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-227942-7",
+      "gameId": "cs-227942",
+      "storeName": "GOG",
+      "platform": "PC",
+      "originalPriceCop": 170000,
+      "discountPercent": 75,
+      "finalPriceCop": 42500,
+      "url": "https://www.cheapshark.com/redirect?dealID=fo%252BHT27GrgZT0g2USsPLQ2dVGTnq%252Fb%252FBnY2L2%252Bi8BWk%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-227942-15",
+      "gameId": "cs-227942",
+      "storeName": "Fanatical (CheapShark)",
+      "platform": "PC",
+      "originalPriceCop": 170000,
+      "discountPercent": 5,
+      "finalPriceCop": 161500,
+      "url": "https://www.cheapshark.com/redirect?dealID=UgYbZfH00wFDvUZF8Nk1uNP7npZA2HEibK%252BCD%252FGadgk%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-227942-27",
+      "gameId": "cs-227942",
+      "storeName": "Gamesplanet (CheapShark)",
+      "platform": "PC",
+      "originalPriceCop": 170000,
+      "discountPercent": 10,
+      "finalPriceCop": 153000,
+      "url": "https://www.cheapshark.com/redirect?dealID=AUvSqG%252BjgjZBM4JGg0dEDho7mk8Sxn2CpCvml8OEW40%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-128-23",
+      "gameId": "cs-128",
+      "storeName": "GameBillet",
+      "platform": "PC",
+      "originalPriceCop": 85000,
+      "discountPercent": 16,
+      "finalPriceCop": 71400,
+      "url": "https://www.cheapshark.com/redirect?dealID=et8hm7BwoAPZnyJpSAAehTMKS7M1aPlbLKSZDWmUtEo%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-128-27",
+      "gameId": "cs-128",
+      "storeName": "Gamesplanet (CheapShark)",
+      "platform": "PC",
+      "originalPriceCop": 85000,
+      "discountPercent": 10,
+      "finalPriceCop": 76500,
+      "url": "https://www.cheapshark.com/redirect?dealID=sih7CO1qZ1vUrVB%252BuKVccW82zOPd37fOjCi07Y5ip4k%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-252306-23",
+      "gameId": "cs-252306",
+      "storeName": "GameBillet",
+      "platform": "PC",
+      "originalPriceCop": 255000,
+      "discountPercent": 14,
+      "finalPriceCop": 219300,
+      "url": "https://www.cheapshark.com/redirect?dealID=umKtFpcd%252BCEVAwmG7uybgULndFuKkbhBX9YY%252FGJBWFM%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-252306-15",
+      "gameId": "cs-252306",
+      "storeName": "Fanatical (CheapShark)",
+      "platform": "PC",
+      "originalPriceCop": 255000,
+      "discountPercent": 10,
+      "finalPriceCop": 229500,
+      "url": "https://www.cheapshark.com/redirect?dealID=uRVzcxxhLLkaoB4fUoUMRkSkJ83qhS%252BapV6EzzC5Fis%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-252306-21",
+      "gameId": "cs-252306",
+      "storeName": "WinGameStore (CheapShark)",
+      "platform": "PC",
+      "originalPriceCop": 255000,
+      "discountPercent": 8,
+      "finalPriceCop": 233700,
+      "url": "https://www.cheapshark.com/redirect?dealID=4242pOcsziHjk4x2p05HEQHWMf5GVpnfBbw2DdMWbC4%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-252306-27",
+      "gameId": "cs-252306",
+      "storeName": "Gamesplanet (CheapShark)",
+      "platform": "PC",
+      "originalPriceCop": 255000,
+      "discountPercent": 10,
+      "finalPriceCop": 229500,
+      "url": "https://www.cheapshark.com/redirect?dealID=PIKV%252BNK%252FuEtLZ5pIBRs%252F7IOsSH92TJLD00ZZa%252F9WzKs%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-252306-1",
+      "gameId": "cs-252306",
+      "storeName": "Steam (CheapShark)",
+      "platform": "PC",
+      "originalPriceCop": 255000,
+      "discountPercent": 70,
+      "finalPriceCop": 76500,
+      "url": "https://www.cheapshark.com/redirect?dealID=GU418B6WsDwRvIPiffA%252BQLq%252BoIKttwAodAF0ooBRdmw%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-126-1",
+      "gameId": "cs-126",
+      "storeName": "Steam",
+      "platform": "PC",
+      "originalPriceCop": 85000,
+      "discountPercent": 80,
+      "finalPriceCop": 17000,
+      "url": "https://www.cheapshark.com/redirect?dealID=khSrhkgpaxgOWWEYV9MdKid%252FcDzIGa0zHzvh5j73lLo%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-93503-23",
+      "gameId": "cs-93503",
+      "storeName": "GameBillet",
+      "platform": "PC",
+      "originalPriceCop": 127500,
+      "discountPercent": 16,
+      "finalPriceCop": 107100,
+      "url": "https://www.cheapshark.com/redirect?dealID=vb3EqB4KpKbSyV83DXQYAZCSBS60LaOMgLCXSt8pQxw%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-126-23",
+      "gameId": "cs-126",
+      "storeName": "GameBillet (CheapShark)",
+      "platform": "PC",
+      "originalPriceCop": 85000,
+      "discountPercent": 16,
+      "finalPriceCop": 71400,
+      "url": "https://www.cheapshark.com/redirect?dealID=BvT8OhZrctaeov6sILtY4koD9ZiZx6PO%252F%252Fc250gq6D4%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-165-15",
+      "gameId": "cs-165",
+      "storeName": "Fanatical",
+      "platform": "PC",
+      "originalPriceCop": 42500,
+      "discountPercent": 15,
+      "finalPriceCop": 36100,
+      "url": "https://www.cheapshark.com/redirect?dealID=HYMI2cUkh8THgbD5eDtcrtQYPCzdPxRRHjVwQDN3YJ8%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-165-27",
+      "gameId": "cs-165",
+      "storeName": "Gamesplanet (CheapShark)",
+      "platform": "PC",
+      "originalPriceCop": 42500,
+      "discountPercent": 10,
+      "finalPriceCop": 38200,
+      "url": "https://www.cheapshark.com/redirect?dealID=vxoyOkdjV%252FhLXN7SxOeVZHb8ZscK2I0X8d1k3pDWCXs%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-236717-27",
+      "gameId": "game-elden",
+      "storeName": "Gamesplanet (CheapShark)",
+      "platform": "PC",
+      "originalPriceCop": 255000,
+      "discountPercent": 10,
+      "finalPriceCop": 229500,
+      "url": "https://www.cheapshark.com/redirect?dealID=hYJjk5KtJE6yKkqeO7KhjbU4we6%252BjKYdUg9ciYIXn%252B8%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-236717-21",
+      "gameId": "game-elden",
+      "storeName": "WinGameStore (CheapShark)",
+      "platform": "PC",
+      "originalPriceCop": 255000,
+      "discountPercent": 3,
+      "finalPriceCop": 246500,
+      "url": "https://www.cheapshark.com/redirect?dealID=QUMPDvMe9rGak%252B%252BSGXNun%252BRpZULEBeebaRQQVxoPAc8%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-236717-23",
+      "gameId": "game-elden",
+      "storeName": "GameBillet (CheapShark)",
+      "platform": "PC",
+      "originalPriceCop": 255000,
+      "discountPercent": 12,
+      "finalPriceCop": 223900,
+      "url": "https://www.cheapshark.com/redirect?dealID=0yH%252B27fnkwwPMEtLKiv52IGhamBesRW%252F9Ictx3%252B%252B2t0%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-236717-15",
+      "gameId": "game-elden",
+      "storeName": "Fanatical (CheapShark)",
+      "platform": "PC",
+      "originalPriceCop": 255000,
+      "discountPercent": 10,
+      "finalPriceCop": 229000,
+      "url": "https://www.cheapshark.com/redirect?dealID=7uWDeqtvJFuw%252BJxO3176Lf3NbqvIahsS6PplDm%252BPS0Q%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-126-21",
+      "gameId": "cs-126",
+      "storeName": "WinGameStore (CheapShark)",
+      "platform": "PC",
+      "originalPriceCop": 85000,
+      "discountPercent": 86,
+      "finalPriceCop": 11800,
+      "url": "https://www.cheapshark.com/redirect?dealID=722MMT3nb71TKpZB4FJNgn4SRd6XWhEVmPvrM6H%252F5hU%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-284226-1",
+      "gameId": "cs-284226",
+      "storeName": "Steam",
+      "platform": "PC",
+      "originalPriceCop": 195400,
+      "discountPercent": 20,
+      "finalPriceCop": 156300,
+      "url": "https://www.cheapshark.com/redirect?dealID=XPn9cT5ayESSY2NK%252FT69EA1koE95Vdqod%252BbODizwHvc%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-330460-27",
+      "gameId": "cs-330460",
+      "storeName": "Gamesplanet",
+      "platform": "PC",
+      "originalPriceCop": 255000,
+      "discountPercent": 15,
+      "finalPriceCop": 216700,
+      "url": "https://www.cheapshark.com/redirect?dealID=feHvQpJTJhYsIPaJDYMDrawz5YyUp1D0kmrjfrjZ9NU%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-330460-3",
+      "gameId": "cs-330460",
+      "storeName": "GreenManGaming (CheapShark)",
+      "platform": "PC",
+      "originalPriceCop": 255000,
+      "discountPercent": 12,
+      "finalPriceCop": 224400,
+      "url": "https://www.cheapshark.com/redirect?dealID=cTGrs%252B4qzInE3cIXgMGv8f5Uqk0GK5vg8AvgNAanj1Y%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-330460-15",
+      "gameId": "cs-330460",
+      "storeName": "Fanatical (CheapShark)",
+      "platform": "PC",
+      "originalPriceCop": 255000,
+      "discountPercent": 12,
+      "finalPriceCop": 224400,
+      "url": "https://www.cheapshark.com/redirect?dealID=eQwF7BCnDusos%252BV6WDF2KgFElntXQs%252BrXeYLXd0VVsQ%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-324216-3",
+      "gameId": "cs-324216",
+      "storeName": "GreenManGaming",
+      "platform": "PC",
+      "originalPriceCop": 297500,
+      "discountPercent": 13,
+      "finalPriceCop": 258800,
+      "url": "https://www.cheapshark.com/redirect?dealID=yIAgMiq1cXGfl%252FlC2mt765Bvpl4oMSn8T5EJqezfiiU%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-324216-15",
+      "gameId": "cs-324216",
+      "storeName": "Fanatical (CheapShark)",
+      "platform": "PC",
+      "originalPriceCop": 297500,
+      "discountPercent": 13,
+      "finalPriceCop": 258800,
+      "url": "https://www.cheapshark.com/redirect?dealID=J%252F6869F13lHAVGkw35a%252FZ%252Fm3N1SWb9KeBqA1BvrKU2c%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-324216-27",
+      "gameId": "cs-324216",
+      "storeName": "Gamesplanet (CheapShark)",
+      "platform": "PC",
+      "originalPriceCop": 297500,
+      "discountPercent": 10,
+      "finalPriceCop": 267700,
+      "url": "https://www.cheapshark.com/redirect?dealID=3tRUhG%252BJymzxjGHSVldT0gYFwJz06tQa3FWFcEyNH0g%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-324216-23",
+      "gameId": "cs-324216",
+      "storeName": "GameBillet (CheapShark)",
+      "platform": "PC",
+      "originalPriceCop": 297500,
+      "discountPercent": 13,
+      "finalPriceCop": 258700,
+      "url": "https://www.cheapshark.com/redirect?dealID=4hf6vFf6iqWMlYIrlDe1fl0ZOzqrOwF5QgTB9xtpKdg%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-333830-27",
+      "gameId": "cs-333830",
+      "storeName": "Gamesplanet",
+      "platform": "PC",
+      "originalPriceCop": 297500,
+      "discountPercent": 14,
+      "finalPriceCop": 255000,
+      "url": "https://www.cheapshark.com/redirect?dealID=r90of57GLaXM81T770nETfQPhgA%252Fof3r5ec%252F6miPqbc%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-333830-15",
+      "gameId": "cs-333830",
+      "storeName": "Fanatical (CheapShark)",
+      "platform": "PC",
+      "originalPriceCop": 297500,
+      "discountPercent": 10,
+      "finalPriceCop": 267700,
+      "url": "https://www.cheapshark.com/redirect?dealID=mP8TY%252FrEhavODjm90lr33OcrAjYVkC1xqr6zvLBb%252BGk%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-332735-27",
+      "gameId": "cs-332735",
+      "storeName": "Gamesplanet",
+      "platform": "PC",
+      "originalPriceCop": 127500,
+      "discountPercent": 10,
+      "finalPriceCop": 114700,
+      "url": "https://www.cheapshark.com/redirect?dealID=QhEKEoPXB6jn%252FSjMF5Alv8m7a%252FGrFlufgRxCpLGdp50%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-332735-3",
+      "gameId": "cs-332735",
+      "storeName": "GreenManGaming (CheapShark)",
+      "platform": "PC",
+      "originalPriceCop": 127500,
+      "discountPercent": 10,
+      "finalPriceCop": 114700,
+      "url": "https://www.cheapshark.com/redirect?dealID=WmXGyHFNU1zVApmD01TOKaAd%252FpAk9BqGmwRqYtR3fQQ%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-332735-15",
+      "gameId": "cs-332735",
+      "storeName": "Fanatical (CheapShark)",
+      "platform": "PC",
+      "originalPriceCop": 127500,
+      "discountPercent": 12,
+      "finalPriceCop": 112200,
+      "url": "https://www.cheapshark.com/redirect?dealID=7Mdb6mxSyGeRuSrr11mW0e6ZmfZrJMKtmYfcZpZGg9E%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-332735-21",
+      "gameId": "cs-332735",
+      "storeName": "WinGameStore (CheapShark)",
+      "platform": "PC",
+      "originalPriceCop": 127500,
+      "discountPercent": 3,
+      "finalPriceCop": 123200,
+      "url": "https://www.cheapshark.com/redirect?dealID=eFDaQD4oagnlM0rlL0XvbjhTewpLJ3VttLM6YH1BlLA%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-308383-1",
+      "gameId": "cs-308383",
+      "storeName": "Steam",
+      "platform": "PC",
+      "originalPriceCop": 233700,
+      "discountPercent": 10,
+      "finalPriceCop": 210300,
+      "url": "https://www.cheapshark.com/redirect?dealID=yK7NEPZIRxs2GaR%252F1yFoi7jsxIksDwp7p87kjlJcmpM%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-158443-21",
+      "gameId": "cs-158443",
+      "storeName": "WinGameStore",
+      "platform": "PC",
+      "originalPriceCop": 170000,
+      "discountPercent": 90,
+      "finalPriceCop": 17000,
+      "url": "https://www.cheapshark.com/redirect?dealID=n6QCiG9FKdQSNO3qxF9g2yOdez8wpOkbnc%252FhrgVXTDw%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-141090-27",
+      "gameId": "cs-141090",
+      "storeName": "Gamesplanet",
+      "platform": "PC",
+      "originalPriceCop": 55200,
+      "discountPercent": 91,
+      "finalPriceCop": 4900,
+      "url": "https://www.cheapshark.com/redirect?dealID=UcN3Ob27BNr%252FfGLh%252Buhd8tNyh5DW%252BrZs%252BHecbjrANQs%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-143165-21",
+      "gameId": "cs-143165",
+      "storeName": "WinGameStore",
+      "platform": "PC",
+      "originalPriceCop": 127500,
+      "discountPercent": 90,
+      "finalPriceCop": 12700,
+      "url": "https://www.cheapshark.com/redirect?dealID=pLfGrv6mjaR7UOkc8UjfGhMrlaGLQEYkdnDUsQjhp68%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-197097-27",
+      "gameId": "cs-197097",
+      "storeName": "Gamesplanet",
+      "platform": "PC",
+      "originalPriceCop": 21200,
+      "discountPercent": 91,
+      "finalPriceCop": 2000,
+      "url": "https://www.cheapshark.com/redirect?dealID=81B0PWjul%252Bp9GXoQdVNzHclvYwHRePDzCahlEEiFD0s%253D",
+      "lastUpdated": "2026-11-17T16:35:28.492Z"
+    },
+    {
+      "id": "so-cs-99739-7",
+      "gameId": "cs-99739",
+      "storeName": "GOG",
+      "platform": "PC",
+      "originalPriceCop": 63700,
+      "discountPercent": 90,
+      "finalPriceCop": 6300,
+      "url": "https://www.cheapshark.com/redirect?dealID=wNjuHxmHnC40ibZzD%252BZ8DGxniOylfO3jy9rXt3Y8Rt8%253D",
+      "lastUpdated": "2026-11-17T16:35:28.493Z"
+    },
+    {
+      "id": "so-cs-191008-7",
+      "gameId": "cs-191008",
+      "storeName": "GOG",
+      "platform": "PC",
+      "originalPriceCop": 127500,
+      "discountPercent": 90,
+      "finalPriceCop": 12700,
+      "url": "https://www.cheapshark.com/redirect?dealID=wU0Nb%252B%252BYjnl3Q8mWou48wfy4kCTgJa4VuMUmASC4af0%253D",
+      "lastUpdated": "2026-11-17T16:35:28.493Z"
+    },
+    {
+      "id": "so-cs-189778-27",
+      "gameId": "cs-189778",
+      "storeName": "Gamesplanet",
+      "platform": "PC",
+      "originalPriceCop": 55200,
+      "discountPercent": 91,
+      "finalPriceCop": 4800,
+      "url": "https://www.cheapshark.com/redirect?dealID=2oyvj72TWf3AQeCpl9Jan%252FCTOprrVn8Tau%252FgavIFaGc%253D",
+      "lastUpdated": "2026-11-17T16:35:28.493Z"
+    },
+    {
+      "id": "so-cs-145115-27",
+      "gameId": "cs-145115",
+      "storeName": "Gamesplanet",
+      "platform": "PC",
+      "originalPriceCop": 63700,
+      "discountPercent": 91,
+      "finalPriceCop": 5500,
+      "url": "https://www.cheapshark.com/redirect?dealID=4QXYiH6ahnbecoEyQBJb3o6f7wawXjpVvKKiNzvKzFo%253D",
+      "lastUpdated": "2026-11-17T16:35:28.493Z"
     }
   ],
   "news": [
@@ -2258,5 +6169,5 @@
       "createdAt": "2026-11-12T11:30:00Z"
     }
   ],
-  "lastCheapSharkSync": "2026-11-17T15:14:35.491Z"
+  "lastCheapSharkSync": "2026-11-17T16:35:28.493Z"
 }

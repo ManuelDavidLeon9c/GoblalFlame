@@ -20,6 +20,13 @@ import type {
   User,
   UserRole,
 } from './src/types/index.ts';
+import {
+  formatCopStrict,
+  normalizeScraperPlatform,
+  scrapeStorePrice,
+  ScraperBlockedError,
+  ScraperNotFoundError,
+} from './src/services/scraperService.ts';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -143,23 +150,67 @@ interface CheapSharkStore {
   isActive: number;
 }
 
-async function fetchAndMergeCheapSharkDeals(db: ServerDB): Promise<{ added: number; updated: number; totalDeals: number }> {
+function inferCheapSharkGenre(title: string, idx: number): Genre {
+  const t = title.toLowerCase();
+  if (/soccer|football|basketball|nba|fifa|fc\s|tennis|golf|racing|drive|rally|moto|f1|manager/.test(t)) {
+    return 'Deportes';
+  }
+  if (/rpg|souls|elden|witcher|dragon|fantasy|persona|tales|quest|dungeon|baldurs|diablo|cyberpunk/.test(t)) {
+    return 'RPG';
+  }
+  if (/watch_dogs|gta|frontier|island|open|horizon|skyrim|fallout|red dead|san andreas/.test(t)) {
+    return 'Mundo Abierto';
+  }
+  if (/lego|puzzle|pixel|hollow|ori|platform|indie|sim|builder|tycoon/.test(t)) {
+    return 'Indie';
+  }
+  if (/tomb|uncharted|plague|adventure|story|life is|syberia|darksiders/.test(t)) {
+    return 'Aventura';
+  }
+  return CHEAPSHARK_GENRE_FALLBACKS[idx % CHEAPSHARK_GENRE_FALLBACKS.length];
+}
+
+async function fetchAndMergeCheapSharkDeals(
+  db: ServerDB
+): Promise<{ added: number; updated: number; totalDeals: number }> {
   const headers = {
     'User-Agent': 'GlobalFlameColombia/1.0 (soporte@globalflame.co)',
     Accept: 'application/json',
   };
-  const [dealsRes, storesRes] = await Promise.all([
-    fetch('https://www.cheapshark.com/api/1.0/deals?pageSize=16&sortBy=DealRating&onSale=1', {
-      headers,
-    }),
+
+  const feedUrls = [
+    'https://www.cheapshark.com/api/1.0/deals?pageSize=25&pageNumber=0&sortBy=DealRating&onSale=1',
+    'https://www.cheapshark.com/api/1.0/deals?pageSize=20&pageNumber=0&sortBy=Savings&onSale=1',
+    'https://www.cheapshark.com/api/1.0/deals?pageSize=20&pageNumber=0&sortBy=Metacritic&onSale=1',
+    'https://www.cheapshark.com/api/1.0/deals?pageSize=15&pageNumber=0&sortBy=Release&onSale=1',
+    'https://www.cheapshark.com/api/1.0/deals?pageSize=15&pageNumber=0&upperPrice=5&sortBy=DealRating&onSale=1',
+  ];
+
+  const [storesRes, ...feedResponses] = await Promise.all([
     fetch('https://www.cheapshark.com/api/1.0/stores', { headers }),
+    ...feedUrls.map((url) => fetch(url, { headers })),
   ]);
 
-  if (!dealsRes.ok) {
-    throw new Error(`CheapShark HTTP ${dealsRes.status}`);
+  const validFeeds = await Promise.all(
+    feedResponses.map(async (r) => (r.ok ? ((await r.json()) as CheapSharkDeal[]) : []))
+  );
+
+  const combinedDeals = validFeeds.flat();
+  if (combinedDeals.length === 0) {
+    throw new Error('CheapShark API no devolvió ofertas disponibles en este momento.');
   }
 
-  const deals = (await dealsRes.json()) as CheapSharkDeal[];
+  // Deduplicate by gameID + storeID while preserving first-seen priority
+  const uniqueDeals: CheapSharkDeal[] = [];
+  const seenDealKeys = new Set<string>();
+  for (const deal of combinedDeals) {
+    const key = `${deal.gameID}:${deal.storeID}`;
+    if (!seenDealKeys.has(key)) {
+      seenDealKeys.add(key);
+      uniqueDeals.push(deal);
+    }
+  }
+
   const stores = storesRes.ok ? ((await storesRes.json()) as CheapSharkStore[]) : [];
   const storeMap = new Map<string, string>();
   stores.forEach((s) => storeMap.set(s.storeID, s.storeName));
@@ -167,7 +218,7 @@ async function fetchAndMergeCheapSharkDeals(db: ServerDB): Promise<{ added: numb
   let added = 0;
   let updated = 0;
 
-  deals.forEach((deal, idx) => {
+  uniqueDeals.forEach((deal, idx) => {
     const cleanTitle = deal.title.trim();
     const originalCop = usdToCop(deal.normalPrice);
     const finalCop = usdToCop(deal.salePrice);
@@ -175,20 +226,22 @@ async function fetchAndMergeCheapSharkDeals(db: ServerDB): Promise<{ added: numb
     const storeName = storeMap.get(deal.storeID) || `CheapShark Tienda #${deal.storeID}`;
     const dealUrl = `https://www.cheapshark.com/redirect?dealID=${encodeURIComponent(deal.dealID)}`;
     const releaseYear =
-      deal.releaseDate > 0 ? new Date(deal.releaseDate * 1000).getFullYear() : 2024;
-    const rawRating = Number.parseFloat(deal.steamRatingPercent) || Number.parseFloat(deal.metacriticScore) || 84;
+      deal.releaseDate > 0 ? new Date(deal.releaseDate * 1000).getFullYear() : 2025;
+    const rawRating =
+      Number.parseFloat(deal.steamRatingPercent) || Number.parseFloat(deal.metacriticScore) || 84;
     const starRating = Number(Math.max(3.5, Math.min(5, (rawRating / 100) * 5)).toFixed(1));
     const slug = cleanTitle.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    const isBundle = /bundle|pack|collection|trilogy|anthology|complete|ultimate|gold edition/i.test(
+      cleanTitle
+    );
 
     const existing = db.games.find(
       (g) =>
         g.cheapSharkGameId === deal.gameID ||
-        g.title.toLowerCase().includes(cleanTitle.toLowerCase()) ||
-        cleanTitle.toLowerCase().includes(g.title.toLowerCase().split(':')[0])
+        g.title.toLowerCase() === cleanTitle.toLowerCase()
     );
 
     if (existing) {
-      // Update live store offer from CheapShark
       const offerId = `so-cs-${deal.gameID}-${deal.storeID}`;
       const existingOffer = db.storeOffers.find((o) => o.id === offerId);
       if (existingOffer) {
@@ -210,12 +263,19 @@ async function fetchAndMergeCheapSharkDeals(db: ServerDB): Promise<{ added: numb
           lastUpdated: new Date().toISOString(),
         });
       }
+      if (finalCop < existing.finalPriceCop && finalCop >= 0) {
+        existing.finalPriceCop = finalCop;
+        existing.originalPriceCop = originalCop;
+        existing.discountPercent = savingsPct;
+        existing.bestStore = storeName;
+        existing.storeUrl = dealUrl;
+      }
       existing.cheapSharkDealId = deal.dealID;
       existing.cheapSharkGameId = deal.gameID;
       updated += 1;
     } else {
       const id = `cs-${deal.gameID}`;
-      const genre = CHEAPSHARK_GENRE_FALLBACKS[idx % CHEAPSHARK_GENRE_FALLBACKS.length];
+      const genre = inferCheapSharkGenre(cleanTitle, idx);
       const theme = CHEAPSHARK_THEMES[idx % CHEAPSHARK_THEMES.length];
 
       const newGame: Game = {
@@ -223,19 +283,22 @@ async function fetchAndMergeCheapSharkDeals(db: ServerDB): Promise<{ added: numb
         slug: slug || id,
         title: cleanTitle,
         developer: storeName,
-        publisher: 'Oferta verificada vía CheapShark API',
-        releaseYear: Number.isFinite(releaseYear) && releaseYear > 1995 ? releaseYear : 2024,
+        publisher: 'Catálogo sincronizado vía CheapShark API',
+        releaseYear: Number.isFinite(releaseYear) && releaseYear > 1995 ? releaseYear : 2025,
         genre,
         platforms: ['PC'],
-        offerType: finalCop === 0 ? 'Juego gratis' : 'Descuento',
+        offerType: finalCop === 0 ? 'Juego gratis' : isBundle ? 'Bundle' : 'Descuento',
         originalPriceCop: originalCop,
         discountPercent: savingsPct,
         finalPriceCop: finalCop,
         rating: starRating,
-        popularityScore: Math.max(70, Math.min(99, Math.round(Number.parseFloat(deal.dealRating) * 10) || 82)),
+        popularityScore: Math.max(
+          70,
+          Math.min(99, Math.round(Number.parseFloat(deal.dealRating) * 10) || 82)
+        ),
         bestStore: storeName,
         storeUrl: dealUrl,
-        synopsis: `${cleanTitle} se encuentra actualmente en promoción verificada a través de la API pública de CheapShark en ${storeName}. Precio convertido automáticamente a pesos colombianos (COP) con base en su valor internacional de ${deal.salePrice} USD (antes ${deal.normalPrice} USD).`,
+        synopsis: `${cleanTitle} forma parte del catálogo en vivo de ofertas de CheapShark en ${storeName}. Precio convertido automáticamente a pesos colombianos (COP) desde ${deal.salePrice} USD (precio regular ${deal.normalPrice} USD).`,
         features: [
           `Oferta en vivo sincronizada desde CheapShark API (${storeName})`,
           `Ahorro verificado del ${savingsPct}% respecto al precio regular`,
@@ -279,7 +342,7 @@ async function fetchAndMergeCheapSharkDeals(db: ServerDB): Promise<{ added: numb
             themeVariant: theme,
           },
         ],
-        isFeatured: idx < 2,
+        isFeatured: idx < 4,
         isFromCheapShark: true,
         cheapSharkDealId: deal.dealID,
         cheapSharkGameId: deal.gameID,
@@ -303,7 +366,7 @@ async function fetchAndMergeCheapSharkDeals(db: ServerDB): Promise<{ added: numb
 
   db.lastCheapSharkSync = new Date().toISOString();
   saveDB(db);
-  return { added, updated, totalDeals: deals.length };
+  return { added, updated, totalDeals: uniqueDeals.length };
 }
 
 function getAdminFromHeader(req: express.Request, db: ServerDB): User | null {
@@ -1032,6 +1095,102 @@ async function startServer() {
     } catch (err) {
       const message = err instanceof Error ? err.message : 'Error consultando noticias 2026.';
       res.status(502).json({ ok: false, error: message, items: [] });
+    }
+  });
+
+  // ==========================================
+  // Plan B: Web Scraping Microservice Endpoint
+  // Complemento resiliente para Consolas (PS, Xbox, Nintendo) y Móvil (Google Play)
+  // No interfiere con CheapShark API (PC).
+  // ==========================================
+  app.get('/api/scrape/price', async (req, res) => {
+    const rawUrl = typeof req.query.url === 'string' ? req.query.url.trim() : '';
+    const rawPlatform = typeof req.query.platform === 'string' ? req.query.platform.trim() : '';
+    const gameId = typeof req.query.gameId === 'string' ? req.query.gameId.trim() : '';
+
+    if (!rawUrl || !rawPlatform) {
+      res.status(400).json({
+        success: false,
+        source: 'Web Scraping (Plan B)',
+        error: 'Debes enviar los parámetros query "url" y "platform" (PlayStation, Xbox, Nintendo, Mobile).',
+        timestamp: new Date().toISOString(),
+      });
+      return;
+    }
+
+    const platform = normalizeScraperPlatform(rawPlatform);
+    if (!platform) {
+      res.status(400).json({
+        success: false,
+        source: 'Web Scraping (Plan B)',
+        error: `Plataforma no soportada "${rawPlatform}". Usa PlayStation, Xbox, Nintendo o Mobile.`,
+        timestamp: new Date().toISOString(),
+      });
+      return;
+    }
+
+    const findCachedFallback = () => {
+      const db = loadDB();
+      const matchedOffer = db.storeOffers.find(
+        (o) => (gameId ? o.gameId === gameId : false) && o.url === rawUrl
+      );
+      const matchedGame = gameId
+        ? db.games.find((g) => g.id === gameId)
+        : db.games.find((g) => g.storeUrl === rawUrl);
+
+      if (matchedOffer) {
+        return {
+          game_title: matchedGame?.title || 'Título en caché',
+          storeName: matchedOffer.storeName,
+          price_cop_formatted: formatCopStrict(matchedOffer.finalPriceCop),
+          discount_percent: matchedOffer.discountPercent > 0 ? `-${matchedOffer.discountPercent}%` : '0%',
+        };
+      }
+      if (matchedGame) {
+        return {
+          game_title: matchedGame.title,
+          storeName: matchedGame.bestStore,
+          price_cop_formatted: formatCopStrict(matchedGame.finalPriceCop),
+          discount_percent: matchedGame.discountPercent > 0 ? `-${matchedGame.discountPercent}%` : '0%',
+        };
+      }
+      return null;
+    };
+
+    try {
+      const result = await scrapeStorePrice({
+        url: rawUrl,
+        platform,
+        trmCopPerUsd: TRM_COP_PER_USD,
+      });
+      res.json(result);
+    } catch (err) {
+      const cachedFallback = findCachedFallback();
+      if (err instanceof ScraperBlockedError) {
+        res.status(403).json({
+          success: false,
+          source: 'Web Scraping (Plan B)',
+          platform,
+          error: err.message,
+          cached_fallback: cachedFallback,
+          timestamp: new Date().toISOString(),
+        });
+        return;
+      }
+
+      const errorMsg =
+        err instanceof ScraperNotFoundError
+          ? err.message
+          : 'Error: No se pudo extraer la información. Usar precio en caché de PostgreSQL';
+
+      res.status(404).json({
+        success: false,
+        source: 'Web Scraping (Plan B)',
+        platform,
+        error: errorMsg,
+        cached_fallback: cachedFallback,
+        timestamp: new Date().toISOString(),
+      });
     }
   });
 

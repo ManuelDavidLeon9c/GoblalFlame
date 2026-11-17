@@ -1,10 +1,24 @@
-import React, { useState } from 'react';
-import { ArrowRight, BellRing, Monitor, Gamepad2, Search, Smartphone, Tag, Layers, RefreshCw } from 'lucide-react';
+import React, { useMemo, useState } from 'react';
+import {
+  ArrowRight,
+  BellRing,
+  Flame,
+  Gamepad2,
+  Layers,
+  Monitor,
+  RefreshCw,
+  Search,
+  Smartphone,
+  Tag,
+} from 'lucide-react';
 import { Game, Platform } from '../types';
 import { GameCard } from './GameCard';
 
+type CheapSharkShelf = 'todos' | 'descuentos' | 'bundles' | 'economicos';
+
 interface HomeViewProps {
   featuredGames: Game[];
+  cheapSharkGames: Game[];
   totalCatalogCount: number;
   favoriteGameIds: Set<string>;
   lastCheapSharkSync: string | null;
@@ -18,6 +32,7 @@ interface HomeViewProps {
 
 export const HomeView: React.FC<HomeViewProps> = ({
   featuredGames,
+  cheapSharkGames,
   totalCatalogCount,
   favoriteGameIds,
   isSyncingCheapShark,
@@ -29,6 +44,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
 }) => {
   const [heroSearch, setHeroSearch] = useState('');
   const [heroImgFailed, setHeroImgFailed] = useState(false);
+  const [activeShelf, setActiveShelf] = useState<CheapSharkShelf>('todos');
 
   const handleHeroSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -41,6 +57,27 @@ export const HomeView: React.FC<HomeViewProps> = ({
     { platform: 'Xbox', label: 'Xbox', icon: <Gamepad2 className="h-4 w-4" /> },
     { platform: 'Nintendo', label: 'Nintendo', icon: <Gamepad2 className="h-4 w-4" /> },
     { platform: 'Android/Móvil', label: 'Móvil', icon: <Smartphone className="h-4 w-4" /> },
+  ];
+
+  const shelfGames = useMemo(() => {
+    let list = cheapSharkGames;
+    if (activeShelf === 'descuentos') {
+      list = [...cheapSharkGames].sort((a, b) => b.discountPercent - a.discountPercent);
+    } else if (activeShelf === 'bundles') {
+      const bundles = cheapSharkGames.filter((g) => g.offerType === 'Bundle');
+      list = bundles.length > 0 ? bundles : cheapSharkGames;
+    } else if (activeShelf === 'economicos') {
+      const budget = cheapSharkGames.filter((g) => g.finalPriceCop <= 35000);
+      list = budget.length > 0 ? budget : [...cheapSharkGames].sort((a, b) => a.finalPriceCop - b.finalPriceCop);
+    }
+    return list.slice(0, 9);
+  }, [cheapSharkGames, activeShelf]);
+
+  const shelves: Array<{ id: CheapSharkShelf; label: string }> = [
+    { id: 'todos', label: 'Todos los catálogos' },
+    { id: 'descuentos', label: 'Mayores descuentos' },
+    { id: 'bundles', label: 'Bundles y Ediciones' },
+    { id: 'economicos', label: 'Económicos (< $ 35.000)' },
   ];
 
   return (
@@ -170,6 +207,72 @@ export const HomeView: React.FC<HomeViewProps> = ({
           ))}
         </div>
       </section>
+
+      {/* Live CheapShark Multi-Catalog Section */}
+      {cheapSharkGames.length > 0 && (
+        <section aria-labelledby="cheapshark-catalog-heading" className="space-y-6">
+          <div className="flex flex-col gap-4 border-t border-[#33251D] pt-10 lg:flex-row lg:items-end lg:justify-between">
+            <div>
+              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#F59E0B]">
+                <Flame className="h-4 w-4" />
+                <span>CheapShark API · Catálogo en Vivo ({cheapSharkGames.length} títulos)</span>
+              </div>
+              <h2
+                id="cheapshark-catalog-heading"
+                className="font-display mt-1 text-2xl font-bold tracking-tight text-white sm:text-3xl"
+              >
+                Más Catálogos de Ofertas en COP
+              </h2>
+              <p className="mt-1 text-sm text-[#A89789]">
+                Promociones de Steam, GOG, Epic, Fanatical, GreenManGaming y Humble convertidas a
+                pesos colombianos.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-2">
+              {shelves.map((shelf) => {
+                const active = activeShelf === shelf.id;
+                return (
+                  <button
+                    key={shelf.id}
+                    type="button"
+                    onClick={() => setActiveShelf(shelf.id)}
+                    className={`rounded-lg border px-3 py-1.5 text-xs font-semibold transition-colors ${
+                      active
+                        ? 'border-[#EA580C] bg-[#EA580C] text-white'
+                        : 'border-[#33251D] bg-[#1D1511] text-[#D6C7BA] hover:border-[#F59E0B] hover:text-white'
+                    }`}
+                  >
+                    {shelf.label}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {shelfGames.map((game) => (
+              <GameCard
+                key={game.id}
+                game={game}
+                isFavorite={favoriteGameIds.has(game.id)}
+                onSelect={onSelectGame}
+                onToggleFavorite={onToggleFavorite}
+              />
+            ))}
+          </div>
+
+          <div className="flex justify-center pt-2">
+            <a
+              href="/ofertas.html"
+              className="inline-flex items-center gap-2 rounded-xl border border-[#33251D] bg-[#1D1511] px-6 py-3 text-sm font-semibold text-[#F59E0B] hover:border-[#EA580C] hover:bg-[#EA580C] hover:text-white transition-colors"
+            >
+              Explorar todo el catálogo ({totalCatalogCount} juegos)
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
+        </section>
+      )}
 
       {/* Value Proposition Strip */}
       <section

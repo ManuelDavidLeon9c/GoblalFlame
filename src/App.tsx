@@ -428,6 +428,11 @@ export default function App({ initialView = 'home' }: AppProps) {
     [allGames]
   );
 
+  const cheapSharkGames = useMemo(
+    () => allGames.filter((g) => g.isFromCheapShark),
+    [allGames]
+  );
+
   const filteredGames = useMemo(() => {
     void catalogVersion;
     return queryGames(filters);
@@ -500,6 +505,7 @@ export default function App({ initialView = 'home' }: AppProps) {
         {currentView === 'home' && (
           <HomeView
             featuredGames={featuredGames}
+            cheapSharkGames={cheapSharkGames}
             totalCatalogCount={allGames.length}
             favoriteGameIds={favoriteIdSet}
             lastCheapSharkSync={lastCheapSharkSync}
