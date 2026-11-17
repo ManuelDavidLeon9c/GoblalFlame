@@ -10,6 +10,8 @@ export type ViewRoute = 'home' | 'catalog' | 'detail' | 'news' | 'profile';
 
 export type NewsCategory = 'Noticias' | 'Lanzamientos' | 'Eventos';
 
+export type UserRole = 'usuario' | 'administrador';
+
 export interface TechnicalSpecs {
   os: string;
   processor: string;
@@ -64,6 +66,9 @@ export interface Game {
     | 'forza5';
   gallery: GallerySlide[];
   isFeatured: boolean;
+  isFromCheapShark?: boolean;
+  cheapSharkDealId?: string;
+  cheapSharkGameId?: string;
 }
 
 export interface StoreOffer {
@@ -83,6 +88,7 @@ export interface User {
   name: string;
   email: string;
   passwordHash: string;
+  role: UserRole;
   avatarInitials: string;
   preferredPlatforms: Platform[];
   createdAt: string;
@@ -112,6 +118,17 @@ export interface PriceAlert {
   discountPercent: number;
   message: string;
   isRead: boolean;
+  createdAt: string;
+}
+
+export interface Review {
+  id: string;
+  gameId: string;
+  userId: string;
+  userName: string;
+  userInitials: string;
+  rating: number;
+  comment: string;
   createdAt: string;
 }
 

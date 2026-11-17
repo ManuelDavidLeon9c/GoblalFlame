@@ -1,11 +1,22 @@
-import { Favorite, Game, NewsItem, PriceAlert, StoreOffer, User } from '../types';
+import { Favorite, Game, NewsItem, PriceAlert, Review, StoreOffer, User } from '../types';
 
 export const SEED_USERS: User[] = [
+  {
+    id: 'usr-admin',
+    name: 'Carlos Mendoza',
+    email: 'admin@globalflame.co',
+    passwordHash: 'admin123',
+    role: 'administrador',
+    avatarInitials: 'CM',
+    preferredPlatforms: ['PC', 'PlayStation', 'Xbox'],
+    createdAt: '2026-08-01T09:00:00Z',
+  },
   {
     id: 'usr-mateo',
     name: 'Mateo Ríos',
     email: 'mateo@globalflame.co',
     passwordHash: 'gamer123',
+    role: 'usuario',
     avatarInitials: 'MR',
     preferredPlatforms: ['PC', 'PlayStation'],
     createdAt: '2026-08-14T10:00:00Z',
@@ -15,6 +26,7 @@ export const SEED_USERS: User[] = [
     name: 'Valeria Gómez',
     email: 'valeria@globalflame.co',
     passwordHash: 'gamer123',
+    role: 'usuario',
     avatarInitials: 'VG',
     preferredPlatforms: ['Nintendo', 'PC', 'Android/Móvil'],
     createdAt: '2026-09-02T15:30:00Z',
@@ -880,6 +892,42 @@ export const SEED_ALERTS: PriceAlert[] = [
     message: 'Hollow Knight: Voidheart Edition alcanzó su mínimo histórico en Colombia ($ 24.950 COP).',
     isRead: false,
     createdAt: '2026-11-15T12:10:00Z',
+  },
+];
+
+export const SEED_REVIEWS: Review[] = [
+  {
+    id: 'rev-1',
+    gameId: 'game-cyberpunk',
+    userId: 'usr-mateo',
+    userName: 'Mateo Ríos',
+    userInitials: 'MR',
+    rating: 5,
+    comment:
+      'Con la expansión Phantom Liberty y los parches recientes vale cada peso colombiano. A 50% de descuento es compra obligada en PC.',
+    createdAt: '2026-11-14T20:15:00Z',
+  },
+  {
+    id: 'rev-2',
+    gameId: 'game-elden',
+    userId: 'usr-mateo',
+    userName: 'Mateo Ríos',
+    userInitials: 'MR',
+    rating: 5,
+    comment:
+      'Más de 120 horas explorando las Tierras Intermedias. El mejor RPG de acción de la década.',
+    createdAt: '2026-11-13T16:40:00Z',
+  },
+  {
+    id: 'rev-3',
+    gameId: 'game-hollow',
+    userId: 'usr-valeria',
+    userName: 'Valeria Gómez',
+    userInitials: 'VG',
+    rating: 5,
+    comment:
+      'Por menos de 25 mil pesos te llevas una obra de arte impecable con banda sonora increíble.',
+    createdAt: '2026-11-12T11:30:00Z',
   },
 ];
 

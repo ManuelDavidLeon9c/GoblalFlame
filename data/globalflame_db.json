@@ -1,0 +1,2262 @@
+{
+  "users": [
+    {
+      "id": "usr-admin",
+      "name": "Carlos Mendoza",
+      "email": "admin@globalflame.co",
+      "passwordHash": "admin123",
+      "role": "administrador",
+      "avatarInitials": "CM",
+      "preferredPlatforms": [
+        "PC",
+        "PlayStation",
+        "Xbox"
+      ],
+      "createdAt": "2026-08-01T09:00:00Z"
+    },
+    {
+      "id": "usr-mateo",
+      "name": "Mateo Ríos",
+      "email": "mateo@globalflame.co",
+      "passwordHash": "gamer123",
+      "role": "usuario",
+      "avatarInitials": "MR",
+      "preferredPlatforms": [
+        "PC",
+        "PlayStation"
+      ],
+      "createdAt": "2026-08-14T10:00:00Z"
+    },
+    {
+      "id": "usr-valeria",
+      "name": "Valeria Gómez",
+      "email": "valeria@globalflame.co",
+      "passwordHash": "gamer123",
+      "role": "usuario",
+      "avatarInitials": "VG",
+      "preferredPlatforms": [
+        "Nintendo",
+        "PC",
+        "Android/Móvil"
+      ],
+      "createdAt": "2026-09-02T15:30:00Z"
+    }
+  ],
+  "games": [
+    {
+      "id": "game-cyberpunk",
+      "slug": "cyberpunk-2077",
+      "title": "Cyberpunk 2077: Ultimate Edition",
+      "developer": "CD PROJEKT RED",
+      "publisher": "CD PROJEKT RED",
+      "releaseYear": 2023,
+      "genre": "RPG",
+      "secondaryGenre": "Mundo Abierto",
+      "platforms": [
+        "PC",
+        "PlayStation",
+        "Xbox"
+      ],
+      "offerType": "Bundle",
+      "originalPriceCop": 249900,
+      "discountPercent": 50,
+      "finalPriceCop": 124950,
+      "rating": 4.8,
+      "popularityScore": 98,
+      "bestStore": "Steam Colombia",
+      "storeUrl": "https://store.steampowered.com/",
+      "synopsis": "Adéntrate en el oscuro futuro de Night City, una megalópolis obsesionada con el poder, el glamour y la modificación corporal. Incluye el juego base completo actualizado y la aclamada expansión de espionaje Phantom Liberty con Idris Elba.",
+      "features": [
+        "Incluye juego base + expansión Phantom Liberty en un solo paquete",
+        "Trazado de rayos completo (Path Tracing) y DLSS 3.5 en PC",
+        "Árboles de habilidades rediseñados y combate vehicular dinámico",
+        "Voces y textos localizados al español latinoamericano"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i7-6700 / AMD Ryzen 5 1600",
+        "memory": "12 GB RAM",
+        "graphics": "NVIDIA GeForce GTX 1060 6GB / Radeon RX 580 8GB",
+        "storage": "70 GB SSD"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7-12700 / AMD Ryzen 7 7800X3D",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA GeForce RTX 3070 / Radeon RX 6800 XT",
+        "storage": "70 GB NVMe SSD"
+      },
+      "coverImage": "/src/assets/images/cover_cyberpunk_city_1794926637227.jpg",
+      "artworkTheme": "cyberpunk",
+      "gallery": [
+        {
+          "id": "cp-1",
+          "title": "Distrito Watson bajo lluvia nocturna",
+          "caption": "Iluminación global con reflejos en tiempo real en Night City",
+          "imageUrl": "/src/assets/images/cover_cyberpunk_city_1794926637227.jpg",
+          "themeVariant": "cyberpunk"
+        },
+        {
+          "id": "cp-2",
+          "title": "Dogtown — Phantom Liberty",
+          "caption": "Zona de alto riesgo militar incluida en la edición Ultimate",
+          "imageUrl": "/src/assets/images/hero_cyber_arena_1794926634204.jpg",
+          "themeVariant": "cyberpunk-alt"
+        },
+        {
+          "id": "cp-3",
+          "title": "Combate Cyberware y Netrunning",
+          "caption": "Personaliza implantes neuronales y armamento inteligente",
+          "themeVariant": "cyberpunk-hud"
+        }
+      ],
+      "isFeatured": true
+    },
+    {
+      "id": "game-elden",
+      "slug": "elden-ring",
+      "title": "Elden Ring",
+      "developer": "FromSoftware",
+      "publisher": "Bandai Namco Entertainment",
+      "releaseYear": 2022,
+      "genre": "RPG",
+      "secondaryGenre": "Mundo Abierto",
+      "platforms": [
+        "PC",
+        "PlayStation",
+        "Xbox"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 239900,
+      "discountPercent": 40,
+      "finalPriceCop": 143940,
+      "rating": 4.9,
+      "popularityScore": 99,
+      "bestStore": "Nuuvem Latam",
+      "storeUrl": "https://www.nuuvem.com/",
+      "synopsis": "Álzate, Sinluz, y que la gracia te guíe para abrazar el poder del Círculo de Elden en las Tierras Intermedias. Un RPG de fantasía oscura creado por Hidetaka Miyazaki y George R. R. Martin con libertad total de exploración.",
+      "features": [
+        "Mundo abierto interconectado con mazmorras heredadas monumentales",
+        "Cientos de armas, cenizas de guerra, encantamientos y hechizos",
+        "Modo cooperativo sin interrupciones e invasiones PvP",
+        "Montura espectral Torrentera para combate y travesía vertical"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5-8400 / AMD Ryzen 3 3300X",
+        "memory": "12 GB RAM",
+        "graphics": "NVIDIA GeForce GTX 1060 3GB / Radeon RX 580 4GB",
+        "storage": "60 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7-8700K / AMD Ryzen 5 3600X",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA GeForce GTX 1070 8GB / Radeon RX Vega 56",
+        "storage": "60 GB SSD"
+      },
+      "coverImage": "/src/assets/images/cover_dark_fantasy_1794926635440.jpg",
+      "artworkTheme": "elden",
+      "gallery": [
+        {
+          "id": "er-1",
+          "title": "Ciudadela del Eclipse Dorado",
+          "caption": "Explora fortalezas góticas y catedrales en ruinas",
+          "imageUrl": "/src/assets/images/cover_dark_fantasy_1794926635440.jpg",
+          "themeVariant": "elden"
+        },
+        {
+          "id": "er-2",
+          "title": "Combate contra Semidioses",
+          "caption": "Enfrenta jefes colosales con mecánicas de postura y esquiva",
+          "themeVariant": "elden-boss"
+        },
+        {
+          "id": "er-3",
+          "title": "Tierras Intermedias al amanecer",
+          "caption": "Ciclo dinámico de clima, niebla y ceniza dorada",
+          "themeVariant": "elden-map"
+        }
+      ],
+      "isFeatured": true
+    },
+    {
+      "id": "game-gow",
+      "slug": "god-of-war-ragnarok",
+      "title": "God of War Ragnarök",
+      "developer": "Santa Monica Studio",
+      "publisher": "PlayStation Publishing",
+      "releaseYear": 2024,
+      "genre": "Acción",
+      "secondaryGenre": "Aventura",
+      "platforms": [
+        "PC",
+        "PlayStation"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 259900,
+      "discountPercent": 35,
+      "finalPriceCop": 168935,
+      "rating": 4.9,
+      "popularityScore": 96,
+      "bestStore": "Epic Games Store",
+      "storeUrl": "https://store.epicgames.com/",
+      "synopsis": "Kratos y Atreus deben viajar a cada uno de los Nueve Reinos en busca de respuestas mientras las fuerzas asgardianas se preparan para una batalla profetizada que terminará con el mundo. Incluye el modo roguelite gratuito Valhalla.",
+      "features": [
+        "Incluye expansión gratuita God of War Ragnarök: Valhalla",
+        "Soporte ultrapanorámico 21:9 y tasa de fotogramas desbloqueada en PC",
+        "Combate visceral con Hacha Leviatán, Espadas del Caos y Lanza Draupnir",
+        "Doblaje completo al español latinoamericano"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5-4670K / AMD Ryzen 3 1200",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GeForce GTX 1060 / Radeon RX 5500 XT",
+        "storage": "190 GB SSD"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i5-8600 / AMD Ryzen 5 3600",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA GeForce RTX 2060 Super / Radeon RX 5700",
+        "storage": "190 GB NVMe SSD"
+      },
+      "coverImage": "/src/assets/images/cover_nordic_realm_1794926634166.jpg",
+      "artworkTheme": "gow",
+      "gallery": [
+        {
+          "id": "gow-1",
+          "title": "Fiordos de Midgard en Fimbulvetr",
+          "caption": "Recorre los Nueve Reinos congelados antes del Ragnarök",
+          "imageUrl": "/src/assets/images/cover_nordic_realm_1794926634166.jpg",
+          "themeVariant": "gow"
+        },
+        {
+          "id": "gow-2",
+          "title": "Hacha Leviatán y Runas Nórdicas",
+          "caption": "Personaliza empuñaduras y ataques rúnicos ligeros y pesados",
+          "themeVariant": "gow-combat"
+        },
+        {
+          "id": "gow-3",
+          "title": "Santuario de Valhalla",
+          "caption": "Desafíos rejugables de combate táctico incluidos",
+          "themeVariant": "gow-valhalla"
+        }
+      ],
+      "isFeatured": true
+    },
+    {
+      "id": "game-rdr2",
+      "slug": "red-dead-redemption-2",
+      "title": "Red Dead Redemption 2",
+      "developer": "Rockstar Games",
+      "publisher": "Rockstar Games",
+      "releaseYear": 2019,
+      "genre": "Mundo Abierto",
+      "secondaryGenre": "Aventura",
+      "platforms": [
+        "PC",
+        "PlayStation",
+        "Xbox"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 219900,
+      "discountPercent": 67,
+      "finalPriceCop": 72567,
+      "rating": 4.9,
+      "popularityScore": 97,
+      "bestStore": "Steam Colombia",
+      "storeUrl": "https://store.steampowered.com/",
+      "synopsis": "América, 1899. El ocaso de la era del Salvaje Oeste ha comenzado. Tras un atraco fallido en Blackwater, Arthur Morgan y la banda de Van der Linde se ven obligados a huir mientras sobreviven en el corazón salvaje de Estados Unidos.",
+      "features": [
+        "Campaña narrativa de más de 60 horas con mundo vivo reactivo",
+        "Acceso completo incluido a Red Dead Online",
+        "Física realista, caza, pesca, duelos y gestión del campamento",
+        "Compatibilidad con HDR y texturas en resolución 4K"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5-2500K / AMD FX-6300",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GeForce GTX 770 2GB / Radeon R9 280",
+        "storage": "150 GB HDD/SSD"
+      },
+      "recSpecs": {
+        "os": "Windows 10 / 11 64-bit",
+        "processor": "Intel Core i7-4770K / AMD Ryzen 5 1500X",
+        "memory": "12 GB RAM",
+        "graphics": "NVIDIA GeForce GTX 1060 6GB / Radeon RX 480 4GB",
+        "storage": "150 GB SSD"
+      },
+      "coverImage": "/src/assets/images/cover_frontier_sunset_1794926636060.jpg",
+      "artworkTheme": "rdr2",
+      "gallery": [
+        {
+          "id": "rdr-1",
+          "title": "Cañones de New Hanover al ocaso",
+          "caption": "Paisajes cinematográficos con iluminación volumétrica realista",
+          "imageUrl": "/src/assets/images/cover_frontier_sunset_1794926636060.jpg",
+          "themeVariant": "rdr2"
+        },
+        {
+          "id": "rdr-2",
+          "title": "Campamento de la banda Van der Linde",
+          "caption": "Interactúa y mejora la moral de tus compañeros forajidos",
+          "themeVariant": "rdr2-camp"
+        },
+        {
+          "id": "rdr-3",
+          "title": "Sistema Dead Eye táctico",
+          "caption": "Ralentiza el tiempo para ejecutar disparos de precisión",
+          "themeVariant": "rdr2-duel"
+        }
+      ],
+      "isFeatured": true
+    },
+    {
+      "id": "game-witcher3",
+      "slug": "the-witcher-3-complete",
+      "title": "The Witcher 3: Wild Hunt Complete Edition",
+      "developer": "CD PROJEKT RED",
+      "publisher": "CD PROJEKT RED",
+      "releaseYear": 2022,
+      "genre": "RPG",
+      "secondaryGenre": "Aventura",
+      "platforms": [
+        "PC",
+        "PlayStation",
+        "Xbox",
+        "Nintendo"
+      ],
+      "offerType": "Bundle",
+      "originalPriceCop": 159900,
+      "discountPercent": 75,
+      "finalPriceCop": 39975,
+      "rating": 4.9,
+      "popularityScore": 95,
+      "bestStore": "GOG / Steam",
+      "storeUrl": "https://www.gog.com/",
+      "synopsis": "Encarna a Geralt de Rivia, cazador de monstruos profesional, en busca de Ciri a través de un continente devastado por la guerra. Incluye las expansiones Hearts of Stone y Blood and Wine más la actualización visual Next-Gen.",
+      "features": [
+        "Más de 150 horas de contenido con las dos grandes expansiones incluidas",
+        "Edición Next-Gen con cámara sobre el hombro y modo foto",
+        "Decisiones morales con múltiples finales que transforman el mundo",
+        "Juego de cartas Gwent integrado con mazo coleccionable"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5-7400 / AMD Ryzen 5 1600",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 970 / Radeon RX 470",
+        "storage": "50 GB SSD"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7-8700K / AMD Ryzen 5 3600",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 3060 / Radeon RX 6700 XT",
+        "storage": "50 GB NVMe SSD"
+      },
+      "artworkTheme": "witcher",
+      "gallery": [
+        {
+          "id": "w3-1",
+          "title": "Dos espadas para monstruos y hombres",
+          "caption": "Alquimia, señales mágicas y contratos de brujo en Velen y Skellige",
+          "themeVariant": "witcher"
+        },
+        {
+          "id": "w3-2",
+          "title": "Viñedos de Toussaint — Blood and Wine",
+          "caption": "Explora un ducado soleado lleno de secretos vampíricos",
+          "themeVariant": "witcher-toussaint"
+        },
+        {
+          "id": "w3-3",
+          "title": "Torneos de Gwent en Novigrado",
+          "caption": "Colecciona cartas raras por tabernas y cortes reales",
+          "themeVariant": "witcher-gwent"
+        }
+      ],
+      "isFeatured": true
+    },
+    {
+      "id": "game-hollow",
+      "slug": "hollow-knight",
+      "title": "Hollow Knight: Voidheart Edition",
+      "developer": "Team Cherry",
+      "publisher": "Team Cherry",
+      "releaseYear": 2018,
+      "genre": "Indie",
+      "secondaryGenre": "Aventura",
+      "platforms": [
+        "PC",
+        "PlayStation",
+        "Xbox",
+        "Nintendo"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 49900,
+      "discountPercent": 50,
+      "finalPriceCop": 24950,
+      "rating": 4.9,
+      "popularityScore": 93,
+      "bestStore": "Nintendo eShop / Steam",
+      "storeUrl": "https://store.steampowered.com/",
+      "synopsis": "Forja tu propio camino en Hallownest, un vasto reino en ruinas de insectos y héroes. Explora cavernas serpenteantes, lucha contra criaturas corrompidas y entabla amistad con extraños insectos en esta obra maestra metroidvania.",
+      "features": [
+        "Arte dibujado a mano cuadro por cuadro con atmósfera inolvidable",
+        "Incluye los 4 paquetes de contenido gratuito (Grimm Troupe, Godmaster)",
+        "Más de 150 enemigos y 40 jefes desafiantes con amuletos combinables",
+        "Corre a 60+ FPS incluso en equipos de gama de entrada y Nintendo Switch"
+      ],
+      "minSpecs": {
+        "os": "Windows 7 / 10 / macOS / Linux",
+        "processor": "Intel Core 2 Duo E5200",
+        "memory": "4 GB RAM",
+        "graphics": "GeForce 9800GTX+ (1GB VRAM)",
+        "storage": "9 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 10 / 11 64-bit",
+        "processor": "Intel Core i5-4590 o superior",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GeForce GTX 560 o equivalente",
+        "storage": "9 GB SSD"
+      },
+      "artworkTheme": "hollow",
+      "gallery": [
+        {
+          "id": "hk-1",
+          "title": "Sendero Verde y Ciudad de Lágrimas",
+          "caption": "Biomas subterráneos interconectados con música orquestal",
+          "themeVariant": "hollow"
+        },
+        {
+          "id": "hk-2",
+          "title": "Banco de descanso y amuletos",
+          "caption": "Configura tu estilo de combate con más de 40 amuletos únicos",
+          "themeVariant": "hollow-charms"
+        },
+        {
+          "id": "hk-3",
+          "title": "Panteón de Hallownest",
+          "caption": "Pon a prueba tu maestría contra todos los jefes del reino",
+          "themeVariant": "hollow-boss"
+        }
+      ],
+      "isFeatured": true
+    },
+    {
+      "id": "game-hogwarts",
+      "slug": "hogwarts-legacy",
+      "title": "Hogwarts Legacy",
+      "developer": "Avalanche Software",
+      "publisher": "Warner Bros. Games",
+      "releaseYear": 2023,
+      "genre": "Aventura",
+      "secondaryGenre": "RPG",
+      "platforms": [
+        "PC",
+        "PlayStation",
+        "Xbox",
+        "Nintendo"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 249900,
+      "discountPercent": 60,
+      "finalPriceCop": 99960,
+      "rating": 4.6,
+      "popularityScore": 91,
+      "bestStore": "PlayStation Store CO",
+      "storeUrl": "https://store.playstation.com/",
+      "synopsis": "Vive lo no escrito en el mundo mágico del siglo XIX. Toma el control de la acción y sé el centro de tu propia aventura aprendiendo hechizos, elaborando pociones, domando bestias fantásticas y explorando Hogsmeade.",
+      "features": [
+        "Explora Hogwarts, el Bosque Prohibido y Hogsmeade sin pantallas de carga",
+        "Personaliza tu Sala de los Menesteres y cría criaturas mágicas",
+        "Combate mágico fluido con combos de encantamientos y maldiciones",
+        "Elige tu casa en Hogwarts con misiones exclusivas de historia"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5-6600 / AMD Ryzen 5 1400",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA GeForce GTX 960 4GB / Radeon RX 470 4GB",
+        "storage": "85 GB SSD"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7-8700 / AMD Ryzen 5 3600",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA GeForce 1080 Ti / Radeon RX 5700 XT",
+        "storage": "85 GB NVMe SSD"
+      },
+      "artworkTheme": "hogwarts",
+      "gallery": [
+        {
+          "id": "hl-1",
+          "title": "Castillo de Hogwarts al anochecer",
+          "caption": "Vuela en escoba sobre el Lago Negro y los torreones históricos",
+          "themeVariant": "hogwarts"
+        },
+        {
+          "id": "hl-2",
+          "title": "Duelos de varita y magia antigua",
+          "caption": "Encadena hechizos de control, fuerza y defensa",
+          "themeVariant": "hogwarts-duel"
+        },
+        {
+          "id": "hl-3",
+          "title": "Vivero de bestias mágicas",
+          "caption": "Rescata y cuida hipogrifos, escarbatos y thestrals",
+          "themeVariant": "hogwarts-beasts"
+        }
+      ],
+      "isFeatured": false
+    },
+    {
+      "id": "game-fc26",
+      "slug": "ea-sports-fc-26",
+      "title": "EA Sports FC 26",
+      "developer": "EA Vancouver",
+      "publisher": "Electronic Arts",
+      "releaseYear": 2025,
+      "genre": "Deportes",
+      "platforms": [
+        "PC",
+        "PlayStation",
+        "Xbox",
+        "Nintendo"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 279900,
+      "discountPercent": 45,
+      "finalPriceCop": 153945,
+      "rating": 4.3,
+      "popularityScore": 94,
+      "bestStore": "Xbox Store Colombia",
+      "storeUrl": "https://www.xbox.com/",
+      "synopsis": "El juego de todo el mundo da un salto táctico con FC IQ renovado, modo Rush 5v5 competitivo, ligas licenciadas incluyendo torneos CONMEBOL Libertadores y Ultimate Team con juego cruzado completo.",
+      "features": [
+        "Más de 19.000 futbolistas, 700 clubes y 30 ligas oficiales licenciadas",
+        "Torneos CONMEBOL Libertadores y Sudamericana con clubes colombianos",
+        "Modo Carrera de Mánager y Jugador con puntos de inicio en vivo",
+        "Cross-play habilitado entre PC, PlayStation 5 y Xbox Series X|S"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5-6600K / AMD Ryzen 5 1600",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GeForce GTX 1050 Ti / Radeon RX 570",
+        "storage": "100 GB SSD"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7-6700 / AMD Ryzen 7 2700X",
+        "memory": "12 GB RAM",
+        "graphics": "NVIDIA GeForce GTX 1660 / Radeon RX 5600 XT",
+        "storage": "100 GB NVMe SSD"
+      },
+      "artworkTheme": "fc26",
+      "gallery": [
+        {
+          "id": "fc-1",
+          "title": "Estadios nocturnos bajo reflectores",
+          "caption": "Motor Frostbite con capturas volumétricas Hypermotion",
+          "themeVariant": "fc26"
+        },
+        {
+          "id": "fc-2",
+          "title": "Modo Rush 5v5 y Clubes",
+          "caption": "Partidos rápidos con amigos sin tiempos muertos",
+          "themeVariant": "fc26-rush"
+        },
+        {
+          "id": "fc-3",
+          "title": "Pizarra táctica FC IQ",
+          "caption": "Roles posicionales dinámicos para ataque y transición",
+          "themeVariant": "fc26-tactics"
+        }
+      ],
+      "isFeatured": false
+    },
+    {
+      "id": "game-re4",
+      "slug": "resident-evil-4-remake",
+      "title": "Resident Evil 4 Remake",
+      "developer": "Capcom",
+      "publisher": "Capcom",
+      "releaseYear": 2023,
+      "genre": "Acción",
+      "secondaryGenre": "Aventura",
+      "platforms": [
+        "PC",
+        "PlayStation",
+        "Xbox",
+        "Android/Móvil"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 199900,
+      "discountPercent": 55,
+      "finalPriceCop": 89955,
+      "rating": 4.8,
+      "popularityScore": 90,
+      "bestStore": "Steam Colombia",
+      "storeUrl": "https://store.steampowered.com/",
+      "synopsis": "La supervivencia es solo el principio. Seis años después de la catástrofe biológica de Raccoon City, el agente Leon S. Kennedy viaja a un remoto pueblo europeo para rescatar a la hija del presidente en una reinvención total del clásico de 2005.",
+      "features": [
+        "Combate renovado con desvío táctico (parry) usando el cuchillo",
+        "Motor RE Engine con iluminación atmosférica y audio espacial 3D",
+        "Modo Los Mercenarios disponible gratis para retos arcade",
+        "Gestión clásica de maletín con mejoras del Buhonero"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "AMD Ryzen 3 1200 / Intel Core i5-7500",
+        "memory": "8 GB RAM",
+        "graphics": "AMD Radeon RX 560 / NVIDIA GeForce GTX 1050 Ti",
+        "storage": "67 GB SSD"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "AMD Ryzen 5 3600 / Intel Core i7-8700",
+        "memory": "16 GB RAM",
+        "graphics": "AMD Radeon RX 5700 / NVIDIA GeForce GTX 1070",
+        "storage": "67 GB NVMe SSD"
+      },
+      "artworkTheme": "re4",
+      "gallery": [
+        {
+          "id": "re4-1",
+          "title": "La Aldea bajo tormenta",
+          "caption": "Tensión constante frente a hordas coordinadas de Ganados",
+          "themeVariant": "re4"
+        },
+        {
+          "id": "re4-2",
+          "title": "El Castillo de Salazar",
+          "caption": "Acertijos góticos y combates cerrados en salones reales",
+          "themeVariant": "re4-castle"
+        },
+        {
+          "id": "re4-3",
+          "title": "Taller del Buhonero",
+          "caption": "Mejora cadencia, potencia y capacidad de tu arsenal",
+          "themeVariant": "re4-arsenal"
+        }
+      ],
+      "isFeatured": false
+    },
+    {
+      "id": "game-genshin",
+      "slug": "genshin-impact",
+      "title": "Genshin Impact",
+      "developer": "HoYoverse",
+      "publisher": "HoYoverse",
+      "releaseYear": 2024,
+      "genre": "RPG",
+      "secondaryGenre": "Mundo Abierto",
+      "platforms": [
+        "PC",
+        "PlayStation",
+        "Xbox",
+        "Android/Móvil"
+      ],
+      "offerType": "Juego gratis",
+      "originalPriceCop": 0,
+      "discountPercent": 0,
+      "finalPriceCop": 0,
+      "rating": 4.5,
+      "popularityScore": 92,
+      "bestStore": "Epic Games / Google Play",
+      "storeUrl": "https://genshin.hoyoverse.com/",
+      "synopsis": "Emprende un viaje a través de Teyvat para reencontrarte con tu familiar perdido y desentrañar los secretos de los Siete Arcontes. Un RPG de acción en mundo abierto totalmente gratuito con guardado cruzado entre PC, consola y móvil.",
+      "features": [
+        "100% Free-to-Play con actualizaciones gratuitas cada 6 semanas",
+        "Sistema elemental combinable entre 7 elementos y equipos de 4 personajes",
+        "Cross-save y multijugador cooperativo de hasta 4 jugadores",
+        "Siete regiones masivas explorables incluyendo Natlan y Fontaine"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 / Android 9.0 / iOS 13",
+        "processor": "Intel Core i5 / Snapdragon 845 o equivalente",
+        "memory": "8 GB RAM (4 GB en móvil)",
+        "graphics": "NVIDIA GeForce GT 1030 o Adreno 630",
+        "storage": "30 GB móvil / 85 GB PC"
+      },
+      "recSpecs": {
+        "os": "Windows 11 / Android 12+",
+        "processor": "Intel Core i7 / Snapdragon 8 Gen 2",
+        "memory": "16 GB RAM (8 GB en móvil)",
+        "graphics": "NVIDIA GeForce GTX 1060 6GB",
+        "storage": "90 GB SSD"
+      },
+      "artworkTheme": "genshin",
+      "gallery": [
+        {
+          "id": "gi-1",
+          "title": "Exploración aérea en Teyvat",
+          "caption": "Escala montañas, planea sobre valles y descubre dominios ocultos",
+          "themeVariant": "genshin"
+        },
+        {
+          "id": "gi-2",
+          "title": "Reacciones elementales en combate",
+          "caption": "Combina Pyro, Hydro, Cryo, Electro y Dendro en tiempo real",
+          "themeVariant": "genshin-elements"
+        },
+        {
+          "id": "gi-3",
+          "title": "Cooperativo semanal de jefes",
+          "caption": "Únete con amigos desde PC, consola o teléfono móvil",
+          "themeVariant": "genshin-coop"
+        }
+      ],
+      "isFeatured": false
+    },
+    {
+      "id": "game-hades2",
+      "slug": "hades-ii",
+      "title": "Hades II",
+      "developer": "Supergiant Games",
+      "publisher": "Supergiant Games",
+      "releaseYear": 2025,
+      "genre": "Indie",
+      "secondaryGenre": "Acción",
+      "platforms": [
+        "PC",
+        "Nintendo"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 79900,
+      "discountPercent": 25,
+      "finalPriceCop": 59925,
+      "rating": 4.9,
+      "popularityScore": 88,
+      "bestStore": "Steam Colombia",
+      "storeUrl": "https://store.steampowered.com/",
+      "synopsis": "Como la inmortal Princesa del Inframundo, explorarás un mundo mítico más grande y profundo mientras doblegas las fuerzas del Titán del Tiempo con todo el poder del Olimpo detrás de ti en esta secuela roguelike de Supergiant Games.",
+      "features": [
+        "Hechicería oscura combinada con bendiciones de los dioses olímpicos",
+        "Dos rutas paralelas completas: descenso al Tártaro y ascenso al Olimpo",
+        "Rejugabilidad casi infinita con arcanos y armas nocturnas transformables",
+        "Banda sonora dinámica compuesta por Darren Korb"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Dual Core 2.4 GHz",
+        "memory": "8 GB RAM",
+        "graphics": "GeForce GTX 950 / Radeon R7 360",
+        "storage": "10 GB SSD"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Quad Core 2.4 GHz+",
+        "memory": "16 GB RAM",
+        "graphics": "GeForce RTX 2060 / Radeon RX 5600 XT",
+        "storage": "10 GB SSD"
+      },
+      "artworkTheme": "hades2",
+      "gallery": [
+        {
+          "id": "hd2-1",
+          "title": "Encrucijada y magia lunar",
+          "caption": "Melinoë domina conjuros arcanos y hechizos omega",
+          "themeVariant": "hades2"
+        },
+        {
+          "id": "hd2-2",
+          "title": "Bendiciones del Olimpo",
+          "caption": "Apolo, Hera, Zeus y Hestia potencian tus ataques en cada sala",
+          "themeVariant": "hades2-boons"
+        },
+        {
+          "id": "hd2-3",
+          "title": "La Casa de Hades bajo asedio",
+          "caption": "Enfrenta a Cronos, el Titán del Tiempo",
+          "themeVariant": "hades2-boss"
+        }
+      ],
+      "isFeatured": false
+    },
+    {
+      "id": "game-forza5",
+      "slug": "forza-horizon-5",
+      "title": "Forza Horizon 5: Edición Premium",
+      "developer": "Playground Games",
+      "publisher": "Xbox Game Studios",
+      "releaseYear": 2023,
+      "genre": "Deportes",
+      "secondaryGenre": "Mundo Abierto",
+      "platforms": [
+        "PC",
+        "Xbox",
+        "PlayStation"
+      ],
+      "offerType": "Bundle",
+      "originalPriceCop": 229900,
+      "discountPercent": 50,
+      "finalPriceCop": 114950,
+      "rating": 4.7,
+      "popularityScore": 87,
+      "bestStore": "Xbox Store Colombia",
+      "storeUrl": "https://www.xbox.com/",
+      "synopsis": "Tu aventura definitiva en el Horizon Festival te espera con más de 800 autos de colección, clima extremo y las expansiones Hot Wheels y Rally Adventure incluidas en un solo paquete de conducción en mundo abierto.",
+      "features": [
+        "Incluye las dos expansiones completas: Hot Wheels y Rally Adventure",
+        "Más de 800 vehículos personalizables con telemetría realista",
+        "Eventos semanales del Festival Playlist y modo EventLab comunitario",
+        "Juego cruzado completo y soporte para volantes de simulación"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 version 1909",
+        "processor": "Intel i5-4460 / AMD Ryzen 3 1200",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 970 / AMD RX 470",
+        "storage": "110 GB SSD"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel i5-8400 / AMD Ryzen 5 1500X",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA GTX 1070 / AMD RX 590",
+        "storage": "110 GB NVMe SSD"
+      },
+      "artworkTheme": "forza5",
+      "gallery": [
+        {
+          "id": "fh5-1",
+          "title": "Volcanes y selvas de Horizon",
+          "caption": "11 biomas distintos con tormentas de arena y lluvias tropicales",
+          "themeVariant": "forza5"
+        },
+        {
+          "id": "fh5-2",
+          "title": "Pistas naranjas de Hot Wheels",
+          "caption": "Circuitos magnéticos suspendidos en las nubes",
+          "themeVariant": "forza5-hw"
+        },
+        {
+          "id": "fh5-3",
+          "title": "Taller de tuning y diseño",
+          "caption": "Comparte libreas y ajustes mecánicos con la comunidad",
+          "themeVariant": "forza5-garage"
+        }
+      ],
+      "isFeatured": false
+    },
+    {
+      "id": "cs-335218",
+      "slug": "ashes-of-the-singularity-ii",
+      "title": "Ashes of the Singularity II",
+      "developer": "GreenManGaming",
+      "publisher": "Oferta verificada vía CheapShark API",
+      "releaseYear": 2026,
+      "genre": "Acción",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 170000,
+      "discountPercent": 35,
+      "finalPriceCop": 110100,
+      "rating": 3.5,
+      "popularityScore": 99,
+      "bestStore": "GreenManGaming",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=bB3LIPi1TbVmxJ0oe6mQawHpMzxTsHlVgmOTwPlxq%252BA%253D",
+      "synopsis": "Ashes of the Singularity II se encuentra actualmente en promoción verificada a través de la API pública de CheapShark en GreenManGaming. Precio convertido automáticamente a pesos colombianos (COP) con base en su valor internacional de 25.91 USD (antes 39.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (GreenManGaming)",
+        "Ahorro verificado del 35% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3499790/9b9f8e8896417ae73ee60cffc30b069864163878/capsule_231x87.jpg?t=1794576706",
+      "artworkTheme": "cyberpunk",
+      "gallery": [
+        {
+          "id": "cs-335218-1",
+          "title": "Ashes of the Singularity II",
+          "caption": "Oferta activa en GreenManGaming vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3499790/9b9f8e8896417ae73ee60cffc30b069864163878/capsule_231x87.jpg?t=1794576706",
+          "themeVariant": "cyberpunk"
+        },
+        {
+          "id": "cs-335218-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 35% verificado",
+          "themeVariant": "cyberpunk"
+        },
+        {
+          "id": "cs-335218-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "cyberpunk"
+        }
+      ],
+      "isFeatured": true,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "bB3LIPi1TbVmxJ0oe6mQawHpMzxTsHlVgmOTwPlxq%2BA%3D",
+      "cheapSharkGameId": "335218"
+    },
+    {
+      "id": "cs-306050",
+      "slug": "the-king-of-fighters-xiv-steam-edition-deluxe-pack",
+      "title": "THE KING OF FIGHTERS XIV STEAM EDITION DELUXE PACK",
+      "developer": "GameBillet",
+      "publisher": "Oferta verificada vía CheapShark API",
+      "releaseYear": 2024,
+      "genre": "RPG",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 318700,
+      "discountPercent": 88,
+      "finalPriceCop": 39700,
+      "rating": 4.2,
+      "popularityScore": 99,
+      "bestStore": "GameBillet",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=y2eiGKKAsTdsuj6iMUfytl3NwxJxOH0YKcrWpJKh98Q%253D",
+      "synopsis": "THE KING OF FIGHTERS XIV STEAM EDITION DELUXE PACK se encuentra actualmente en promoción verificada a través de la API pública de CheapShark en GameBillet. Precio convertido automáticamente a pesos colombianos (COP) con base en su valor internacional de 9.34 USD (antes 74.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (GameBillet)",
+        "Ahorro verificado del 88% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://sttc.gamersgate.com/images/product/the-king-of-fighters-xiv-steam-edition-deluxe-pack/cover-180-c386aa.jpg",
+      "artworkTheme": "elden",
+      "gallery": [
+        {
+          "id": "cs-306050-1",
+          "title": "THE KING OF FIGHTERS XIV STEAM EDITION DELUXE PACK",
+          "caption": "Oferta activa en GameBillet vía CheapShark",
+          "imageUrl": "https://sttc.gamersgate.com/images/product/the-king-of-fighters-xiv-steam-edition-deluxe-pack/cover-180-c386aa.jpg",
+          "themeVariant": "elden"
+        },
+        {
+          "id": "cs-306050-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 88% verificado",
+          "themeVariant": "elden"
+        },
+        {
+          "id": "cs-306050-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "elden"
+        }
+      ],
+      "isFeatured": true,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "rv7mTddvgW%2BVLTcYryzxs1LC1YtSdOZUNYQK5rof25k%3D",
+      "cheapSharkGameId": "306050"
+    },
+    {
+      "id": "cs-326980",
+      "slug": "contractor-the-clean-up-part-ii",
+      "title": "Contractor: The Clean Up Part II",
+      "developer": "Epic Games Store",
+      "publisher": "Oferta verificada vía CheapShark API",
+      "releaseYear": 2026,
+      "genre": "Mundo Abierto",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Juego gratis",
+      "originalPriceCop": 17000,
+      "discountPercent": 99,
+      "finalPriceCop": 0,
+      "rating": 4.2,
+      "popularityScore": 99,
+      "bestStore": "Epic Games Store",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=9C%252B2hwINwXpuTAKoxmx56nS29WPr5Tt9tH%252BCX7Ls1uQ%253D",
+      "synopsis": "Contractor: The Clean Up Part II se encuentra actualmente en promoción verificada a través de la API pública de CheapShark en Epic Games Store. Precio convertido automáticamente a pesos colombianos (COP) con base en su valor internacional de 0.00 USD (antes 3.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (Epic Games Store)",
+        "Ahorro verificado del 99% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://cdn1.epicgames.com/spt-assets/45a0995f31e348739b814de2cb32674b/contractor-the-clean-up-part-ii-io7r5.png",
+      "artworkTheme": "witcher",
+      "gallery": [
+        {
+          "id": "cs-326980-1",
+          "title": "Contractor: The Clean Up Part II",
+          "caption": "Oferta activa en Epic Games Store vía CheapShark",
+          "imageUrl": "https://cdn1.epicgames.com/spt-assets/45a0995f31e348739b814de2cb32674b/contractor-the-clean-up-part-ii-io7r5.png",
+          "themeVariant": "witcher"
+        },
+        {
+          "id": "cs-326980-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 99% verificado",
+          "themeVariant": "witcher"
+        },
+        {
+          "id": "cs-326980-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "witcher"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "9C%2B2hwINwXpuTAKoxmx56nS29WPr5Tt9tH%2BCX7Ls1uQ%3D",
+      "cheapSharkGameId": "326980"
+    },
+    {
+      "id": "cs-195476",
+      "slug": "darksiders-blades-and-whip-franchise-pack",
+      "title": "Darksiders Blades and Whip Franchise Pack",
+      "developer": "WinGameStore",
+      "publisher": "Oferta verificada vía CheapShark API",
+      "releaseYear": 2024,
+      "genre": "Acción",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 340000,
+      "discountPercent": 85,
+      "finalPriceCop": 51000,
+      "rating": 4.2,
+      "popularityScore": 99,
+      "bestStore": "WinGameStore",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=jUIksCf7OKL1gDeMjhT%252Fx%252Bi7HWhFLcE2qWzPWrrvzmI%253D",
+      "synopsis": "Darksiders Blades and Whip Franchise Pack se encuentra actualmente en promoción verificada a través de la API pública de CheapShark en WinGameStore. Precio convertido automáticamente a pesos colombianos (COP) con base en su valor internacional de 11.99 USD (antes 79.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (WinGameStore)",
+        "Ahorro verificado del 85% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://sttc.gamersgate.com/images/product/darksiders-blades-whip-franchise-pack/cover-180-1f9c00.jpg",
+      "artworkTheme": "hollow",
+      "gallery": [
+        {
+          "id": "cs-195476-1",
+          "title": "Darksiders Blades and Whip Franchise Pack",
+          "caption": "Oferta activa en WinGameStore vía CheapShark",
+          "imageUrl": "https://sttc.gamersgate.com/images/product/darksiders-blades-whip-franchise-pack/cover-180-1f9c00.jpg",
+          "themeVariant": "hollow"
+        },
+        {
+          "id": "cs-195476-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 85% verificado",
+          "themeVariant": "hollow"
+        },
+        {
+          "id": "cs-195476-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "hollow"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "jUIksCf7OKL1gDeMjhT%2Fx%2Bi7HWhFLcE2qWzPWrrvzmI%3D",
+      "cheapSharkGameId": "195476"
+    },
+    {
+      "id": "cs-336516",
+      "slug": "pro-basketball-manager-2027",
+      "title": "Pro Basketball Manager 2027",
+      "developer": "Fanatical",
+      "publisher": "Oferta verificada vía CheapShark API",
+      "releaseYear": 2026,
+      "genre": "RPG",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 148700,
+      "discountPercent": 27,
+      "finalPriceCop": 108500,
+      "rating": 4.2,
+      "popularityScore": 99,
+      "bestStore": "Fanatical",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=3ajWjhNSwTN8Cn8cWRhrsfJStxKHKNeHCg7gnJcQetw%253D",
+      "synopsis": "Pro Basketball Manager 2027 se encuentra actualmente en promoción verificada a través de la API pública de CheapShark en Fanatical. Precio convertido automáticamente a pesos colombianos (COP) con base en su valor internacional de 25.54 USD (antes 34.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (Fanatical)",
+        "Ahorro verificado del 27% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4411720/a61b246c8ba47b2ac332301094d1cfad1cb8fa58/capsule_231x87.jpg?t=1794755119",
+      "artworkTheme": "re4",
+      "gallery": [
+        {
+          "id": "cs-336516-1",
+          "title": "Pro Basketball Manager 2027",
+          "caption": "Oferta activa en Fanatical vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4411720/a61b246c8ba47b2ac332301094d1cfad1cb8fa58/capsule_231x87.jpg?t=1794755119",
+          "themeVariant": "re4"
+        },
+        {
+          "id": "cs-336516-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 27% verificado",
+          "themeVariant": "re4"
+        },
+        {
+          "id": "cs-336516-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "re4"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "3ajWjhNSwTN8Cn8cWRhrsfJStxKHKNeHCg7gnJcQetw%3D",
+      "cheapSharkGameId": "336516"
+    },
+    {
+      "id": "cs-293628",
+      "slug": "dead-island-2-ultimate-edition",
+      "title": "Dead Island 2 Ultimate Edition",
+      "developer": "Gamesplanet",
+      "publisher": "Oferta verificada vía CheapShark API",
+      "releaseYear": 2024,
+      "genre": "Indie",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 297500,
+      "discountPercent": 90,
+      "finalPriceCop": 29700,
+      "rating": 4.2,
+      "popularityScore": 99,
+      "bestStore": "Gamesplanet",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=sRLxoWx7sqRIloa4OEm5coyZF8kRuBfKInGomtFNhkg%253D",
+      "synopsis": "Dead Island 2 Ultimate Edition se encuentra actualmente en promoción verificada a través de la API pública de CheapShark en Gamesplanet. Precio convertido automáticamente a pesos colombianos (COP) con base en su valor internacional de 6.99 USD (antes 69.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (Gamesplanet)",
+        "Ahorro verificado del 90% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://cdn.humblebundle.com/misc/files/hashed/ea4b53bccf50d3165e099e604c6c7496a546914f.jpg",
+      "artworkTheme": "cyberpunk",
+      "gallery": [
+        {
+          "id": "cs-293628-1",
+          "title": "Dead Island 2 Ultimate Edition",
+          "caption": "Oferta activa en Gamesplanet vía CheapShark",
+          "imageUrl": "https://cdn.humblebundle.com/misc/files/hashed/ea4b53bccf50d3165e099e604c6c7496a546914f.jpg",
+          "themeVariant": "cyberpunk"
+        },
+        {
+          "id": "cs-293628-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 90% verificado",
+          "themeVariant": "cyberpunk"
+        },
+        {
+          "id": "cs-293628-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "cyberpunk"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "sRLxoWx7sqRIloa4OEm5coyZF8kRuBfKInGomtFNhkg%3D",
+      "cheapSharkGameId": "293628"
+    },
+    {
+      "id": "cs-287418",
+      "slug": "test-drive-unlimited-solar-crown-gold-edition",
+      "title": "Test Drive Unlimited Solar Crown  Gold Edition",
+      "developer": "Gamesplanet",
+      "publisher": "Oferta verificada vía CheapShark API",
+      "releaseYear": 2024,
+      "genre": "Mundo Abierto",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 340000,
+      "discountPercent": 84,
+      "finalPriceCop": 54600,
+      "rating": 4.2,
+      "popularityScore": 99,
+      "bestStore": "Gamesplanet",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=j6A5LXhuUxm9XH%252BQqKFi5vZar5VhRRJPG4XEgij0kwQ%253D",
+      "synopsis": "Test Drive Unlimited Solar Crown  Gold Edition se encuentra actualmente en promoción verificada a través de la API pública de CheapShark en Gamesplanet. Precio convertido automáticamente a pesos colombianos (COP) con base en su valor internacional de 12.85 USD (antes 79.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (Gamesplanet)",
+        "Ahorro verificado del 84% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://sttc.gamersgate.com/images/product/test-drive-unlimited-solar-crown-gold-edition/cover-180-c93df1.jpg",
+      "artworkTheme": "elden",
+      "gallery": [
+        {
+          "id": "cs-287418-1",
+          "title": "Test Drive Unlimited Solar Crown  Gold Edition",
+          "caption": "Oferta activa en Gamesplanet vía CheapShark",
+          "imageUrl": "https://sttc.gamersgate.com/images/product/test-drive-unlimited-solar-crown-gold-edition/cover-180-c93df1.jpg",
+          "themeVariant": "elden"
+        },
+        {
+          "id": "cs-287418-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 84% verificado",
+          "themeVariant": "elden"
+        },
+        {
+          "id": "cs-287418-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "elden"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "%2BAy2P336b90tPBVMQrGWVFYhETPnIspqfcoc%2BOCdSR4%3D",
+      "cheapSharkGameId": "287418"
+    },
+    {
+      "id": "cs-102249",
+      "slug": "deus-ex-human-revolution-director-s-cut",
+      "title": "Deus Ex: Human Revolution - Director's Cut",
+      "developer": "WinGameStore",
+      "publisher": "Oferta verificada vía CheapShark API",
+      "releaseYear": 2013,
+      "genre": "Acción",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 85000,
+      "discountPercent": 90,
+      "finalPriceCop": 8500,
+      "rating": 4.5,
+      "popularityScore": 99,
+      "bestStore": "WinGameStore",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=ZLniwdY%252BXppO6gBCgyKEBZHHPbgDOGqeHSSJOzYSTbo%253D",
+      "synopsis": "Deus Ex: Human Revolution - Director's Cut se encuentra actualmente en promoción verificada a través de la API pública de CheapShark en WinGameStore. Precio convertido automáticamente a pesos colombianos (COP) con base en su valor internacional de 1.99 USD (antes 19.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (WinGameStore)",
+        "Ahorro verificado del 90% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/238010/capsule_231x87.jpg?t=1779722099",
+      "artworkTheme": "gow",
+      "gallery": [
+        {
+          "id": "cs-102249-1",
+          "title": "Deus Ex: Human Revolution - Director's Cut",
+          "caption": "Oferta activa en WinGameStore vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/238010/capsule_231x87.jpg?t=1779722099",
+          "themeVariant": "gow"
+        },
+        {
+          "id": "cs-102249-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 90% verificado",
+          "themeVariant": "gow"
+        },
+        {
+          "id": "cs-102249-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "gow"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "ZLniwdY%2BXppO6gBCgyKEBZHHPbgDOGqeHSSJOzYSTbo%3D",
+      "cheapSharkGameId": "102249"
+    },
+    {
+      "id": "cs-233561",
+      "slug": "rims-racing-ultimate-edition",
+      "title": "Rims Racing : Ultimate Edition",
+      "developer": "WinGameStore",
+      "publisher": "Oferta verificada vía CheapShark API",
+      "releaseYear": 2024,
+      "genre": "RPG",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 295400,
+      "discountPercent": 95,
+      "finalPriceCop": 14700,
+      "rating": 4.2,
+      "popularityScore": 99,
+      "bestStore": "WinGameStore",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=SmsaXTBWCcgJyOW0zG%252BuTbwH%252F1QL11rC2Yqb%252FMFqxCs%253D",
+      "synopsis": "Rims Racing : Ultimate Edition se encuentra actualmente en promoción verificada a través de la API pública de CheapShark en WinGameStore. Precio convertido automáticamente a pesos colombianos (COP) con base en su valor internacional de 3.47 USD (antes 69.50 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (WinGameStore)",
+        "Ahorro verificado del 95% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://images.greenmangaming.com/e1cdac10807b4dd78337834ab4ca1837/a21ed18dfb334b8481276f4d5a4a538b.jpg",
+      "artworkTheme": "rdr2",
+      "gallery": [
+        {
+          "id": "cs-233561-1",
+          "title": "Rims Racing : Ultimate Edition",
+          "caption": "Oferta activa en WinGameStore vía CheapShark",
+          "imageUrl": "https://images.greenmangaming.com/e1cdac10807b4dd78337834ab4ca1837/a21ed18dfb334b8481276f4d5a4a538b.jpg",
+          "themeVariant": "rdr2"
+        },
+        {
+          "id": "cs-233561-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 95% verificado",
+          "themeVariant": "rdr2"
+        },
+        {
+          "id": "cs-233561-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "rdr2"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "SmsaXTBWCcgJyOW0zG%2BuTbwH%2F1QL11rC2Yqb%2FMFqxCs%3D",
+      "cheapSharkGameId": "233561"
+    },
+    {
+      "id": "cs-294665",
+      "slug": "the-lego-games-bundle",
+      "title": "The LEGO Games Bundle",
+      "developer": "GOG",
+      "publisher": "Oferta verificada vía CheapShark API",
+      "releaseYear": 2024,
+      "genre": "Aventura",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 425000,
+      "discountPercent": 87,
+      "finalPriceCop": 55200,
+      "rating": 4.3,
+      "popularityScore": 99,
+      "bestStore": "GOG",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=lx1Ldqb2ETEm0PJHIwoF8aVhlAvtMNpyHN%252B3M64aUek%253D",
+      "synopsis": "The LEGO Games Bundle se encuentra actualmente en promoción verificada a través de la API pública de CheapShark en GOG. Precio convertido automáticamente a pesos colombianos (COP) con base en su valor internacional de 12.99 USD (antes 99.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (GOG)",
+        "Ahorro verificado del 87% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/subs/466140/capsule_231x87.jpg?t=1773438562",
+      "artworkTheme": "witcher",
+      "gallery": [
+        {
+          "id": "cs-294665-1",
+          "title": "The LEGO Games Bundle",
+          "caption": "Oferta activa en GOG vía CheapShark",
+          "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/subs/466140/capsule_231x87.jpg?t=1773438562",
+          "themeVariant": "witcher"
+        },
+        {
+          "id": "cs-294665-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 87% verificado",
+          "themeVariant": "witcher"
+        },
+        {
+          "id": "cs-294665-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "witcher"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "lx1Ldqb2ETEm0PJHIwoF8aVhlAvtMNpyHN%2B3M64aUek%3D",
+      "cheapSharkGameId": "294665"
+    },
+    {
+      "id": "cs-153679",
+      "slug": "watch-dogs-2-gold-edition",
+      "title": "Watch_Dogs 2 Gold Edition",
+      "developer": "Uplay",
+      "publisher": "Oferta verificada vía CheapShark API",
+      "releaseYear": 2024,
+      "genre": "Mundo Abierto",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 340000,
+      "discountPercent": 85,
+      "finalPriceCop": 51000,
+      "rating": 4.2,
+      "popularityScore": 99,
+      "bestStore": "Uplay",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=pGwiDdiyTGTBUh6qtuDI6Iq3cSdq4KNR1fIOIu2ULmk%253D",
+      "synopsis": "Watch_Dogs 2 Gold Edition se encuentra actualmente en promoción verificada a través de la API pública de CheapShark en Uplay. Precio convertido automáticamente a pesos colombianos (COP) con base en su valor internacional de 12.00 USD (antes 79.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (Uplay)",
+        "Ahorro verificado del 85% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://images.greenmangaming.com/b862c5cae355443f879809fc20eec404/e1d34e22dd2e4d3196a8e0c77b07c778.jpg",
+      "artworkTheme": "re4",
+      "gallery": [
+        {
+          "id": "cs-153679-1",
+          "title": "Watch_Dogs 2 Gold Edition",
+          "caption": "Oferta activa en Uplay vía CheapShark",
+          "imageUrl": "https://images.greenmangaming.com/b862c5cae355443f879809fc20eec404/e1d34e22dd2e4d3196a8e0c77b07c778.jpg",
+          "themeVariant": "re4"
+        },
+        {
+          "id": "cs-153679-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 85% verificado",
+          "themeVariant": "re4"
+        },
+        {
+          "id": "cs-153679-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "re4"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "pGwiDdiyTGTBUh6qtuDI6Iq3cSdq4KNR1fIOIu2ULmk%3D",
+      "cheapSharkGameId": "153679"
+    },
+    {
+      "id": "cs-311528",
+      "slug": "il-2-sturmovik-tank-crew-clash-at-prokhorovka",
+      "title": "IL-2 Sturmovik: Tank Crew - Clash at Prokhorovka",
+      "developer": "GreenManGaming",
+      "publisher": "Oferta verificada vía CheapShark API",
+      "releaseYear": 2024,
+      "genre": "Acción",
+      "platforms": [
+        "PC"
+      ],
+      "offerType": "Descuento",
+      "originalPriceCop": 340000,
+      "discountPercent": 79,
+      "finalPriceCop": 69700,
+      "rating": 4.2,
+      "popularityScore": 99,
+      "bestStore": "GreenManGaming",
+      "storeUrl": "https://www.cheapshark.com/redirect?dealID=g%252BqhS9gSM%252BnWLMVW%252B1km4Tys%252FmPDa%252F9R5dnFQR6CmhE%253D",
+      "synopsis": "IL-2 Sturmovik: Tank Crew - Clash at Prokhorovka se encuentra actualmente en promoción verificada a través de la API pública de CheapShark en GreenManGaming. Precio convertido automáticamente a pesos colombianos (COP) con base en su valor internacional de 16.40 USD (antes 79.99 USD).",
+      "features": [
+        "Oferta en vivo sincronizada desde CheapShark API (GreenManGaming)",
+        "Ahorro verificado del 79% respecto al precio regular",
+        "Activación digital oficial en plataforma PC",
+        "Conversión automática transparente a pesos colombianos (COP)"
+      ],
+      "minSpecs": {
+        "os": "Windows 10 64-bit",
+        "processor": "Intel Core i5 / AMD Ryzen 5 equivalente",
+        "memory": "8 GB RAM",
+        "graphics": "NVIDIA GTX 1050 Ti / AMD RX 570",
+        "storage": "35 GB de espacio disponible"
+      },
+      "recSpecs": {
+        "os": "Windows 11 64-bit",
+        "processor": "Intel Core i7 / AMD Ryzen 7 equivalente",
+        "memory": "16 GB RAM",
+        "graphics": "NVIDIA RTX 2060 / AMD RX 6600",
+        "storage": "35 GB SSD"
+      },
+      "coverImage": "https://sttc.gamersgate.com/images/product/il-2-sturmovik-tank-crew-clash-at-prokhorovka/cover-180-4ada10.jpg",
+      "artworkTheme": "hades2",
+      "gallery": [
+        {
+          "id": "cs-311528-1",
+          "title": "IL-2 Sturmovik: Tank Crew - Clash at Prokhorovka",
+          "caption": "Oferta activa en GreenManGaming vía CheapShark",
+          "imageUrl": "https://sttc.gamersgate.com/images/product/il-2-sturmovik-tank-crew-clash-at-prokhorovka/cover-180-4ada10.jpg",
+          "themeVariant": "hades2"
+        },
+        {
+          "id": "cs-311528-2",
+          "title": "Comparativa de descuento en COP",
+          "caption": "Descuento del 79% verificado",
+          "themeVariant": "hades2"
+        },
+        {
+          "id": "cs-311528-3",
+          "title": "Disponibilidad digital PC",
+          "caption": "Entrega de clave oficial en tienda asociada",
+          "themeVariant": "hades2"
+        }
+      ],
+      "isFeatured": false,
+      "isFromCheapShark": true,
+      "cheapSharkDealId": "g%2BqhS9gSM%2BnWLMVW%2B1km4Tys%2FmPDa%2F9R5dnFQR6CmhE%3D",
+      "cheapSharkGameId": "311528"
+    }
+  ],
+  "storeOffers": [
+    {
+      "id": "so-1",
+      "gameId": "game-cyberpunk",
+      "storeName": "Steam Colombia",
+      "platform": "PC",
+      "originalPriceCop": 249900,
+      "discountPercent": 50,
+      "finalPriceCop": 124950,
+      "url": "https://store.steampowered.com/",
+      "lastUpdated": "2026-11-17T06:00:00Z"
+    },
+    {
+      "id": "so-2",
+      "gameId": "game-cyberpunk",
+      "storeName": "Epic Games Store",
+      "platform": "PC",
+      "originalPriceCop": 249900,
+      "discountPercent": 45,
+      "finalPriceCop": 137445,
+      "url": "https://store.epicgames.com/",
+      "lastUpdated": "2026-11-17T06:00:00Z"
+    },
+    {
+      "id": "so-3",
+      "gameId": "game-cyberpunk",
+      "storeName": "PlayStation Store CO",
+      "platform": "PlayStation",
+      "originalPriceCop": 259900,
+      "discountPercent": 40,
+      "finalPriceCop": 155940,
+      "url": "https://store.playstation.com/",
+      "lastUpdated": "2026-11-17T06:00:00Z"
+    },
+    {
+      "id": "so-4",
+      "gameId": "game-elden",
+      "storeName": "Nuuvem Latam",
+      "platform": "PC",
+      "originalPriceCop": 239900,
+      "discountPercent": 40,
+      "finalPriceCop": 143940,
+      "url": "https://www.nuuvem.com/",
+      "lastUpdated": "2026-11-17T06:00:00Z"
+    },
+    {
+      "id": "so-5",
+      "gameId": "game-elden",
+      "storeName": "Steam Colombia",
+      "platform": "PC",
+      "originalPriceCop": 239900,
+      "discountPercent": 35,
+      "finalPriceCop": 155935,
+      "url": "https://store.steampowered.com/",
+      "lastUpdated": "2026-11-17T06:00:00Z"
+    },
+    {
+      "id": "so-6",
+      "gameId": "game-elden",
+      "storeName": "Xbox Store Colombia",
+      "platform": "Xbox",
+      "originalPriceCop": 249900,
+      "discountPercent": 30,
+      "finalPriceCop": 174930,
+      "url": "https://www.xbox.com/",
+      "lastUpdated": "2026-11-17T06:00:00Z"
+    },
+    {
+      "id": "so-7",
+      "gameId": "game-gow",
+      "storeName": "Epic Games Store",
+      "platform": "PC",
+      "originalPriceCop": 259900,
+      "discountPercent": 35,
+      "finalPriceCop": 168935,
+      "url": "https://store.epicgames.com/",
+      "lastUpdated": "2026-11-17T06:00:00Z"
+    },
+    {
+      "id": "so-8",
+      "gameId": "game-gow",
+      "storeName": "PlayStation Store CO",
+      "platform": "PlayStation",
+      "originalPriceCop": 269900,
+      "discountPercent": 30,
+      "finalPriceCop": 188930,
+      "url": "https://store.playstation.com/",
+      "lastUpdated": "2026-11-17T06:00:00Z"
+    },
+    {
+      "id": "so-9",
+      "gameId": "game-rdr2",
+      "storeName": "Steam Colombia",
+      "platform": "PC",
+      "originalPriceCop": 219900,
+      "discountPercent": 67,
+      "finalPriceCop": 72567,
+      "url": "https://store.steampowered.com/",
+      "lastUpdated": "2026-11-17T06:00:00Z"
+    },
+    {
+      "id": "so-10",
+      "gameId": "game-rdr2",
+      "storeName": "Xbox Store Colombia",
+      "platform": "Xbox",
+      "originalPriceCop": 219900,
+      "discountPercent": 60,
+      "finalPriceCop": 87960,
+      "url": "https://www.xbox.com/",
+      "lastUpdated": "2026-11-17T06:00:00Z"
+    },
+    {
+      "id": "so-11",
+      "gameId": "game-witcher3",
+      "storeName": "GOG / Steam",
+      "platform": "PC",
+      "originalPriceCop": 159900,
+      "discountPercent": 75,
+      "finalPriceCop": 39975,
+      "url": "https://www.gog.com/",
+      "lastUpdated": "2026-11-17T06:00:00Z"
+    },
+    {
+      "id": "so-12",
+      "gameId": "game-witcher3",
+      "storeName": "Nintendo eShop",
+      "platform": "Nintendo",
+      "originalPriceCop": 179900,
+      "discountPercent": 65,
+      "finalPriceCop": 62965,
+      "url": "https://www.nintendo.com/",
+      "lastUpdated": "2026-11-17T06:00:00Z"
+    },
+    {
+      "id": "so-13",
+      "gameId": "game-hollow",
+      "storeName": "Steam Colombia",
+      "platform": "PC",
+      "originalPriceCop": 49900,
+      "discountPercent": 50,
+      "finalPriceCop": 24950,
+      "url": "https://store.steampowered.com/",
+      "lastUpdated": "2026-11-17T06:00:00Z"
+    },
+    {
+      "id": "so-14",
+      "gameId": "game-hollow",
+      "storeName": "Nintendo eShop",
+      "platform": "Nintendo",
+      "originalPriceCop": 54900,
+      "discountPercent": 45,
+      "finalPriceCop": 30195,
+      "url": "https://www.nintendo.com/",
+      "lastUpdated": "2026-11-17T06:00:00Z"
+    },
+    {
+      "id": "so-15",
+      "gameId": "game-hogwarts",
+      "storeName": "PlayStation Store CO",
+      "platform": "PlayStation",
+      "originalPriceCop": 249900,
+      "discountPercent": 60,
+      "finalPriceCop": 99960,
+      "url": "https://store.playstation.com/",
+      "lastUpdated": "2026-11-17T06:00:00Z"
+    },
+    {
+      "id": "so-16",
+      "gameId": "game-hogwarts",
+      "storeName": "Steam Colombia",
+      "platform": "PC",
+      "originalPriceCop": 249900,
+      "discountPercent": 55,
+      "finalPriceCop": 112455,
+      "url": "https://store.steampowered.com/",
+      "lastUpdated": "2026-11-17T06:00:00Z"
+    },
+    {
+      "id": "so-17",
+      "gameId": "game-fc26",
+      "storeName": "Xbox Store Colombia",
+      "platform": "Xbox",
+      "originalPriceCop": 279900,
+      "discountPercent": 45,
+      "finalPriceCop": 153945,
+      "url": "https://www.xbox.com/",
+      "lastUpdated": "2026-11-17T06:00:00Z"
+    },
+    {
+      "id": "so-18",
+      "gameId": "game-fc26",
+      "storeName": "EA App / Steam",
+      "platform": "PC",
+      "originalPriceCop": 279900,
+      "discountPercent": 40,
+      "finalPriceCop": 167940,
+      "url": "https://store.steampowered.com/",
+      "lastUpdated": "2026-11-17T06:00:00Z"
+    },
+    {
+      "id": "so-19",
+      "gameId": "game-re4",
+      "storeName": "Steam Colombia",
+      "platform": "PC",
+      "originalPriceCop": 199900,
+      "discountPercent": 55,
+      "finalPriceCop": 89955,
+      "url": "https://store.steampowered.com/",
+      "lastUpdated": "2026-11-17T06:00:00Z"
+    },
+    {
+      "id": "so-20",
+      "gameId": "game-re4",
+      "storeName": "PlayStation Store CO",
+      "platform": "PlayStation",
+      "originalPriceCop": 209900,
+      "discountPercent": 50,
+      "finalPriceCop": 104950,
+      "url": "https://store.playstation.com/",
+      "lastUpdated": "2026-11-17T06:00:00Z"
+    },
+    {
+      "id": "so-21",
+      "gameId": "game-genshin",
+      "storeName": "Epic Games Store",
+      "platform": "PC",
+      "originalPriceCop": 0,
+      "discountPercent": 0,
+      "finalPriceCop": 0,
+      "url": "https://genshin.hoyoverse.com/",
+      "lastUpdated": "2026-11-17T06:00:00Z"
+    },
+    {
+      "id": "so-22",
+      "gameId": "game-genshin",
+      "storeName": "Google Play Colombia",
+      "platform": "Android/Móvil",
+      "originalPriceCop": 0,
+      "discountPercent": 0,
+      "finalPriceCop": 0,
+      "url": "https://play.google.com/",
+      "lastUpdated": "2026-11-17T06:00:00Z"
+    },
+    {
+      "id": "so-23",
+      "gameId": "game-hades2",
+      "storeName": "Steam Colombia",
+      "platform": "PC",
+      "originalPriceCop": 79900,
+      "discountPercent": 25,
+      "finalPriceCop": 59925,
+      "url": "https://store.steampowered.com/",
+      "lastUpdated": "2026-11-17T06:00:00Z"
+    },
+    {
+      "id": "so-24",
+      "gameId": "game-forza5",
+      "storeName": "Xbox Store Colombia",
+      "platform": "Xbox",
+      "originalPriceCop": 229900,
+      "discountPercent": 50,
+      "finalPriceCop": 114950,
+      "url": "https://www.xbox.com/",
+      "lastUpdated": "2026-11-17T06:00:00Z"
+    },
+    {
+      "id": "so-cs-335218-3",
+      "gameId": "cs-335218",
+      "storeName": "GreenManGaming",
+      "platform": "PC",
+      "originalPriceCop": 170000,
+      "discountPercent": 35,
+      "finalPriceCop": 110100,
+      "url": "https://www.cheapshark.com/redirect?dealID=bB3LIPi1TbVmxJ0oe6mQawHpMzxTsHlVgmOTwPlxq%252BA%253D",
+      "lastUpdated": "2026-11-17T15:14:35.491Z"
+    },
+    {
+      "id": "so-cs-306050-23",
+      "gameId": "cs-306050",
+      "storeName": "GameBillet",
+      "platform": "PC",
+      "originalPriceCop": 318700,
+      "discountPercent": 88,
+      "finalPriceCop": 39700,
+      "url": "https://www.cheapshark.com/redirect?dealID=y2eiGKKAsTdsuj6iMUfytl3NwxJxOH0YKcrWpJKh98Q%253D",
+      "lastUpdated": "2026-11-17T15:14:35.491Z"
+    },
+    {
+      "id": "so-cs-306050-30",
+      "gameId": "cs-306050",
+      "storeName": "IndieGala (CheapShark)",
+      "platform": "PC",
+      "originalPriceCop": 318700,
+      "discountPercent": 87,
+      "finalPriceCop": 39900,
+      "url": "https://www.cheapshark.com/redirect?dealID=ZxZxgeLkuP7Vy2s0c%252FutA9Bkn%252B6hIp%252BXFAQH%252Flyzbxg%253D",
+      "lastUpdated": "2026-11-17T15:14:35.491Z"
+    },
+    {
+      "id": "so-cs-306050-27",
+      "gameId": "cs-306050",
+      "storeName": "Gamesplanet (CheapShark)",
+      "platform": "PC",
+      "originalPriceCop": 318700,
+      "discountPercent": 87,
+      "finalPriceCop": 40300,
+      "url": "https://www.cheapshark.com/redirect?dealID=c4eafQffkMm%252BBgemxjWHWauGLxPi6xvwpUtskhxINM4%253D",
+      "lastUpdated": "2026-11-17T15:14:35.491Z"
+    },
+    {
+      "id": "so-cs-326980-25",
+      "gameId": "cs-326980",
+      "storeName": "Epic Games Store",
+      "platform": "PC",
+      "originalPriceCop": 17000,
+      "discountPercent": 99,
+      "finalPriceCop": 0,
+      "url": "https://www.cheapshark.com/redirect?dealID=9C%252B2hwINwXpuTAKoxmx56nS29WPr5Tt9tH%252BCX7Ls1uQ%253D",
+      "lastUpdated": "2026-11-17T15:14:35.491Z"
+    },
+    {
+      "id": "so-cs-195476-21",
+      "gameId": "cs-195476",
+      "storeName": "WinGameStore",
+      "platform": "PC",
+      "originalPriceCop": 340000,
+      "discountPercent": 85,
+      "finalPriceCop": 51000,
+      "url": "https://www.cheapshark.com/redirect?dealID=jUIksCf7OKL1gDeMjhT%252Fx%252Bi7HWhFLcE2qWzPWrrvzmI%253D",
+      "lastUpdated": "2026-11-17T15:14:35.491Z"
+    },
+    {
+      "id": "so-cs-336516-15",
+      "gameId": "cs-336516",
+      "storeName": "Fanatical",
+      "platform": "PC",
+      "originalPriceCop": 148700,
+      "discountPercent": 27,
+      "finalPriceCop": 108500,
+      "url": "https://www.cheapshark.com/redirect?dealID=3ajWjhNSwTN8Cn8cWRhrsfJStxKHKNeHCg7gnJcQetw%253D",
+      "lastUpdated": "2026-11-17T15:14:35.491Z"
+    },
+    {
+      "id": "so-cs-306050-2",
+      "gameId": "cs-306050",
+      "storeName": "GamersGate (CheapShark)",
+      "platform": "PC",
+      "originalPriceCop": 318700,
+      "discountPercent": 85,
+      "finalPriceCop": 47800,
+      "url": "https://www.cheapshark.com/redirect?dealID=rv7mTddvgW%252BVLTcYryzxs1LC1YtSdOZUNYQK5rof25k%253D",
+      "lastUpdated": "2026-11-17T15:14:35.491Z"
+    },
+    {
+      "id": "so-cs-293628-27",
+      "gameId": "cs-293628",
+      "storeName": "Gamesplanet",
+      "platform": "PC",
+      "originalPriceCop": 297500,
+      "discountPercent": 90,
+      "finalPriceCop": 29700,
+      "url": "https://www.cheapshark.com/redirect?dealID=sRLxoWx7sqRIloa4OEm5coyZF8kRuBfKInGomtFNhkg%253D",
+      "lastUpdated": "2026-11-17T15:14:35.491Z"
+    },
+    {
+      "id": "so-cs-287418-27",
+      "gameId": "cs-287418",
+      "storeName": "Gamesplanet",
+      "platform": "PC",
+      "originalPriceCop": 340000,
+      "discountPercent": 84,
+      "finalPriceCop": 54600,
+      "url": "https://www.cheapshark.com/redirect?dealID=j6A5LXhuUxm9XH%252BQqKFi5vZar5VhRRJPG4XEgij0kwQ%253D",
+      "lastUpdated": "2026-11-17T15:14:35.491Z"
+    },
+    {
+      "id": "so-cs-102249-21",
+      "gameId": "cs-102249",
+      "storeName": "WinGameStore",
+      "platform": "PC",
+      "originalPriceCop": 85000,
+      "discountPercent": 90,
+      "finalPriceCop": 8500,
+      "url": "https://www.cheapshark.com/redirect?dealID=ZLniwdY%252BXppO6gBCgyKEBZHHPbgDOGqeHSSJOzYSTbo%253D",
+      "lastUpdated": "2026-11-17T15:14:35.491Z"
+    },
+    {
+      "id": "so-cs-233561-21",
+      "gameId": "cs-233561",
+      "storeName": "WinGameStore",
+      "platform": "PC",
+      "originalPriceCop": 295400,
+      "discountPercent": 95,
+      "finalPriceCop": 14700,
+      "url": "https://www.cheapshark.com/redirect?dealID=SmsaXTBWCcgJyOW0zG%252BuTbwH%252F1QL11rC2Yqb%252FMFqxCs%253D",
+      "lastUpdated": "2026-11-17T15:14:35.491Z"
+    },
+    {
+      "id": "so-cs-294665-7",
+      "gameId": "cs-294665",
+      "storeName": "GOG",
+      "platform": "PC",
+      "originalPriceCop": 425000,
+      "discountPercent": 87,
+      "finalPriceCop": 55200,
+      "url": "https://www.cheapshark.com/redirect?dealID=lx1Ldqb2ETEm0PJHIwoF8aVhlAvtMNpyHN%252B3M64aUek%253D",
+      "lastUpdated": "2026-11-17T15:14:35.491Z"
+    },
+    {
+      "id": "so-cs-287418-35",
+      "gameId": "cs-287418",
+      "storeName": "DreamGame (CheapShark)",
+      "platform": "PC",
+      "originalPriceCop": 340000,
+      "discountPercent": 80,
+      "finalPriceCop": 68000,
+      "url": "https://www.cheapshark.com/redirect?dealID=%252BAy2P336b90tPBVMQrGWVFYhETPnIspqfcoc%252BOCdSR4%253D",
+      "lastUpdated": "2026-11-17T15:14:35.491Z"
+    },
+    {
+      "id": "so-cs-153679-13",
+      "gameId": "cs-153679",
+      "storeName": "Uplay",
+      "platform": "PC",
+      "originalPriceCop": 340000,
+      "discountPercent": 85,
+      "finalPriceCop": 51000,
+      "url": "https://www.cheapshark.com/redirect?dealID=pGwiDdiyTGTBUh6qtuDI6Iq3cSdq4KNR1fIOIu2ULmk%253D",
+      "lastUpdated": "2026-11-17T15:14:35.491Z"
+    },
+    {
+      "id": "so-cs-311528-3",
+      "gameId": "cs-311528",
+      "storeName": "GreenManGaming",
+      "platform": "PC",
+      "originalPriceCop": 340000,
+      "discountPercent": 79,
+      "finalPriceCop": 69700,
+      "url": "https://www.cheapshark.com/redirect?dealID=g%252BqhS9gSM%252BnWLMVW%252B1km4Tys%252FmPDa%252F9R5dnFQR6CmhE%253D",
+      "lastUpdated": "2026-11-17T15:14:35.491Z"
+    }
+  ],
+  "news": [
+    {
+      "id": "news-1",
+      "title": "Cyberpunk 2077: Ultimate Edition marca mínimo en pesos colombianos tras parche 2.2",
+      "summary": "CD PROJEKT RED libera nuevas opciones de personalización vehicular y mejoras de rendimiento mientras el paquete completo cae al 50% en tiendas digitales de Colombia.",
+      "content": "Los jugadores de PC y consolas en Colombia encuentran esta semana una de las rebajas más atractivas del año para Cyberpunk 2077: Ultimate Edition. La edición que agrupa la campaña principal y la expansión Phantom Liberty se posiciona en $ 124.950 COP en Steam Colombia, acompañada de nuevas opciones estéticas, modo foto avanzado y optimización para tarjetas de serie RTX y Radeon.",
+      "category": "Noticias",
+      "publishedAt": "2026-11-16T14:00:00Z",
+      "author": "Redacción Global Flame",
+      "readTime": "3 min",
+      "relatedGameIds": [
+        "game-cyberpunk"
+      ],
+      "relatedGenres": [
+        "RPG",
+        "Mundo Abierto"
+      ],
+      "coverImage": "/src/assets/images/cover_cyberpunk_city_1794926637227.jpg",
+      "artworkTheme": "cyberpunk"
+    },
+    {
+      "id": "news-2",
+      "title": "Guía de temporada: las mejores ofertas de RPG y Mundo Abierto en Colombia",
+      "summary": "Comparamos los precios históricos de Elden Ring, The Witcher 3 y Red Dead Redemption 2 frente al dólar actual para maximizar tu presupuesto en COP.",
+      "content": "Con la llegada de las rebajas de cierre de año, analizar el precio regional en pesos colombianos se vuelve clave para ahorrar. Títulos de más de 100 horas como The Witcher 3: Wild Hunt Complete Edition por $ 39.975 COP o Elden Ring al 40% de descuento lideran la relación costo-beneficio para jugadores de PC, PlayStation y Xbox en el país.",
+      "category": "Eventos",
+      "publishedAt": "2026-11-15T11:20:00Z",
+      "author": "Camila Duarte",
+      "readTime": "4 min",
+      "relatedGameIds": [
+        "game-elden",
+        "game-witcher3",
+        "game-rdr2"
+      ],
+      "relatedGenres": [
+        "RPG",
+        "Mundo Abierto"
+      ],
+      "coverImage": "/src/assets/images/cover_dark_fantasy_1794926635440.jpg",
+      "artworkTheme": "elden"
+    },
+    {
+      "id": "news-3",
+      "title": "God of War Ragnarök celebra su llegada a PC con soporte ultrawide y modo Valhalla",
+      "summary": "Santa Monica Studio detalla las mejoras técnicas de la versión de escritorio junto con un descuento inicial del 35% en distribuidores autorizados.",
+      "content": "La epopeya nórdica de Kratos y Atreus recibe una sólida recepción en PC gracias a la compatibilidad con monitores 21:9, tasa de cuadros desbloqueada y la inclusión sin costo adicional del modo roguelite Valhalla. En Global Flame verificamos que la oferta más competitiva se encuentra actualmente en Epic Games Store Colombia.",
+      "category": "Lanzamientos",
+      "publishedAt": "2026-11-13T16:45:00Z",
+      "author": "Andrés Salgado",
+      "readTime": "3 min",
+      "relatedGameIds": [
+        "game-gow"
+      ],
+      "relatedGenres": [
+        "Acción",
+        "Aventura"
+      ],
+      "coverImage": "/src/assets/images/cover_nordic_realm_1794926634166.jpg",
+      "artworkTheme": "gow"
+    },
+    {
+      "id": "news-4",
+      "title": "Copa Libertadores eSports y torneo Rush 5v5 llegan a EA Sports FC 26",
+      "summary": "Electronic Arts anuncia clasificatorias regionales en Sudamérica con clubes colombianos licenciados y descuentos de mitad de temporada.",
+      "content": "Los aficionados del fútbol virtual en Bogotá, Medellín y Cali ya pueden inscribirse en las clasificatorias abiertas del circuito sudamericano. El parche de noviembre equilibra los pases filtrados en FC IQ y coincide con una rebaja del 45% en Xbox Store Colombia y EA App.",
+      "category": "Eventos",
+      "publishedAt": "2026-11-11T09:00:00Z",
+      "author": "Redacción Global Flame",
+      "readTime": "2 min",
+      "relatedGameIds": [
+        "game-fc26",
+        "game-forza5"
+      ],
+      "relatedGenres": [
+        "Deportes"
+      ],
+      "artworkTheme": "fc26"
+    },
+    {
+      "id": "news-5",
+      "title": "Joyas Indie por menos de $ 60.000 COP: Hollow Knight y Hades II dominan en Switch y PC",
+      "summary": "Analizamos por qué las producciones independientes siguen siendo la opción favorita para jugar en portátiles y equipos de gama media.",
+      "content": "No necesitas gastar más de doscientos mil pesos para disfrutar experiencias de altísima calificación. Hollow Knight: Voidheart Edition a $ 24.950 COP y Hades II a $ 59.925 COP ofrecen cientos de horas de diseño artesanal, combates precisos y requisitos técnicos accesibles para prácticamente cualquier portátil moderno.",
+      "category": "Noticias",
+      "publishedAt": "2026-11-09T17:15:00Z",
+      "author": "Camila Duarte",
+      "readTime": "3 min",
+      "relatedGameIds": [
+        "game-hollow",
+        "game-hades2"
+      ],
+      "relatedGenres": [
+        "Indie",
+        "Aventura",
+        "Acción"
+      ],
+      "artworkTheme": "hollow"
+    },
+    {
+      "id": "news-6",
+      "title": "Genshin Impact estrena nueva región jugable gratis en PC, consola y Android",
+      "summary": "La actualización gratuita añade nuevas misiones de Arconte, recompensas de inicio de sesión y optimización para dispositivos móviles.",
+      "content": "HoYoverse despliega una expansión masiva sin costo para todos los viajeros en Teyvat. Gracias al soporte de guardado cruzado, los jugadores en Colombia pueden continuar su progreso tanto en escritorio como en teléfonos Android sin pagar suscripciones adicionales.",
+      "category": "Lanzamientos",
+      "publishedAt": "2026-11-07T13:30:00Z",
+      "author": "Andrés Salgado",
+      "readTime": "3 min",
+      "relatedGameIds": [
+        "game-genshin",
+        "game-hogwarts",
+        "game-re4"
+      ],
+      "relatedGenres": [
+        "RPG",
+        "Aventura",
+        "Mundo Abierto"
+      ],
+      "artworkTheme": "genshin"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "rev-1",
+      "gameId": "game-cyberpunk",
+      "userId": "usr-mateo",
+      "userName": "Mateo Ríos",
+      "userInitials": "MR",
+      "rating": 5,
+      "comment": "Con la expansión Phantom Liberty y los parches recientes vale cada peso colombiano. A 50% de descuento es compra obligada en PC.",
+      "createdAt": "2026-11-14T20:15:00Z"
+    },
+    {
+      "id": "rev-2",
+      "gameId": "game-elden",
+      "userId": "usr-mateo",
+      "userName": "Mateo Ríos",
+      "userInitials": "MR",
+      "rating": 5,
+      "comment": "Más de 120 horas explorando las Tierras Intermedias. El mejor RPG de acción de la década.",
+      "createdAt": "2026-11-13T16:40:00Z"
+    },
+    {
+      "id": "rev-3",
+      "gameId": "game-hollow",
+      "userId": "usr-valeria",
+      "userName": "Valeria Gómez",
+      "userInitials": "VG",
+      "rating": 5,
+      "comment": "Por menos de 25 mil pesos te llevas una obra de arte impecable con banda sonora increíble.",
+      "createdAt": "2026-11-12T11:30:00Z"
+    }
+  ],
+  "lastCheapSharkSync": "2026-11-17T15:14:35.491Z"
+}

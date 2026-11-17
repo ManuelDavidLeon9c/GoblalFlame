@@ -3,6 +3,7 @@ import {
   SEED_FAVORITES,
   SEED_GAMES,
   SEED_NEWS,
+  SEED_REVIEWS,
   SEED_STORE_OFFERS,
   SEED_USERS,
 } from '../data/seedData';
@@ -15,21 +16,25 @@ import {
   Platform,
   PriceAlert,
   QAState,
+  Review,
   Session,
   StoreOffer,
   User,
+  UserRole,
 } from '../types';
 import { calculateDiscountPercent, formatCOP, normalizeText } from '../utils/formatters';
 
 const STORAGE_KEYS = {
-  USERS: 'gf_pg_users_v1',
-  GAMES: 'gf_pg_games_v1',
-  OFFERS: 'gf_pg_store_offers_v1',
-  FAVORITES: 'gf_pg_favorites_v1',
-  ALERTS: 'gf_pg_alerts_v1',
-  NEWS: 'gf_pg_news_v1',
-  SESSION: 'gf_pg_session_v1',
-  QA: 'gf_pg_qa_state_v1',
+  USERS: 'gf_pg_users_v2',
+  GAMES: 'gf_pg_games_v2',
+  OFFERS: 'gf_pg_store_offers_v2',
+  FAVORITES: 'gf_pg_favorites_v2',
+  ALERTS: 'gf_pg_alerts_v2',
+  NEWS: 'gf_pg_news_v2',
+  REVIEWS: 'gf_pg_reviews_v2',
+  SESSION: 'gf_pg_session_v2',
+  QA: 'gf_pg_qa_state_v2',
+  LAST_SYNC: 'gf_pg_last_cheapshark_sync_v2',
 } as const;
 
 function readTable<T>(key: string, fallback: T): T {
@@ -60,10 +65,97 @@ export function initializeDatabase(): void {
   readTable<Favorite[]>(STORAGE_KEYS.FAVORITES, SEED_FAVORITES);
   readTable<PriceAlert[]>(STORAGE_KEYS.ALERTS, SEED_ALERTS);
   readTable<NewsItem[]>(STORAGE_KEYS.NEWS, SEED_NEWS);
+  readTable<Review[]>(STORAGE_KEYS.REVIEWS, SEED_REVIEWS);
   readTable<QAState>(STORAGE_KEYS.QA, {
     simulateApiFailure: false,
     simulateChatbotFailure: false,
   });
+}
+
+/**
+ * Syncs local browser state with the Express + CheapShark + Excel backend DB
+ */
+export async function syncWithServerDatabase(): Promise<{
+  games: Game[];
+  storeOffers: StoreOffer[];
+  news: NewsItem[];
+  reviews: Review[];
+  lastCheapSharkSync: string | null;
+}> {
+  const qa = getQAState();
+  if (qa.simulateApiFailure) {
+    return {
+      games: getAllGames(),
+      storeOffers: readTable<StoreOffer[]>(STORAGE_KEYS.OFFERS, SEED_STORE_OFFERS),
+      news: readTable<NewsItem[]>(STORAGE_KEYS.NEWS, SEED_NEWS),
+      reviews: readTable<Review[]>(STORAGE_KEYS.REVIEWS, SEED_REVIEWS),
+      lastCheapSharkSync: localStorage.getItem(STORAGE_KEYS.LAST_SYNC),
+    };
+  }
+
+  try {
+    const res = await fetch('/api/bootstrap');
+    if (!res.ok) throw new Error('Bootstrap error');
+    const data = (await res.json()) as {
+      games: Game[];
+      storeOffers: StoreOffer[];
+      news: NewsItem[];
+      reviews: Review[];
+      lastCheapSharkSync: string | null;
+    };
+    writeTable(STORAGE_KEYS.GAMES, data.games);
+    writeTable(STORAGE_KEYS.OFFERS, data.storeOffers);
+    writeTable(STORAGE_KEYS.NEWS, data.news);
+    writeTable(STORAGE_KEYS.REVIEWS, data.reviews);
+    if (data.lastCheapSharkSync) {
+      localStorage.setItem(STORAGE_KEYS.LAST_SYNC, data.lastCheapSharkSync);
+    }
+    return data;
+  } catch {
+    return {
+      games: getAllGames(),
+      storeOffers: readTable<StoreOffer[]>(STORAGE_KEYS.OFFERS, SEED_STORE_OFFERS),
+      news: readTable<NewsItem[]>(STORAGE_KEYS.NEWS, SEED_NEWS),
+      reviews: readTable<Review[]>(STORAGE_KEYS.REVIEWS, SEED_REVIEWS),
+      lastCheapSharkSync: localStorage.getItem(STORAGE_KEYS.LAST_SYNC),
+    };
+  }
+}
+
+export async function triggerCheapSharkLiveSync(): Promise<{
+  ok: boolean;
+  added?: number;
+  updated?: number;
+  error?: string;
+}> {
+  if (getQAState().simulateApiFailure) {
+    return {
+      ok: false,
+      error: 'Modo Caché QA activo: desactiva "Simular fallo de API externa" para sincronizar CheapShark.',
+    };
+  }
+  try {
+    const res = await fetch('/api/cheapshark/sync', { method: 'POST' });
+    const data = (await res.json()) as {
+      ok: boolean;
+      summary?: { added: number; updated: number };
+      games: Game[];
+      storeOffers: StoreOffer[];
+      lastCheapSharkSync?: string;
+      error?: string;
+    };
+    if (!data.ok) {
+      return { ok: false, error: data.error || 'Error conectando con CheapShark API' };
+    }
+    writeTable(STORAGE_KEYS.GAMES, data.games);
+    writeTable(STORAGE_KEYS.OFFERS, data.storeOffers);
+    if (data.lastCheapSharkSync) {
+      localStorage.setItem(STORAGE_KEYS.LAST_SYNC, data.lastCheapSharkSync);
+    }
+    return { ok: true, added: data.summary?.added ?? 0, updated: data.summary?.updated ?? 0 };
+  } catch {
+    return { ok: false, error: 'No fue posible contactar el servidor para sincronizar CheapShark.' };
+  }
 }
 
 // ==========================================
@@ -84,13 +176,14 @@ export function updateQAState(partial: Partial<QAState>): QAState {
 }
 
 // ==========================================
-// Authentication & Session Isolation (RNF07)
+// Authentication & Role Isolation (Usuario vs Administrador)
 // ==========================================
 export function getCurrentUser(): User | null {
   try {
     const rawSession = localStorage.getItem(STORAGE_KEYS.SESSION);
     if (!rawSession) return null;
-    const session = JSON.parse(rawSession) as Session;
+    const session = JSON.parse(rawSession) as Session & { user?: User };
+    if (session.user) return session.user;
     const users = readTable<User[]>(STORAGE_KEYS.USERS, SEED_USERS);
     return users.find((u) => u.id === session.userId) ?? null;
   } catch {
@@ -98,77 +191,77 @@ export function getCurrentUser(): User | null {
   }
 }
 
-export function loginUser(
+export async function loginUserAsync(
   email: string,
-  password: string
-): { ok: true; user: User } | { ok: false; error: string } {
-  const users = readTable<User[]>(STORAGE_KEYS.USERS, SEED_USERS);
-  const cleanEmail = email.trim().toLowerCase();
-  const user = users.find((u) => u.email.toLowerCase() === cleanEmail);
-
-  if (!user || user.passwordHash !== password) {
-    return { ok: false, error: 'Correo o contraseña incorrectos. Verifica tus credenciales.' };
+  password: string,
+  expectedRole?: UserRole
+): Promise<{ ok: true; user: User } | { ok: false; error: string }> {
+  try {
+    const res = await fetch('/api/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password, expectedRole }),
+    });
+    const data = (await res.json()) as { ok: boolean; user?: User; error?: string };
+    if (!res.ok || !data.ok || !data.user) {
+      return { ok: false, error: data.error || 'Credenciales inválidas.' };
+    }
+    const session: Session & { user: User } = {
+      token: `tok_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
+      userId: data.user.id,
+      user: data.user,
+      createdAt: new Date().toISOString(),
+    };
+    writeTable(STORAGE_KEYS.SESSION, session);
+    return { ok: true, user: data.user };
+  } catch {
+    // Fallback to local if server unreachable
+    const users = readTable<User[]>(STORAGE_KEYS.USERS, SEED_USERS);
+    const cleanEmail = email.trim().toLowerCase();
+    const user = users.find((u) => u.email.toLowerCase() === cleanEmail);
+    if (!user || user.passwordHash !== password) {
+      return { ok: false, error: 'Correo o contraseña incorrectos.' };
+    }
+    if (expectedRole && user.role !== expectedRole) {
+      return { ok: false, error: `Esta cuenta no corresponde al rol ${expectedRole}.` };
+    }
+    writeTable(STORAGE_KEYS.SESSION, {
+      token: `tok_${Date.now()}`,
+      userId: user.id,
+      user,
+      createdAt: new Date().toISOString(),
+    });
+    return { ok: true, user };
   }
-
-  const session: Session = {
-    token: `tok_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
-    userId: user.id,
-    createdAt: new Date().toISOString(),
-  };
-  writeTable(STORAGE_KEYS.SESSION, session);
-  return { ok: true, user };
 }
 
-export function registerUser(
+export async function registerUserAsync(
   name: string,
   email: string,
   password: string,
+  role: UserRole = 'usuario',
   preferredPlatforms: Platform[] = ['PC']
-): { ok: true; user: User } | { ok: false; error: string } {
-  const cleanName = name.trim();
-  const cleanEmail = email.trim().toLowerCase();
-
-  if (cleanName.length < 2) {
-    return { ok: false, error: 'Ingresa tu nombre completo (mínimo 2 caracteres).' };
+): Promise<{ ok: true; user: User } | { ok: false; error: string }> {
+  try {
+    const res = await fetch('/api/auth/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, password, role, preferredPlatforms }),
+    });
+    const data = (await res.json()) as { ok: boolean; user?: User; error?: string };
+    if (!res.ok || !data.ok || !data.user) {
+      return { ok: false, error: data.error || 'No se pudo registrar la cuenta.' };
+    }
+    writeTable(STORAGE_KEYS.SESSION, {
+      token: `tok_${Date.now()}`,
+      userId: data.user.id,
+      user: data.user,
+      createdAt: new Date().toISOString(),
+    });
+    return { ok: true, user: data.user };
+  } catch {
+    return { ok: false, error: 'Error de conexión al registrar la cuenta.' };
   }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cleanEmail)) {
-    return { ok: false, error: 'Ingresa un correo electrónico válido.' };
-  }
-  if (password.length < 6) {
-    return { ok: false, error: 'La contraseña debe tener al menos 6 caracteres.' };
-  }
-
-  const users = readTable<User[]>(STORAGE_KEYS.USERS, SEED_USERS);
-  if (users.some((u) => u.email.toLowerCase() === cleanEmail)) {
-    return { ok: false, error: 'Ya existe una cuenta registrada con ese correo.' };
-  }
-
-  const initials = cleanName
-    .split(/\s+/)
-    .slice(0, 2)
-    .map((p) => p[0]?.toUpperCase() ?? '')
-    .join('');
-
-  const newUser: User = {
-    id: `usr-${Date.now()}`,
-    name: cleanName,
-    email: cleanEmail,
-    passwordHash: password,
-    avatarInitials: initials || 'GF',
-    preferredPlatforms: preferredPlatforms.length > 0 ? preferredPlatforms : ['PC'],
-    createdAt: new Date().toISOString(),
-  };
-
-  users.push(newUser);
-  writeTable(STORAGE_KEYS.USERS, users);
-
-  const session: Session = {
-    token: `tok_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
-    userId: newUser.id,
-    createdAt: new Date().toISOString(),
-  };
-  writeTable(STORAGE_KEYS.SESSION, session);
-  return { ok: true, user: newUser };
 }
 
 export function logoutUser(): void {
@@ -176,7 +269,7 @@ export function logoutUser(): void {
 }
 
 // ==========================================
-// Games & Store Offers Queries (RF01-RF04)
+// Games & Store Offers Queries
 // ==========================================
 export function getAllGames(): Game[] {
   return readTable<Game[]>(STORAGE_KEYS.GAMES, SEED_GAMES);
@@ -196,7 +289,6 @@ export function getStoreOffersForGame(gameId: string): StoreOffer[] {
 export function queryGames(filters: CatalogFilters): Game[] {
   let results = getAllGames();
 
-  // RF01: Keyword search (title, developer, genre, synopsis)
   if (filters.search.trim().length > 0) {
     const q = normalizeText(filters.search);
     results = results.filter((g) => {
@@ -207,14 +299,12 @@ export function queryGames(filters: CatalogFilters): Game[] {
     });
   }
 
-  // RF02 & RF03: Platform multi-filter
   if (filters.platforms.length > 0) {
     results = results.filter((g) =>
       filters.platforms.some((p) => g.platforms.includes(p))
     );
   }
 
-  // RF02: Genre multi-filter
   if (filters.genres.length > 0) {
     results = results.filter(
       (g) =>
@@ -223,19 +313,16 @@ export function queryGames(filters: CatalogFilters): Game[] {
     );
   }
 
-  // RF02: Offer type multi-filter
   if (filters.offerTypes.length > 0) {
     results = results.filter((g) => filters.offerTypes.includes(g.offerType));
   }
 
-  // RF02: Free-to-Play or Price range COP
   if (filters.freeOnly) {
     results = results.filter((g) => g.finalPriceCop === 0);
   } else if (filters.maxPriceCop < 300000) {
     results = results.filter((g) => g.finalPriceCop <= filters.maxPriceCop);
   }
 
-  // Sorting
   results = [...results].sort((a, b) => {
     if (filters.sortBy === 'price_asc') {
       return a.finalPriceCop - b.finalPriceCop || b.discountPercent - a.discountPercent;
@@ -250,7 +337,71 @@ export function queryGames(filters: CatalogFilters): Game[] {
 }
 
 // ==========================================
-// Favorites & Price Alerts (RF05, RF06, RNF07)
+// Community Reviews (Per-Game)
+// ==========================================
+export function getReviewsForGame(gameId: string): Review[] {
+  const all = readTable<Review[]>(STORAGE_KEYS.REVIEWS, SEED_REVIEWS);
+  return all
+    .filter((r) => r.gameId === gameId)
+    .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+}
+
+export async function addGameReviewAsync(
+  gameId: string,
+  userId: string,
+  rating: number,
+  comment: string
+): Promise<{ ok: true; reviews: Review[] } | { ok: false; error: string }> {
+  try {
+    const res = await fetch('/api/reviews', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ gameId, userId, rating, comment }),
+    });
+    const data = (await res.json()) as {
+      ok: boolean;
+      reviews?: Review[];
+      updatedGame?: Game;
+      error?: string;
+    };
+    if (!res.ok || !data.ok || !data.reviews) {
+      return { ok: false, error: data.error || 'No se pudo guardar la reseña.' };
+    }
+    writeTable(STORAGE_KEYS.REVIEWS, data.reviews);
+    if (data.updatedGame) {
+      const games = getAllGames().map((g) =>
+        g.id === data.updatedGame!.id ? data.updatedGame! : g
+      );
+      writeTable(STORAGE_KEYS.GAMES, games);
+    }
+    return { ok: true, reviews: data.reviews };
+  } catch {
+    return { ok: false, error: 'Error de conexión al guardar la reseña.' };
+  }
+}
+
+export async function deleteGameReviewAsync(
+  reviewId: string,
+  userId: string
+): Promise<{ ok: boolean; error?: string }> {
+  try {
+    const res = await fetch(`/api/reviews/${encodeURIComponent(reviewId)}`, {
+      method: 'DELETE',
+      headers: { 'x-user-id': userId },
+    });
+    const data = (await res.json()) as { ok: boolean; reviews?: Review[]; error?: string };
+    if (!res.ok || !data.ok || !data.reviews) {
+      return { ok: false, error: data.error || 'No se pudo eliminar la reseña.' };
+    }
+    writeTable(STORAGE_KEYS.REVIEWS, data.reviews);
+    return { ok: true };
+  } catch {
+    return { ok: false, error: 'Error de conexión al eliminar reseña.' };
+  }
+}
+
+// ==========================================
+// Favorites & Price Alerts
 // ==========================================
 export function getUserFavorites(userId: string | null): Favorite[] {
   if (!userId) return [];
@@ -319,10 +470,6 @@ export function markAllAlertsAsRead(userId: string): PriceAlert[] {
   return getUserAlerts(userId);
 }
 
-/**
- * RF06: Simulates a live price drop on one of the authenticated user's paid favorite games,
- * updates both the games and store_offers tables, and dispatches a real PriceAlert.
- */
 export function simulatePriceDropForUser(
   userId: string | null
 ):
@@ -352,10 +499,8 @@ export function simulatePriceDropForUser(
     };
   }
 
-  // Pick a random or top paid favorite game
   const target = paidFavGames[Math.floor(Math.random() * paidFavGames.length)];
   const oldPriceCop = target.finalPriceCop;
-  // Drop by 20% from current price (rounded cleanly to hundreds)
   const rawNewPrice = Math.max(9900, Math.round((oldPriceCop * 0.8) / 100) * 100);
   const baseOriginal = target.originalPriceCop > rawNewPrice ? target.originalPriceCop : oldPriceCop;
   const newDiscount = calculateDiscountPercent(baseOriginal, rawNewPrice);
@@ -371,7 +516,6 @@ export function simulatePriceDropForUser(
   const nextGames = games.map((g) => (g.id === updatedGame.id ? updatedGame : g));
   writeTable(STORAGE_KEYS.GAMES, nextGames);
 
-  // Sync best store offer
   const offers = readTable<StoreOffer[]>(STORAGE_KEYS.OFFERS, SEED_STORE_OFFERS);
   let syncedFirst = false;
   const nextOffers = offers.map((offer) => {
@@ -409,7 +553,7 @@ export function simulatePriceDropForUser(
 }
 
 // ==========================================
-// News Feed (RF07 Personalized by Favorites)
+// News Feed
 // ==========================================
 export function queryNews(
   category: 'Todas' | NewsCategory,

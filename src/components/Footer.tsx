@@ -16,52 +16,51 @@ export const Footer: React.FC<FooterProps> = ({
   onToggleChatbotFailure,
 }) => {
   return (
-    <footer className="mt-16 border-t border-[#1E293B] bg-[#080B13]">
+    <footer className="mt-16 border-t border-[#33251D] bg-[#0D0907]">
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
-          {/* Brand & Info */}
           <div className="lg:col-span-5 space-y-3">
             <div className="flex items-center gap-2.5">
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-[#2563EB] to-[#00E5FF] text-[#0B0F19]">
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-[#EA580C] to-[#F59E0B] text-[#120D0A]">
                 <Flame className="h-4 w-4 fill-current" aria-hidden="true" />
               </span>
               <span className="font-display text-base font-bold text-white">Global Flame</span>
             </div>
-            <p className="max-w-md text-sm leading-relaxed text-slate-400">
-              Comparador centralizado de ofertas digitales de videojuegos para Colombia. Todos los
-              precios se calculan y presentan en pesos colombianos (COP) comparando tiendas oficiales.
+            <p className="max-w-md text-sm leading-relaxed text-[#A89789]">
+              Comparador centralizado de ofertas digitales de videojuegos para Colombia integrado con
+              CheapShark API. Precios en pesos colombianos (COP) y reseñas de la comunidad.
             </p>
-            <div className="flex flex-wrap items-center gap-4 pt-1 text-xs font-medium text-slate-300">
-              <button type="button" onClick={() => onNavigate('home')} className="hover:text-[#00E5FF]">
+            <div className="flex flex-wrap items-center gap-4 pt-1 text-xs font-medium text-[#D6C7BA]">
+              <button type="button" onClick={() => onNavigate('home')} className="hover:text-[#F59E0B]">
                 Inicio
               </button>
-              <button type="button" onClick={() => onNavigate('catalog')} className="hover:text-[#00E5FF]">
+              <button type="button" onClick={() => onNavigate('catalog')} className="hover:text-[#F59E0B]">
                 Ofertas y Catálogo
               </button>
-              <button type="button" onClick={() => onNavigate('news')} className="hover:text-[#00E5FF]">
+              <button type="button" onClick={() => onNavigate('news')} className="hover:text-[#F59E0B]">
                 Novedades
               </button>
-              <button type="button" onClick={() => onNavigate('profile')} className="hover:text-[#00E5FF]">
-                Favoritos y Alertas
+              <button type="button" onClick={() => onNavigate('profile')} className="hover:text-[#F59E0B]">
+                Perfil y Administración
               </button>
             </div>
           </div>
 
-          {/* RNF08: Discreet Academic QA / Fault Tolerance Simulator */}
+          {/* RNF08: Academic QA Simulator */}
           <div className="lg:col-span-7">
-            <div className="rounded-xl border border-[#1E293B] bg-[#131B2E]/60 p-4 sm:p-5">
-              <div className="flex items-center gap-2 text-xs font-semibold text-slate-200">
-                <Cpu className="h-4 w-4 text-[#00E5FF]" aria-hidden="true" />
+            <div className="rounded-xl border border-[#33251D] bg-[#1D1511]/70 p-4 sm:p-5">
+              <div className="flex items-center gap-2 text-xs font-semibold text-[#FAF5F0]">
+                <Cpu className="h-4 w-4 text-[#F59E0B]" aria-hidden="true" />
                 <span>Simulador de Estado del Sistema / QA (RNF08)</span>
               </div>
-              <p className="mt-1 text-xs text-slate-400">
+              <p className="mt-1 text-xs text-[#A89789]">
                 Controles de tolerancia a fallos para pruebas de fiabilidad sin interrumpir la
                 navegación principal.
               </p>
 
               <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
-                <label className="flex items-center justify-between gap-3 rounded-lg border border-[#1E293B] bg-[#0B0F19]/80 px-3.5 py-2.5 cursor-pointer hover:border-[#2563EB]/60 transition-colors">
-                  <span className="text-xs font-medium text-slate-200">
+                <label className="flex items-center justify-between gap-3 rounded-lg border border-[#33251D] bg-[#150F0B] px-3.5 py-2.5 cursor-pointer hover:border-[#EA580C]/60 transition-colors">
+                  <span className="text-xs font-medium text-[#D6C7BA]">
                     Simular fallo de API externa
                   </span>
                   <button
@@ -70,7 +69,7 @@ export const Footer: React.FC<FooterProps> = ({
                     aria-checked={qaState.simulateApiFailure}
                     onClick={onToggleApiFailure}
                     className={`relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors ${
-                      qaState.simulateApiFailure ? 'bg-amber-500' : 'bg-slate-700'
+                      qaState.simulateApiFailure ? 'bg-amber-500' : 'bg-[#33251D]'
                     }`}
                   >
                     <span
@@ -81,8 +80,8 @@ export const Footer: React.FC<FooterProps> = ({
                   </button>
                 </label>
 
-                <label className="flex items-center justify-between gap-3 rounded-lg border border-[#1E293B] bg-[#0B0F19]/80 px-3.5 py-2.5 cursor-pointer hover:border-[#2563EB]/60 transition-colors">
-                  <span className="text-xs font-medium text-slate-200">
+                <label className="flex items-center justify-between gap-3 rounded-lg border border-[#33251D] bg-[#150F0B] px-3.5 py-2.5 cursor-pointer hover:border-[#EA580C]/60 transition-colors">
+                  <span className="text-xs font-medium text-[#D6C7BA]">
                     Simular fallo del Chatbot IA
                   </span>
                   <button
@@ -91,7 +90,7 @@ export const Footer: React.FC<FooterProps> = ({
                     aria-checked={qaState.simulateChatbotFailure}
                     onClick={onToggleChatbotFailure}
                     className={`relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors ${
-                      qaState.simulateChatbotFailure ? 'bg-rose-500' : 'bg-slate-700'
+                      qaState.simulateChatbotFailure ? 'bg-red-600' : 'bg-[#33251D]'
                     }`}
                   >
                     <span
@@ -116,9 +115,9 @@ export const Footer: React.FC<FooterProps> = ({
           </div>
         </div>
 
-        <div className="mt-8 flex flex-col items-start justify-between gap-2 border-t border-[#1E293B] pt-6 text-xs text-slate-500 sm:flex-row sm:items-center">
-          <p>© 2026 Global Flame Colombia. Prototipo funcional de comparación de ofertas en COP.</p>
-          <p>Arquitectura local estructurada · Estándar ISO/IEC 25010</p>
+        <div className="mt-8 flex flex-col items-start justify-between gap-2 border-t border-[#33251D] pt-6 text-xs text-[#8C7A6B] sm:flex-row sm:items-center">
+          <p>© 2026 Global Flame Colombia. Comparador de ofertas en COP integrado con CheapShark.</p>
+          <p>Arquitectura multi-HTML · Base de datos local y Excel AppSheet</p>
         </div>
       </div>
     </footer>

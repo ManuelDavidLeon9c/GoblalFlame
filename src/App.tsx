@@ -11,23 +11,28 @@ import { NewsView } from './components/NewsView';
 import { ProfileView } from './components/ProfileView';
 import { ToastContainer } from './components/ToastContainer';
 import {
+  addGameReviewAsync,
+  deleteGameReviewAsync,
   getAllGames,
   getCurrentUser,
   getGameById,
   getQAState,
+  getReviewsForGame,
   getStoreOffersForGame,
   getUserAlerts,
   getUserFavorites,
   initializeDatabase,
-  loginUser,
+  loginUserAsync,
   logoutUser,
   markAllAlertsAsRead,
   markAlertAsRead,
   queryGames,
   queryNews,
-  registerUser,
+  registerUserAsync,
   simulatePriceDropForUser,
+  syncWithServerDatabase,
   toggleUserFavorite,
+  triggerCheapSharkLiveSync,
   updateQAState,
 } from './services/databaseService';
 import {
@@ -38,6 +43,7 @@ import {
   QAState,
   ToastMessage,
   User,
+  UserRole,
   ViewRoute,
 } from './types';
 import { formatCOP } from './utils/formatters';
@@ -52,11 +58,35 @@ const DEFAULT_FILTERS: CatalogFilters = {
   sortBy: 'popular',
 };
 
-export default function App() {
+const VIEW_TO_HTML: Record<ViewRoute, string> = {
+  home: '/index.html',
+  catalog: '/ofertas.html',
+  news: '/novedades.html',
+  profile: '/perfil.html',
+  detail: '/detalle.html',
+};
+
+interface AppProps {
+  initialView?: ViewRoute;
+}
+
+export default function App({ initialView = 'home' }: AppProps) {
   const [initialized, setInitialized] = useState(false);
-  const [currentView, setCurrentView] = useState<ViewRoute>('home');
-  const [selectedGameId, setSelectedGameId] = useState<string | null>(null);
-  const [filters, setFilters] = useState<CatalogFilters>(DEFAULT_FILTERS);
+  const [currentView, setCurrentView] = useState<ViewRoute>(initialView);
+  const [selectedGameId, setSelectedGameId] = useState<string | null>(() => {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('id');
+  });
+  const [filters, setFilters] = useState<CatalogFilters>(() => {
+    const params = new URLSearchParams(window.location.search);
+    const q = params.get('q') ?? '';
+    const plat = params.get('platform') as Platform | null;
+    return {
+      ...DEFAULT_FILTERS,
+      search: q,
+      platforms: plat ? [plat] : [],
+    };
+  });
   const [newsCategory, setNewsCategory] = useState<'Todas' | NewsCategory>('Todas');
   const [newsForYouOnly, setNewsForYouOnly] = useState(false);
 
@@ -68,6 +98,8 @@ export default function App() {
     simulateChatbotFailure: false,
   });
   const [catalogVersion, setCatalogVersion] = useState(0);
+  const [lastCheapSharkSync, setLastCheapSharkSync] = useState<string | null>(null);
+  const [isSyncingCheapShark, setIsSyncingCheapShark] = useState(false);
 
   const [authModalOpen, setAuthModalOpen] = useState(false);
   const [authReason, setAuthReason] = useState<string | undefined>(undefined);
@@ -77,7 +109,11 @@ export default function App() {
   const [toasts, setToasts] = useState<ToastMessage[]>([]);
 
   const pushToast = useCallback(
-    (title: string, description?: string, type: ToastMessage['type'] = 'info') => {
+    (
+      title: string,
+      description?: string,
+      type: ToastMessage['type'] = 'info'
+    ) => {
       const id = `toast-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`;
       setToasts((prev) => [...prev.slice(-3), { id, title, description, type }]);
       setTimeout(() => {
@@ -102,6 +138,12 @@ export default function App() {
     setAlerts(getUserAlerts(activeUser.id));
   }, []);
 
+  const refreshFromServer = useCallback(async () => {
+    const data = await syncWithServerDatabase();
+    setLastCheapSharkSync(data.lastCheapSharkSync);
+    setCatalogVersion((v) => v + 1);
+  }, []);
+
   useEffect(() => {
     initializeDatabase();
     const activeUser = getCurrentUser();
@@ -109,14 +151,21 @@ export default function App() {
     syncUserSessionData(activeUser);
     setQaState(getQAState());
     setInitialized(true);
-  }, [syncUserSessionData]);
+
+    refreshFromServer();
+  }, [syncUserSessionData, refreshFromServer]);
 
   const navigateTo = useCallback(
     (view: ViewRoute) => {
       if (view === 'profile' && !user) {
         setPendingViewAfterAuth('profile');
-        setAuthReason('Inicia sesión para acceder a tu perfil privado, favoritos y alertas.');
+        setAuthReason('Inicia sesión como Usuario o Administrador para acceder a tu perfil.');
         setAuthModalOpen(true);
+        return;
+      }
+      const targetHtml = VIEW_TO_HTML[view];
+      if (window.location.pathname !== targetHtml) {
+        window.location.href = targetHtml;
         return;
       }
       setCurrentView(view);
@@ -126,21 +175,20 @@ export default function App() {
   );
 
   const handleSelectGame = useCallback((gameId: string) => {
-    setSelectedGameId(gameId);
-    setCurrentView('detail');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.location.href = `/detalle.html?id=${encodeURIComponent(gameId)}`;
   }, []);
 
   const handleSearchSubmit = useCallback((query: string) => {
+    if (window.location.pathname !== '/ofertas.html') {
+      window.location.href = `/ofertas.html?q=${encodeURIComponent(query)}`;
+      return;
+    }
     setFilters((prev) => ({ ...prev, search: query }));
     setCurrentView('catalog');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
   const handleNavigateCatalogWithPlatform = useCallback((platform: Platform) => {
-    setFilters({ ...DEFAULT_FILTERS, platforms: [platform] });
-    setCurrentView('catalog');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.location.href = `/ofertas.html?platform=${encodeURIComponent(platform)}`;
   }, []);
 
   const handleUpdateFilters = useCallback((partial: Partial<CatalogFilters>) => {
@@ -151,11 +199,30 @@ export default function App() {
     setFilters(DEFAULT_FILTERS);
   }, []);
 
+  const handleSyncCheapShark = useCallback(async () => {
+    setIsSyncingCheapShark(true);
+    try {
+      const res = await triggerCheapSharkLiveSync();
+      if (!res.ok) {
+        pushToast('No se pudo sincronizar CheapShark', res.error, 'warning');
+        return;
+      }
+      setCatalogVersion((v) => v + 1);
+      pushToast(
+        'CheapShark API sincronizada',
+        `${res.added ?? 0} ofertas nuevas y ${res.updated ?? 0} actualizadas en COP.`,
+        'success'
+      );
+    } finally {
+      setIsSyncingCheapShark(false);
+    }
+  }, [pushToast]);
+
   const handleToggleFavorite = useCallback(
     (gameId: string) => {
       if (!user) {
         setPendingFavGameId(gameId);
-        setAuthReason('Inicia sesión para guardar videojuegos en tu lista personal de favoritos.');
+        setAuthReason('Inicia sesión como Usuario para guardar videojuegos en tu lista de favoritos.');
         setAuthModalOpen(true);
         return;
       }
@@ -183,8 +250,8 @@ export default function App() {
   );
 
   const handleLogin = useCallback(
-    (email: string, password: string) => {
-      const res = loginUser(email, password);
+    async (email: string, password: string, expectedRole: UserRole) => {
+      const res = await loginUserAsync(email, password, expectedRole);
       if (!res.ok) {
         return { ok: false, error: res.error };
       }
@@ -192,23 +259,25 @@ export default function App() {
       syncUserSessionData(res.user);
       setAuthModalOpen(false);
       setAuthReason(undefined);
-      pushToast(`Bienvenido, ${res.user.name.split(' ')[0]}`, 'Sesión iniciada correctamente.', 'success');
+      pushToast(
+        `Bienvenido, ${res.user.name.split(' ')[0]}`,
+        res.user.role === 'administrador'
+          ? 'Sesión de Administrador activa.'
+          : 'Sesión de Usuario activa.',
+        'success'
+      );
 
       if (pendingFavGameId) {
         const favRes = toggleUserFavorite(res.user.id, pendingFavGameId);
         if (favRes.ok) {
           setFavoriteIds(favRes.favorites.map((f) => f.gameId));
-          const game = getGameById(pendingFavGameId);
-          if (favRes.added && game) {
-            pushToast('Agregado a tus favoritos', `${game.title} guardado en tu cuenta.`, 'success');
-          }
         }
         setPendingFavGameId(null);
       }
 
-      if (pendingViewAfterAuth) {
-        setCurrentView(pendingViewAfterAuth);
+      if (pendingViewAfterAuth === 'profile') {
         setPendingViewAfterAuth(null);
+        window.location.href = '/perfil.html';
       }
 
       return { ok: true };
@@ -217,8 +286,14 @@ export default function App() {
   );
 
   const handleRegister = useCallback(
-    (name: string, email: string, password: string, platforms: Platform[]) => {
-      const res = registerUser(name, email, password, platforms);
+    async (
+      name: string,
+      email: string,
+      password: string,
+      role: UserRole,
+      platforms: Platform[]
+    ) => {
+      const res = await registerUserAsync(name, email, password, role, platforms);
       if (!res.ok) {
         return { ok: false, error: res.error };
       }
@@ -226,7 +301,7 @@ export default function App() {
       syncUserSessionData(res.user);
       setAuthModalOpen(false);
       setAuthReason(undefined);
-      pushToast('Cuenta creada con éxito', `Bienvenido a Global Flame, ${res.user.name}.`, 'success');
+      pushToast('Cuenta creada y guardada en Excel DB', `Bienvenido, ${res.user.name}.`, 'success');
 
       if (pendingFavGameId) {
         const favRes = toggleUserFavorite(res.user.id, pendingFavGameId);
@@ -236,9 +311,9 @@ export default function App() {
         setPendingFavGameId(null);
       }
 
-      if (pendingViewAfterAuth) {
-        setCurrentView(pendingViewAfterAuth);
+      if (pendingViewAfterAuth === 'profile') {
         setPendingViewAfterAuth(null);
+        window.location.href = '/perfil.html';
       }
 
       return { ok: true };
@@ -252,11 +327,40 @@ export default function App() {
     setFavoriteIds([]);
     setAlerts([]);
     setNewsForYouOnly(false);
-    if (currentView === 'profile') {
-      setCurrentView('home');
+    pushToast('Sesión cerrada', 'Tus datos permanecen protegidos.', 'info');
+    if (window.location.pathname === '/perfil.html') {
+      window.location.href = '/index.html';
     }
-    pushToast('Sesión cerrada', 'Tus favoritos y alertas permanecen protegidos.', 'info');
-  }, [currentView, pushToast]);
+  }, [pushToast]);
+
+  const handleSubmitReview = useCallback(
+    async (gameId: string, rating: number, comment: string) => {
+      if (!user) return false;
+      const res = await addGameReviewAsync(gameId, user.id, rating, comment);
+      if (!res.ok) {
+        pushToast('Error en reseña', res.error, 'error');
+        return false;
+      }
+      setCatalogVersion((v) => v + 1);
+      pushToast('Reseña publicada', 'Tu calificación se guardó en la base de datos.', 'success');
+      return true;
+    },
+    [user, pushToast]
+  );
+
+  const handleDeleteReview = useCallback(
+    async (reviewId: string) => {
+      if (!user) return;
+      const res = await deleteGameReviewAsync(reviewId, user.id);
+      if (!res.ok) {
+        pushToast('No se pudo eliminar', res.error, 'error');
+        return;
+      }
+      setCatalogVersion((v) => v + 1);
+      pushToast('Reseña eliminada', undefined, 'info');
+    },
+    [user, pushToast]
+  );
 
   const handleSimulatePriceDrop = useCallback(() => {
     if (!user) {
@@ -340,23 +444,36 @@ export default function App() {
 
   const selectedGame = useMemo(() => {
     void catalogVersion;
-    return selectedGameId ? getGameById(selectedGameId) : undefined;
-  }, [selectedGameId, catalogVersion]);
+    if (selectedGameId) {
+      return getGameById(selectedGameId) ?? allGames[0];
+    }
+    return allGames[0];
+  }, [selectedGameId, catalogVersion, allGames]);
 
   const selectedGameOffers = useMemo(() => {
     void catalogVersion;
     return selectedGame ? getStoreOffersForGame(selectedGame.id) : [];
   }, [selectedGame, catalogVersion]);
 
-  const filteredNews = useMemo(
-    () => queryNews(newsCategory, newsForYouOnly, user?.id ?? null),
-    [newsCategory, newsForYouOnly, user, favoriteIds]
-  );
+  const selectedGameReviews = useMemo(() => {
+    void catalogVersion;
+    return selectedGame ? getReviewsForGame(selectedGame.id) : [];
+  }, [selectedGame, catalogVersion]);
+
+  const allNews = useMemo(() => {
+    void catalogVersion;
+    return queryNews('Todas', false, null);
+  }, [catalogVersion]);
+
+  const filteredNews = useMemo(() => {
+    void catalogVersion;
+    return queryNews(newsCategory, newsForYouOnly, user?.id ?? null);
+  }, [newsCategory, newsForYouOnly, user, favoriteIds, catalogVersion]);
 
   if (!initialized) return null;
 
   return (
-    <div className="flex min-h-screen flex-col bg-[#0B0F19] text-[#F8FAFC]">
+    <div className="flex min-h-screen flex-col bg-[#120D0A] text-[#FAF5F0]">
       <Navbar
         currentView={currentView}
         onNavigate={navigateTo}
@@ -373,15 +490,14 @@ export default function App() {
         onSelectGame={handleSelectGame}
       />
 
-      {/* RNF08: Subtle Cache Mode Banner when External API Failure is simulated */}
       {qaState.simulateApiFailure && (
         <div
           role="status"
-          className="border-b border-amber-500/30 bg-amber-500/10 px-4 py-2 text-center text-xs font-medium text-amber-200"
+          className="border-b border-amber-500/35 bg-amber-500/10 px-4 py-2 text-center text-xs font-medium text-amber-200"
         >
           <span className="inline-flex items-center gap-2">
             <WifiOff className="h-3.5 w-3.5 shrink-0 text-amber-400" />
-            Mostrando últimos precios válidos en caché — La API externa de tiendas está en modo
+            Mostrando últimos precios válidos en caché — La API externa de CheapShark está en modo
             de fallo simulado sin interrumpir tu navegación.
           </span>
         </div>
@@ -393,11 +509,13 @@ export default function App() {
             featuredGames={featuredGames}
             totalCatalogCount={allGames.length}
             favoriteGameIds={favoriteIdSet}
+            lastCheapSharkSync={lastCheapSharkSync}
+            isSyncingCheapShark={isSyncingCheapShark}
+            onSyncCheapShark={handleSyncCheapShark}
             onSelectGame={handleSelectGame}
             onToggleFavorite={handleToggleFavorite}
             onSearchSubmit={handleSearchSubmit}
             onNavigateCatalogWithPlatform={handleNavigateCatalogWithPlatform}
-            onNavigate={navigateTo}
           />
         )}
 
@@ -406,6 +524,9 @@ export default function App() {
             games={filteredGames}
             filters={filters}
             favoriteGameIds={favoriteIdSet}
+            user={user}
+            isSyncingCheapShark={isSyncingCheapShark}
+            onSyncCheapShark={handleSyncCheapShark}
             onUpdateFilters={handleUpdateFilters}
             onResetFilters={handleResetFilters}
             onSelectGame={handleSelectGame}
@@ -417,6 +538,8 @@ export default function App() {
           <GameDetailView
             game={selectedGame}
             storeOffers={selectedGameOffers}
+            reviews={selectedGameReviews}
+            user={user}
             isFavorite={favoriteIdSet.has(selectedGame.id)}
             onBack={() => navigateTo('catalog')}
             onToggleFavorite={handleToggleFavorite}
@@ -427,6 +550,12 @@ export default function App() {
                 'success'
               )
             }
+            onSubmitReview={handleSubmitReview}
+            onDeleteReview={handleDeleteReview}
+            onOpenAuthForReview={() => {
+              setAuthReason('Inicia sesión como Usuario para calificar este título y publicar tu reseña.');
+              setAuthModalOpen(true);
+            }}
           />
         )}
 
@@ -447,19 +576,43 @@ export default function App() {
           />
         )}
 
-        {currentView === 'profile' && user && (
-          <ProfileView
-            user={user}
-            favoriteGames={favoriteGames}
-            alerts={alerts}
-            onSelectGame={handleSelectGame}
-            onToggleFavorite={handleToggleFavorite}
-            onSimulatePriceDrop={handleSimulatePriceDrop}
-            onMarkAlertRead={handleMarkAlertRead}
-            onMarkAllAlertsRead={handleMarkAllAlertsRead}
-            onLogout={handleLogout}
-            onNavigate={navigateTo}
-          />
+        {currentView === 'profile' && (
+          user ? (
+            <ProfileView
+              user={user}
+              allGames={allGames}
+              allNews={allNews}
+              favoriteGames={favoriteGames}
+              alerts={alerts}
+              onSelectGame={handleSelectGame}
+              onToggleFavorite={handleToggleFavorite}
+              onSimulatePriceDrop={handleSimulatePriceDrop}
+              onMarkAlertRead={handleMarkAlertRead}
+              onMarkAllAlertsRead={handleMarkAllAlertsRead}
+              onLogout={handleLogout}
+              onNavigate={navigateTo}
+              onRefreshBootstrap={refreshFromServer}
+              onSyncCheapShark={handleSyncCheapShark}
+              onNotify={pushToast}
+            />
+          ) : (
+            <div className="rounded-2xl border border-[#33251D] bg-[#1D1511] p-10 text-center space-y-4">
+              <h1 className="font-display text-2xl font-bold text-white">
+                Inicia sesión para acceder a tu perfil o panel administrador
+              </h1>
+              <p className="mx-auto max-w-md text-sm text-[#A89789]">
+                Elige ingresar como Usuario (para guardar favoritos y calificar juegos) o como
+                Administrador (para editar ofertas, novedades y cuentas en Excel).
+              </p>
+              <button
+                type="button"
+                onClick={() => setAuthModalOpen(true)}
+                className="rounded-xl bg-[#EA580C] px-6 py-2.5 text-sm font-semibold text-white hover:bg-[#C2410C]"
+              >
+                Abrir inicio de sesión
+              </button>
+            </div>
+          )
         )}
       </main>
 
