@@ -1,262 +1,496 @@
-import React, { useState } from 'react';
-import { ArrowRight, Heart, Newspaper, ShieldCheck, Sparkles, X } from 'lucide-react';
-import { NewsCategory, NewsItem, User } from '../types';
-import { formatDateCO } from '../utils/formatters';
-import { GameArtwork } from './GameArtwork';
+import React, { useCallback, useEffect, useState } from 'react';
+import {
+  AlertTriangle,
+  Calendar,
+  ExternalLink,
+  Flame,
+  Newspaper,
+  RefreshCw,
+  Rocket,
+  Star,
+  Trophy,
+  X,
+} from 'lucide-react';
 
-interface NewsViewProps {
-  news: NewsItem[];
-  category: 'Todas' | NewsCategory;
-  forYouOnly: boolean;
-  user: User | null;
-  favoritesCount: number;
-  onChangeCategory: (cat: 'Todas' | NewsCategory) => void;
-  onToggleForYou: () => void;
-  onOpenAuth: () => void;
-  onSelectGame: (gameId: string) => void;
+type NewsTab = 'populares' | 'lanzamientos' | 'noticias' | 'eventos';
+
+interface RawgGame {
+  id: number;
+  slug: string;
+  name: string;
+  released: string | null;
+  background_image: string | null;
+  rating: number;
+  ratings_count: number;
+  genres?: Array<{ id: number; name: string }>;
 }
 
-const CATEGORIES: Array<'Todas' | NewsCategory> = ['Todas', 'Noticias', 'Lanzamientos', 'Eventos'];
+interface LiveNewsItem {
+  id: string;
+  appid: number;
+  gameTitle: string;
+  title: string;
+  summary: string;
+  url: string;
+  author: string;
+  source: string;
+  publishedAt: string;
+  image: string;
+}
 
-export const NewsView: React.FC<NewsViewProps> = ({
-  news,
-  category,
-  forYouOnly,
-  user,
-  favoritesCount,
-  onChangeCategory,
-  onToggleForYou,
-  onOpenAuth,
-  onSelectGame,
-}) => {
-  const [activeArticle, setActiveArticle] = useState<NewsItem | null>(null);
+interface EventCard {
+  id: string;
+  title: string;
+  date: string;
+  location: string;
+  category: string;
+  description: string;
+  highlight: string;
+}
+
+const RAWG_API_KEY = '062c02ee49ef4184abbc0e744729f9db';
+
+function getDateRanges() {
+  const now = new Date();
+  const year = now.getFullYear();
+  const toIso = (d: Date) => d.toISOString().slice(0, 10);
+
+  const todayIso = toIso(now);
+  const yearStartIso = `${year}-01-01`;
+
+  const recentStart = new Date(now.getTime() - 50 * 24 * 60 * 60 * 1000);
+  const recentStartIso = toIso(recentStart) < yearStartIso ? yearStartIso : toIso(recentStart);
+
+  return { year, todayIso, yearStartIso, recentStartIso };
+}
+
+const SIMULATED_EVENTS: EventCard[] = [
+  {
+    id: 'evt-tga-2026',
+    title: 'The Game Awards 2026',
+    date: '10 de Diciembre 2026 · 19:30 COT',
+    location: 'Peacock Theater, Los Ángeles / Streaming Global',
+    category: 'Premiación y Estrenos',
+    description:
+      'Ceremonia oficial al Juego del Año 2026 con estrenos mundiales, tráilers inéditos para 2027 y ofertas relámpago en tiendas digitales.',
+    highlight: 'Nominados GOTY 2026 y descuentos en vivo',
+  },
+  {
+    id: 'evt-pcgs-2026',
+    title: 'PC Gaming Show: Most Wanted',
+    date: 'Diciembre 2026 · 15:00 COT',
+    location: 'Transmisión Global Digital',
+    category: 'Showcase PC y Steam',
+    description:
+      'Conteo regresivo con los 25 lanzamientos de PC más esperados, entrevistas exclusivas con desarrolladores y demos jugables.',
+    highlight: 'Demos gratuitas por tiempo limitado',
+  },
+  {
+    id: 'evt-sgf-2027',
+    title: 'Summer Game Fest Showcase',
+    date: 'Junio 2027 · 16:00 COT',
+    location: 'YouTube Theater / Transmisión Global',
+    category: 'Conferencia Principal',
+    description:
+      'El gran evento de mitad de año con anuncios multiplataforma para PC, PlayStation, Xbox y Nintendo Switch 2.',
+    highlight: 'Más de 40 estudios internacionales confirmados',
+  },
+];
+
+function formatDateEs(iso: string | null): string {
+  if (!iso) return 'Fecha por confirmar';
+  try {
+    return new Intl.DateTimeFormat('es-CO', {
+      day: '2-digit',
+      month: 'short',
+      year: 'numeric',
+    }).format(new Date(iso));
+  } catch {
+    return iso;
+  }
+}
+
+export const NewsView: React.FC = () => {
+  const [activeTab, setActiveTab] = useState<NewsTab>('populares');
+  const [games, setGames] = useState<RawgGame[]>([]);
+  const [newsItems, setNewsItems] = useState<LiveNewsItem[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [brokenImages, setBrokenImages] = useState<Record<string, boolean>>({});
+  const [selectedNews, setSelectedNews] = useState<LiveNewsItem | null>(null);
+
+  const { year: currentYear } = getDateRanges();
+
+  const loadTabContent = useCallback(async (tab: NewsTab) => {
+    if (tab === 'eventos') {
+      setError(null);
+      setLoading(false);
+      return;
+    }
+
+    setLoading(true);
+    setError(null);
+
+    try {
+      const { todayIso, yearStartIso, recentStartIso } = getDateRanges();
+
+      if (tab === 'noticias') {
+        const response = await fetch('/api/news/2026');
+        if (!response.ok) {
+          throw new Error(`El servidor de noticias respondió con estado HTTP ${response.status}`);
+        }
+        const data = (await response.json()) as {
+          ok: boolean;
+          items?: LiveNewsItem[];
+          error?: string;
+        };
+        if (!data.ok || !Array.isArray(data.items)) {
+          throw new Error(data.error || 'No se pudieron obtener noticias recientes.');
+        }
+        setNewsItems(data.items);
+      } else {
+        const endpoint =
+          tab === 'populares'
+            ? `https://api.rawg.io/api/games?key=${RAWG_API_KEY}&dates=${yearStartIso},${todayIso}&ordering=-added&page_size=8`
+            : `https://api.rawg.io/api/games?key=${RAWG_API_KEY}&dates=${recentStartIso},${todayIso}&ordering=-added&page_size=8`;
+
+        const response = await fetch(endpoint);
+        if (!response.ok) {
+          throw new Error(`RAWG API respondió con estado HTTP ${response.status}`);
+        }
+        const data = (await response.json()) as { results?: RawgGame[] };
+        setGames(Array.isArray(data.results) ? data.results : []);
+      }
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? `Error consultando la fuente en vivo: ${err.message}`
+          : 'Ocurrió un error inesperado al cargar los datos.'
+      );
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    loadTabContent(activeTab);
+  }, [activeTab, loadTabContent]);
+
+  const tabs: Array<{ id: NewsTab; label: string; icon: React.ReactNode }> = [
+    { id: 'populares', label: `Populares ${currentYear}`, icon: <Flame className="h-4 w-4" /> },
+    { id: 'lanzamientos', label: 'Lanzamientos', icon: <Rocket className="h-4 w-4" /> },
+    { id: 'noticias', label: `Noticias ${currentYear}`, icon: <Newspaper className="h-4 w-4" /> },
+    { id: 'eventos', label: 'Eventos', icon: <Trophy className="h-4 w-4" /> },
+  ];
 
   return (
-    <div className="space-y-8">
-      {/* Header */}
-      <div className="flex flex-col gap-4 border-b border-[#33251D] pb-6 md:flex-row md:items-end md:justify-between">
-        <div>
-          <h1 className="font-display text-2xl font-bold tracking-tight text-white sm:text-3xl">
-            Novedades y Lanzamientos
-          </h1>
-          <p className="mt-1 text-sm text-[#A89789]">
-            Actualizaciones de la industria gamer, rebajas de temporada en Colombia y noticias
-            personalizadas.
-          </p>
-        </div>
+    <section className="mx-auto flex w-full max-w-6xl flex-col items-center px-2 py-4 sm:px-6">
+      {/* Centered Warm Header */}
+      <header className="flex max-w-3xl flex-col items-center text-center">
+        <p className="text-xs font-semibold uppercase tracking-widest text-[#F59E0B]">
+          Global Flame · Actualidad Gamer {currentYear}
+        </p>
+        <h1 className="font-display mt-2 text-3xl font-extrabold tracking-tight text-white sm:text-4xl text-balance">
+          Novedades y Noticias Gamer
+        </h1>
+        <p className="mt-3 text-sm leading-relaxed text-[#D6C7BA] sm:text-base">
+          Explora los videojuegos más populares de {currentYear}, los lanzamientos más recientes de
+          esta temporada, noticias oficiales en vivo y los próximos eventos globales.
+        </p>
+      </header>
 
-        <div className="flex flex-wrap items-center gap-2.5 self-start md:self-auto">
-          {user?.role === 'administrador' && (
-            <a
-              href="/perfil.html"
-              className="inline-flex items-center gap-1.5 rounded-xl bg-[#EA580C] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#C2410C] whitespace-nowrap"
-            >
-              <ShieldCheck className="h-4 w-4" />
-              Agregar / editar novedades
-            </a>
-          )}
-
-          <button
-            type="button"
-            onClick={onToggleForYou}
-            aria-pressed={forYouOnly}
-            className={`inline-flex items-center gap-2 rounded-xl border px-4 py-2.5 text-sm font-semibold transition-colors whitespace-nowrap ${
-              forYouOnly
-                ? 'border-[#F59E0B] bg-[#EA580C] text-white shadow-lg shadow-[#EA580C]/25'
-                : 'border-[#33251D] bg-[#1D1511] text-[#FAF5F0] hover:border-[#F59E0B]/70'
-            }`}
-          >
-            <Sparkles className="h-4 w-4" />
-            Para ti (Basado en tus Favoritos)
-          </button>
-        </div>
-      </div>
-
-      {/* Category Filter Tabs */}
-      <div className="flex flex-wrap items-center gap-2">
-        {CATEGORIES.map((cat) => {
-          const active = category === cat;
+      {/* Centered Tabs Bar (Warm Palette) */}
+      <nav
+        aria-label="Categorías de novedades"
+        className="mt-8 flex w-full max-w-2xl flex-wrap items-center justify-center gap-2 rounded-2xl border border-[#33251D] bg-[#1D1511] p-2 shadow-lg shadow-black/40"
+      >
+        {tabs.map((tab) => {
+          const isActive = activeTab === tab.id;
           return (
             <button
-              key={cat}
+              key={tab.id}
               type="button"
-              onClick={() => onChangeCategory(cat)}
-              className={`rounded-lg border px-4 py-2 text-sm font-medium transition-colors ${
-                active
-                  ? 'border-[#F59E0B] bg-[#EA580C]/20 text-[#F59E0B]'
-                  : 'border-[#33251D] bg-[#1D1511] text-[#D6C7BA] hover:text-white'
+              onClick={() => setActiveTab(tab.id)}
+              aria-pressed={isActive}
+              className={`inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all whitespace-nowrap ${
+                isActive
+                  ? 'bg-[#EA580C] text-white shadow-md shadow-[#EA580C]/35 ring-1 ring-[#F59E0B]/50'
+                  : 'text-[#D6C7BA] hover:bg-[#150F0B] hover:text-[#F59E0B]'
               }`}
             >
-              {cat}
+              {tab.icon}
+              <span>{tab.label}</span>
             </button>
           );
         })}
-      </div>
+      </nav>
 
-      {forYouOnly && !user ? (
-        <div className="rounded-2xl border border-[#33251D] bg-[#1D1511] p-10 text-center">
-          <Heart className="mx-auto h-10 w-10 text-[#F59E0B]" />
-          <h2 className="font-display mt-3 text-xl font-bold text-white">
-            Inicia sesión para ver tu feed personalizado
-          </h2>
-          <p className="mx-auto mt-2 max-w-md text-sm text-[#A89789]">
-            El filtro &ldquo;Para ti&rdquo; muestra únicamente noticias vinculadas a los juegos y
-            géneros que tienes guardados en tu lista de favoritos.
-          </p>
-          <button
-            type="button"
-            onClick={onOpenAuth}
-            className="mt-5 rounded-xl bg-[#EA580C] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#C2410C]"
-          >
-            Iniciar sesión ahora
-          </button>
-        </div>
-      ) : forYouOnly && favoritesCount === 0 ? (
-        <div className="rounded-2xl border border-[#33251D] bg-[#1D1511] p-10 text-center">
-          <Newspaper className="mx-auto h-10 w-10 text-[#F59E0B]" />
-          <h2 className="font-display mt-3 text-xl font-bold text-white">
-            Aún no tienes videojuegos en favoritos
-          </h2>
-          <p className="mx-auto mt-2 max-w-md text-sm text-[#A89789]">
-            Marca al menos un juego con el ícono de corazón en el catálogo para personalizar tus
-            noticias según tus títulos y géneros preferidos.
-          </p>
-        </div>
-      ) : news.length === 0 ? (
-        <div className="rounded-2xl border border-[#33251D] bg-[#1D1511] p-10 text-center">
-          <p className="text-sm text-[#D6C7BA]">
-            No hay noticias en esta categoría que coincidan con tus favoritos actuales.
-          </p>
-        </div>
-      ) : (
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {news.map((item) => (
-            <article
-              key={item.id}
-              onClick={() => setActiveArticle(item)}
-              tabIndex={0}
-              role="button"
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault();
-                  setActiveArticle(item);
-                }
-              }}
-              className="group flex flex-col overflow-hidden rounded-xl border border-[#33251D] bg-[#1D1511] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#EA580C]/80 cursor-pointer"
-            >
-              <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#120D0A]">
-                <GameArtwork
-                  theme={item.artworkTheme}
-                  title={item.title}
-                  imageUrl={item.coverImage}
-                  className="h-full w-full"
-                />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1D1511] via-transparent to-transparent" />
+      {/* Dynamic Content Container (Centered Grid) */}
+      <div className="mt-8 w-full">
+        {/* Loading Skeletons */}
+        {loading && (
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {Array.from({ length: activeTab === 'noticias' ? 6 : 8 }).map((_, idx) => (
+              <div
+                key={idx}
+                className="overflow-hidden rounded-2xl border border-[#33251D] bg-[#1D1511] animate-pulse"
+              >
+                <div className="h-44 w-full bg-[#150F0B]" />
+                <div className="p-4 space-y-3">
+                  <div className="h-4 w-3/4 rounded bg-[#33251D]" />
+                  <div className="h-3 w-1/2 rounded bg-[#33251D]" />
+                </div>
               </div>
+            ))}
+          </div>
+        )}
 
-              <div className="flex flex-1 flex-col justify-between p-5">
-                <div>
-                  <div className="flex items-center gap-2 text-xs text-[#A89789]">
-                    <span className="font-semibold text-[#F59E0B]">{item.category}</span>
-                    <span aria-hidden="true">·</span>
-                    <span>{formatDateCO(item.publishedAt)}</span>
-                    <span aria-hidden="true">·</span>
-                    <span>{item.readTime}</span>
+        {/* Error State */}
+        {!loading && error && (
+          <div className="mx-auto flex max-w-lg flex-col items-center rounded-2xl border border-red-500/40 bg-[#1D1511] p-8 text-center">
+            <AlertTriangle className="h-10 w-10 text-amber-400" />
+            <h2 className="font-display mt-3 text-lg font-bold text-white">
+              No pudimos cargar esta sección
+            </h2>
+            <p className="mt-2 text-sm text-[#D6C7BA]">{error}</p>
+            <button
+              type="button"
+              onClick={() => loadTabContent(activeTab)}
+              className="mt-5 inline-flex items-center gap-2 rounded-xl bg-[#EA580C] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#C2410C] transition-colors"
+            >
+              <RefreshCw className="h-4 w-4" />
+              Reintentar conexión
+            </button>
+          </div>
+        )}
+
+        {/* TAB 1 & 2: Populares 2026 / Lanzamientos Recientes 2026 */}
+        {!loading && !error && (activeTab === 'populares' || activeTab === 'lanzamientos') && (
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {games.map((game) => {
+              const imgKey = `${activeTab}-${game.id}`;
+              const hasValidImg = Boolean(game.background_image) && !brokenImages[imgKey];
+              const genres = game.genres?.slice(0, 2).map((g) => g.name).join(' · ') || 'Videojuego';
+
+              return (
+                <article
+                  key={game.id}
+                  className="group flex flex-col overflow-hidden rounded-2xl border border-[#33251D] bg-[#1D1511] transition-all duration-200 hover:-translate-y-1 hover:border-[#EA580C]/75 hover:shadow-[0_12px_30px_-10px_rgba(234,88,12,0.28)]"
+                >
+                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#150F0B]">
+                    {hasValidImg ? (
+                      <img
+                        src={game.background_image!}
+                        alt={game.name}
+                        referrerPolicy="no-referrer"
+                        onError={() =>
+                          setBrokenImages((prev) => ({ ...prev, [imgKey]: true }))
+                        }
+                        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                    ) : (
+                      <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-[#2B170D] to-[#150F0B] p-4 text-center">
+                        <span className="font-display text-sm font-bold text-[#F59E0B]">
+                          {game.name}
+                        </span>
+                      </div>
+                    )}
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1D1511] via-transparent to-transparent" />
+
+                    <div className="absolute top-3 right-3 flex items-center gap-1 rounded-lg border border-[#F59E0B]/35 bg-[#120D0A]/85 px-2.5 py-1 text-xs font-bold text-[#F59E0B] backdrop-blur-sm">
+                      <Star className="h-3.5 w-3.5 fill-[#F59E0B] text-[#F59E0B]" />
+                      <span className="font-mono-num">
+                        {game.rating > 0 ? game.rating.toFixed(2) : 'Nuevo'}
+                      </span>
+                    </div>
                   </div>
 
-                  <h2 className="font-display mt-2 text-lg font-bold leading-snug text-white group-hover:text-[#F59E0B] transition-colors">
-                    {item.title}
-                  </h2>
+                  <div className="flex flex-1 flex-col justify-between p-4">
+                    <div>
+                      <p className="text-xs font-medium text-[#F59E0B]">{genres}</p>
+                      <h2 className="font-display mt-1 line-clamp-2 text-base font-bold text-white group-hover:text-[#FBBF24] transition-colors">
+                        {game.name}
+                      </h2>
+                    </div>
 
-                  <p className="mt-2.5 line-clamp-3 text-sm leading-relaxed text-[#D6C7BA]">
-                    {item.summary}
+                    <div className="mt-4 flex items-center justify-between border-t border-[#33251D] pt-3 text-xs text-[#D6C7BA]">
+                      <span className="inline-flex items-center gap-1.5">
+                        <Calendar className="h-3.5 w-3.5 text-[#EA580C]" />
+                        {formatDateEs(game.released)}
+                      </span>
+                      <span className="font-mono-num text-[#A89789]">
+                        {game.ratings_count} votos
+                      </span>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        )}
+
+        {/* TAB 3: Noticias en Vivo 2026 (Steam Web API) */}
+        {!loading && !error && activeTab === 'noticias' && (
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {newsItems.map((item) => {
+              const imgKey = `news-${item.id}`;
+              const hasImg = Boolean(item.image) && !brokenImages[imgKey];
+
+              return (
+                <article
+                  key={item.id}
+                  className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-[#33251D] bg-[#1D1511] p-5 transition-all duration-200 hover:-translate-y-1 hover:border-[#EA580C]/75 hover:shadow-[0_12px_30px_-10px_rgba(234,88,12,0.25)]"
+                >
+                  <div>
+                    {hasImg && (
+                      <div className="mb-4 aspect-[16/9] w-full overflow-hidden rounded-xl bg-[#150F0B]">
+                        <img
+                          src={item.image}
+                          alt={item.gameTitle}
+                          referrerPolicy="no-referrer"
+                          onError={() =>
+                            setBrokenImages((prev) => ({ ...prev, [imgKey]: true }))
+                          }
+                          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                      </div>
+                    )}
+
+                    <div className="flex items-center justify-between gap-2 text-xs text-[#A89789]">
+                      <span className="font-semibold text-[#F59E0B] truncate">
+                        {item.gameTitle} · {item.source}
+                      </span>
+                      <span className="shrink-0">{formatDateEs(item.publishedAt)}</span>
+                    </div>
+
+                    <h2 className="font-display mt-2 text-lg font-bold leading-snug text-white group-hover:text-[#FBBF24] transition-colors">
+                      {item.title}
+                    </h2>
+
+                    <p className="mt-2.5 line-clamp-3 text-sm leading-relaxed text-[#D6C7BA]">
+                      {item.summary || `Actualización oficial publicada para ${item.gameTitle}.`}
+                    </p>
+                  </div>
+
+                  <div className="mt-5 flex items-center justify-between border-t border-[#33251D] pt-3.5 text-xs">
+                    <button
+                      type="button"
+                      onClick={() => setSelectedNews(item)}
+                      className="font-semibold text-[#FAF5F0] hover:text-[#F59E0B]"
+                    >
+                      Leer detalle
+                    </button>
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 font-semibold text-[#F59E0B] hover:underline"
+                    >
+                      Fuente oficial
+                      <ExternalLink className="h-3.5 w-3.5" />
+                    </a>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        )}
+
+        {/* TAB 4: Eventos (3 Centered Simulated Event Cards - Warm Palette) */}
+        {!loading && !error && activeTab === 'eventos' && (
+          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3">
+            {SIMULATED_EVENTS.map((ev) => (
+              <article
+                key={ev.id}
+                className="flex flex-col justify-between rounded-2xl border border-[#33251D] bg-[#1D1511] p-6 transition-all duration-200 hover:-translate-y-1 hover:border-[#EA580C]/75 hover:shadow-[0_12px_30px_-10px_rgba(234,88,12,0.28)]"
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-2 text-xs">
+                    <span className="font-semibold text-[#F59E0B]">{ev.category}</span>
+                    <Trophy className="h-4 w-4 text-[#EA580C]" />
+                  </div>
+
+                  <h2 className="font-display mt-3 text-xl font-bold text-white">{ev.title}</h2>
+
+                  <p className="mt-2 text-xs font-medium text-[#A89789]">
+                    {ev.date} · {ev.location}
                   </p>
+
+                  <p className="mt-3 text-sm leading-relaxed text-[#D6C7BA]">{ev.description}</p>
                 </div>
 
-                <div className="mt-4 flex items-center justify-between border-t border-[#33251D] pt-3.5 text-xs">
-                  <span className="text-[#A89789]">{item.author}</span>
-                  <span className="inline-flex items-center gap-1 font-semibold text-[#F59E0B]">
-                    Leer nota
-                    <ArrowRight className="h-3.5 w-3.5" />
-                  </span>
+                <div className="mt-5 border-t border-[#33251D] pt-3.5 text-xs font-semibold text-[#F59E0B]">
+                  {ev.highlight}
                 </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      )}
+              </article>
+            ))}
+          </div>
+        )}
+      </div>
 
-      {/* Article Reader Modal */}
-      {activeArticle && (
+      {/* News Detail Modal Reader */}
+      {selectedNews && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 p-4 backdrop-blur-sm"
           role="dialog"
           aria-modal="true"
           aria-labelledby="news-modal-title"
         >
-          <div className="max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-2xl border border-[#33251D] bg-[#1D1511] shadow-2xl">
-            <div className="relative aspect-[16/8] w-full overflow-hidden bg-[#120D0A]">
-              <GameArtwork
-                theme={activeArticle.artworkTheme}
-                title={activeArticle.title}
-                imageUrl={activeArticle.coverImage}
-                className="h-full w-full"
-              />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1D1511] via-transparent to-black/40" />
+          <div className="max-h-[88vh] w-full max-w-xl overflow-y-auto rounded-2xl border border-[#33251D] bg-[#1D1511] p-6 shadow-2xl">
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <p className="text-xs font-semibold text-[#F59E0B]">
+                  {selectedNews.gameTitle} · {formatDateEs(selectedNews.publishedAt)}
+                </p>
+                <h2 id="news-modal-title" className="font-display mt-1 text-xl font-bold text-white">
+                  {selectedNews.title}
+                </h2>
+              </div>
               <button
                 type="button"
-                onClick={() => setActiveArticle(null)}
-                className="absolute top-4 right-4 flex h-10 w-10 items-center justify-center rounded-lg bg-[#120D0A]/80 text-white hover:bg-[#120D0A]"
-                aria-label="Cerrar artículo"
+                onClick={() => setSelectedNews(null)}
+                className="rounded-lg p-1.5 text-[#A89789] hover:bg-[#261A14] hover:text-white"
+                aria-label="Cerrar detalle"
               >
                 <X className="h-5 w-5" />
               </button>
             </div>
 
-            <div className="p-6 space-y-4">
-              <div className="flex flex-wrap items-center gap-2 text-xs text-[#A89789]">
-                <span className="font-semibold text-[#F59E0B]">{activeArticle.category}</span>
-                <span aria-hidden="true">·</span>
-                <span>{formatDateCO(activeArticle.publishedAt)}</span>
-                <span aria-hidden="true">·</span>
-                <span>{activeArticle.author}</span>
-              </div>
+            {selectedNews.image && (
+              <img
+                src={selectedNews.image}
+                alt={selectedNews.gameTitle}
+                referrerPolicy="no-referrer"
+                className="mt-4 max-h-60 w-full rounded-xl object-cover bg-[#150F0B]"
+              />
+            )}
 
-              <h2 id="news-modal-title" className="font-display text-2xl font-bold text-white">
-                {activeArticle.title}
-              </h2>
+            <p className="mt-4 text-sm leading-relaxed text-[#FAF5F0]">
+              {selectedNews.summary ||
+                `Anuncio oficial publicado para ${selectedNews.gameTitle}.`}
+            </p>
 
-              <p className="text-sm leading-relaxed text-[#FAF5F0] sm:text-base">
-                {activeArticle.content}
-              </p>
-
-              {activeArticle.relatedGameIds.length > 0 && (
-                <div className="border-t border-[#33251D] pt-4">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-[#A89789]">
-                    Ofertas relacionadas en Global Flame
-                  </p>
-                  <div className="mt-2.5 flex flex-wrap gap-2">
-                    {activeArticle.relatedGameIds.map((gid) => (
-                      <button
-                        key={gid}
-                        type="button"
-                        onClick={() => {
-                          setActiveArticle(null);
-                          onSelectGame(gid);
-                        }}
-                        className="inline-flex items-center gap-1.5 rounded-lg bg-[#EA580C] px-3.5 py-2 text-xs font-semibold text-white hover:bg-[#C2410C]"
-                      >
-                        Ver oferta del juego
-                        <ArrowRight className="h-3.5 w-3.5" />
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
+            <div className="mt-6 flex justify-end gap-3 border-t border-[#33251D] pt-4">
+              <button
+                type="button"
+                onClick={() => setSelectedNews(null)}
+                className="rounded-xl border border-[#33251D] px-4 py-2 text-xs font-medium text-[#D6C7BA] hover:text-white"
+              >
+                Cerrar
+              </button>
+              <a
+                href={selectedNews.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-xl bg-[#EA580C] px-4 py-2 text-xs font-semibold text-white hover:bg-[#C2410C]"
+              >
+                Abrir nota completa
+                <ExternalLink className="h-3.5 w-3.5" />
+              </a>
             </div>
           </div>
         </div>
       )}
-    </div>
+    </section>
   );
 };

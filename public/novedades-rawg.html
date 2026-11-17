@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Global Flame | Novedades y Noticias Gamer</title>
+  <style>
+    :root {
+      --bg-main: #120D0A;
+      --bg-card: #1D1511;
+      --bg-inner: #150F0B;
+      --border-soft: #33251D;
+      --accent-flame: #EA580C;
+      --accent-amber: #F59E0B;
+      --text-white: #FAF5F0;
+      --text-muted: #A89789;
+      --text-soft: #D6C7BA;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-white);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1.5;
+    }
+
+    .page-wrapper {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 48px 24px 72px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-header {
+      text-align: center;
+      max-width: 720px;
+      margin-bottom: 32px;
+    }
+
+    .brand-kicker {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent-amber);
+      margin-bottom: 10px;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-white);
+      margin-bottom: 12px;
+    }
+
+    .hero-subtitle {
+      font-size: 15px;
+      color: var(--text-soft);
+    }
+
+    .tabs-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      border-radius: 16px;
+      padding: 8px;
+      margin-bottom: 36px;
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.4);
+    }
+
+    .tab-btn {
+      appearance: none;
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--text-soft);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 11px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .tab-btn:hover {
+      color: var(--accent-amber);
+      background-color: var(--bg-inner);
+    }
+
+    .tab-btn.active {
+      background-color: var(--accent-flame);
+      color: var(--text-white);
+      border-color: rgba(245, 158, 11, 0.5);
+      box-shadow: 0 6px 20px rgba(234, 88, 12, 0.35);
+    }
+
+    .cards-grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 24px;
+      justify-content: center;
+    }
+
+    .cards-grid.news-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .cards-grid.events-grid {
+      max-width: 1024px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(234, 88, 12, 0.75);
+      box-shadow: 0 14px 32px -12px rgba(234, 88, 12, 0.32);
+    }
+
+    .card-media {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      background-color: var(--bg-inner);
+      overflow: hidden;
+    }
+
+    .card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .rating-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(18, 13, 10, 0.88);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      color: var(--accent-amber);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 8px;
+      backdrop-filter: blur(6px);
+    }
+
+    .card-body {
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .card-tag {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent-amber);
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-white);
+      margin-top: 4px;
+    }
+
+    .card-text {
+      font-size: 13px;
+      color: var(--text-soft);
+      line-height: 1.55;
+    }
+
+    .card-footer {
+      border-top: 1px solid var(--border-soft);
+      padding-top: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      gap: 8px;
+    }
+
+    .card-link {
+      color: var(--accent-amber);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .card-link:hover {
+      text-decoration: underline;
+    }
+
+    .status-box {
+      width: 100%;
+      max-width: 560px;
+      margin: 24px auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+    }
+
+    @media (max-width: 1080px) {
+      .cards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .cards-grid.news-grid,
+      .cards-grid.events-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 640px) {
+      .cards-grid,
+      .cards-grid.news-grid,
+      .cards-grid.events-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page-wrapper">
+    <header class="hero-header">
+      <p class="brand-kicker" id="year-kicker">Global Flame · Actualidad Gamer 2026</p>
+      <h1 class="hero-title">Novedades y Noticias Gamer</h1>
+      <p class="hero-subtitle">
+        Videojuegos populares de este año, lanzamientos recientes, anuncios en vivo y próximos eventos.
+      </p>
+    </header>
+
+    <nav class="tabs-nav" aria-label="Categorías de novedades">
+      <button class="tab-btn active" data-tab="populares">Populares 2026</button>
+      <button class="tab-btn" data-tab="lanzamientos">Lanzamientos</button>
+      <button class="tab-btn" data-tab="noticias">Noticias 2026</button>
+      <button class="tab-btn" data-tab="eventos">Eventos</button>
+    </nav>
+
+    <section id="content-area" style="width: 100%; display: flex; justify-content: center;"></section>
+  </main>
+
+  <script>
+    const API_KEY = '062c02ee49ef4184abbc0e744729f9db';
+    const contentArea = document.getElementById('content-area');
+    const tabButtons = document.querySelectorAll('.tab-btn');
+
+    function getDateWindow() {
+      const now = new Date();
+      const year = now.getFullYear();
+      const toIso = (d) => d.toISOString().slice(0, 10);
+      const todayIso = toIso(now);
+      const yearStartIso = `${year}-01-01`;
+      const recentStart = new Date(now.getTime() - 50 * 24 * 60 * 60 * 1000);
+      const recentStartIso = toIso(recentStart) < yearStartIso ? yearStartIso : toIso(recentStart);
+      return { year, todayIso, yearStartIso, recentStartIso };
+    }
+
+    const EVENTS = [
+      {
+        title: 'The Game Awards 2026',
+        category: 'Premiación y Estrenos',
+        date: '10 de Diciembre 2026 · 19:30 COT',
+        location: 'Peacock Theater, Los Ángeles',
+        description: 'Ceremonia oficial al Juego del Año 2026 con estrenos mundiales y ofertas relámpago.',
+        highlight: 'Nominados GOTY 2026 y descuentos en vivo'
+      },
+      {
+        title: 'PC Gaming Show: Most Wanted',
+        category: 'Showcase PC y Steam',
+        date: 'Diciembre 2026 · 15:00 COT',
+        location: 'Transmisión Global Digital',
+        description: 'Los 25 lanzamientos más esperados con entrevistas exclusivas y demos jugables.',
+        highlight: 'Demos gratuitas por tiempo limitado'
+      },
+      {
+        title: 'Summer Game Fest Showcase',
+        category: 'Conferencia Principal',
+        date: 'Junio 2027 · 16:00 COT',
+        location: 'YouTube Theater / Streaming Global',
+        description: 'Anuncios multiplataforma para PC, PlayStation, Xbox y Nintendo.',
+        highlight: 'Más de 40 estudios confirmados'
+      }
+    ];
+
+    function formatDate(iso) {
+      if (!iso) return 'Fecha por confirmar';
+      try {
+        return new Intl.DateTimeFormat('es-CO', {
+          day: '2-digit',
+          month: 'short',
+          year: 'numeric'
+        }).format(new Date(iso));
+      } catch {
+        return iso;
+      }
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text || '';
+      return div.innerHTML;
+    }
+
+    function renderGames(games) {
+      const grid = document.createElement('div');
+      grid.className = 'cards-grid';
+      games.forEach((game) => {
+        const genres = (game.genres || []).slice(0, 2).map((g) => g.name).join(' · ') || 'Videojuego';
+        const card = document.createElement('article');
+        card.className = 'card';
+        card.innerHTML = `
+          <div class="card-media">
+            ${game.background_image ? `<img src="${game.background_image}" alt="${escapeHtml(game.name)}" referrerpolicy="no-referrer" />` : ''}
+            <span class="rating-badge">★ ${Number(game.rating || 0).toFixed(2)}</span>
+          </div>
+          <div class="card-body">
+            <div>
+              <p class="card-tag">${escapeHtml(genres)}</p>
+              <h2 class="card-title">${escapeHtml(game.name)}</h2>
+            </div>
+            <div class="card-footer">
+              <span>${formatDate(game.released)}</span>
+              <span>${game.ratings_count || 0} votos</span>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+      contentArea.innerHTML = '';
+      contentArea.appendChild(grid);
+    }
+
+    function renderNews(items) {
+      const grid = document.createElement('div');
+      grid.className = 'cards-grid news-grid';
+      items.forEach((item) => {
+        const card = document.createElement('article');
+        card.className = 'card';
+        card.innerHTML = `
+          ${item.image ? `<div class="card-media"><img src="${item.image}" alt="${escapeHtml(item.gameTitle)}" referrerpolicy="no-referrer" /></div>` : ''}
+          <div class="card-body">
+            <div>
+              <p class="card-tag">${escapeHtml(item.gameTitle)} · ${escapeHtml(item.source)}</p>
+              <h2 class="card-title">${escapeHtml(item.title)}</h2>
+              <p class="card-text" style="margin-top:8px;">${escapeHtml((item.summary || '').slice(0, 160))}...</p>
+            </div>
+            <div class="card-footer">
+              <span>${formatDate(item.publishedAt)}</span>
+              <a class="card-link" href="${item.url}" target="_blank" rel="noopener noreferrer">Fuente oficial ↗</a>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+      contentArea.innerHTML = '';
+      contentArea.appendChild(grid);
+    }
+
+    function renderEvents() {
+      const grid = document.createElement('div');
+      grid.className = 'cards-grid events-grid';
+      EVENTS.forEach((ev) => {
+        const card = document.createElement('article');
+        card.className = 'card';
+        card.innerHTML = `
+          <div class="card-body">
+            <div>
+              <p class="card-tag">${escapeHtml(ev.category)}</p>
+              <h2 class="card-title" style="font-size:19px;">${escapeHtml(ev.title)}</h2>
+              <p class="card-text" style="color:var(--text-muted); margin-top:6px;">${escapeHtml(ev.date)} · ${escapeHtml(ev.location)}</p>
+              <p class="card-text" style="margin-top:12px;">${escapeHtml(ev.description)}</p>
+            </div>
+            <div class="card-footer" style="color:var(--accent-amber); font-weight:600;">
+              <span>${escapeHtml(ev.highlight)}</span>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+      contentArea.innerHTML = '';
+      contentArea.appendChild(grid);
+    }
+
+    async function loadTab(tab) {
+      if (tab === 'eventos') {
+        renderEvents();
+        return;
+      }
+      contentArea.innerHTML = '<div class="status-box"><p class="card-text">Cargando información de este año...</p></div>';
+      const { todayIso, yearStartIso, recentStartIso } = getDateWindow();
+      try {
+        if (tab === 'noticias') {
+          const res = await fetch('/api/news/2026');
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          const data = await res.json();
+          renderNews(data.items || []);
+        } else {
+          const endpoint = tab === 'populares'
+            ? `https://api.rawg.io/api/games?key=${API_KEY}&dates=${yearStartIso},${todayIso}&ordering=-added&page_size=8`
+            : `https://api.rawg.io/api/games?key=${API_KEY}&dates=${recentStartIso},${todayIso}&ordering=-added&page_size=8`;
+          const res = await fetch(endpoint);
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          const data = await res.json();
+          renderGames(data.results || []);
+        }
+      } catch (err) {
+        contentArea.innerHTML = `<div class="status-box"><h2 class="card-title">Error al conectar con la API</h2><p class="card-text" style="margin-top:8px;">${escapeHtml(err.message)}</p></div>`;
+      }
+    }
+
+    tabButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        tabButtons.forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        loadTab(btn.dataset.tab);
+      });
+    });
+
+    loadTab('populares');
+  </script>
+</body>
+</html>

@@ -37,7 +37,6 @@ import {
 } from './services/databaseService';
 import {
   CatalogFilters,
-  NewsCategory,
   Platform,
   PriceAlert,
   QAState,
@@ -73,7 +72,7 @@ interface AppProps {
 export default function App({ initialView = 'home' }: AppProps) {
   const [initialized, setInitialized] = useState(false);
   const [currentView, setCurrentView] = useState<ViewRoute>(initialView);
-  const [selectedGameId, setSelectedGameId] = useState<string | null>(() => {
+  const [selectedGameId] = useState<string | null>(() => {
     const params = new URLSearchParams(window.location.search);
     return params.get('id');
   });
@@ -87,8 +86,6 @@ export default function App({ initialView = 'home' }: AppProps) {
       platforms: plat ? [plat] : [],
     };
   });
-  const [newsCategory, setNewsCategory] = useState<'Todas' | NewsCategory>('Todas');
-  const [newsForYouOnly, setNewsForYouOnly] = useState(false);
 
   const [user, setUser] = useState<User | null>(null);
   const [favoriteIds, setFavoriteIds] = useState<string[]>([]);
@@ -326,7 +323,6 @@ export default function App({ initialView = 'home' }: AppProps) {
     setUser(null);
     setFavoriteIds([]);
     setAlerts([]);
-    setNewsForYouOnly(false);
     pushToast('Sesión cerrada', 'Tus datos permanecen protegidos.', 'info');
     if (window.location.pathname === '/perfil.html') {
       window.location.href = '/index.html';
@@ -397,6 +393,7 @@ export default function App({ initialView = 'home' }: AppProps) {
   }, [user, pushToast]);
 
   const handleToggleApiFailure = useCallback(() => {
+    if (user?.role !== 'administrador') return;
     const next = updateQAState({ simulateApiFailure: !qaState.simulateApiFailure });
     setQaState(next);
     pushToast(
@@ -406,9 +403,10 @@ export default function App({ initialView = 'home' }: AppProps) {
         : 'Sincronización de precios en vivo restaurada.',
       next.simulateApiFailure ? 'warning' : 'success'
     );
-  }, [qaState.simulateApiFailure, pushToast]);
+  }, [user, qaState.simulateApiFailure, pushToast]);
 
   const handleToggleChatbotFailure = useCallback(() => {
+    if (user?.role !== 'administrador') return;
     const next = updateQAState({ simulateChatbotFailure: !qaState.simulateChatbotFailure });
     setQaState(next);
     pushToast(
@@ -418,7 +416,7 @@ export default function App({ initialView = 'home' }: AppProps) {
         : 'El asistente inteligente volvió a estar disponible.',
       next.simulateChatbotFailure ? 'warning' : 'success'
     );
-  }, [qaState.simulateChatbotFailure, pushToast]);
+  }, [user, qaState.simulateChatbotFailure, pushToast]);
 
   const allGames = useMemo(() => {
     void catalogVersion;
@@ -464,11 +462,6 @@ export default function App({ initialView = 'home' }: AppProps) {
     void catalogVersion;
     return queryNews('Todas', false, null);
   }, [catalogVersion]);
-
-  const filteredNews = useMemo(() => {
-    void catalogVersion;
-    return queryNews(newsCategory, newsForYouOnly, user?.id ?? null);
-  }, [newsCategory, newsForYouOnly, user, favoriteIds, catalogVersion]);
 
   if (!initialized) return null;
 
@@ -559,22 +552,7 @@ export default function App({ initialView = 'home' }: AppProps) {
           />
         )}
 
-        {currentView === 'news' && (
-          <NewsView
-            news={filteredNews}
-            category={newsCategory}
-            forYouOnly={newsForYouOnly}
-            user={user}
-            favoritesCount={favoriteIds.length}
-            onChangeCategory={setNewsCategory}
-            onToggleForYou={() => setNewsForYouOnly((prev) => !prev)}
-            onOpenAuth={() => {
-              setAuthReason('Inicia sesión para filtrar noticias según tus videojuegos favoritos.');
-              setAuthModalOpen(true);
-            }}
-            onSelectGame={handleSelectGame}
-          />
-        )}
+        {currentView === 'news' && <NewsView />}
 
         {currentView === 'profile' && (
           user ? (
@@ -618,6 +596,7 @@ export default function App({ initialView = 'home' }: AppProps) {
 
       <Footer
         onNavigate={navigateTo}
+        isAdmin={user?.role === 'administrador'}
         qaState={qaState}
         onToggleApiFailure={handleToggleApiFailure}
         onToggleChatbotFailure={handleToggleChatbotFailure}

@@ -894,8 +894,154 @@ async function startServer() {
   });
 
   // ==========================================
+  // Live 2026 Gaming News API (Steam Web API)
+  // ==========================================
+  let cachedNews2026: { fetchedAt: number; items: Array<Record<string, unknown>> } | null = null;
+
+  function cleanNewsBody(raw: string): string {
+    return (raw || '')
+      .replace(/\{STEAM_CLAN_IMAGE\}[^\s\]"']*/gi, '')
+      .replace(/\[img\][\s\S]*?\[\/img\]/gi, '')
+      .replace(/\[url=[^\]]*\]/gi, '')
+      .replace(/\[\/?url\]/gi, '')
+      .replace(/\[\/?(b|i|u|h1|h2|h3|list|olist|\*|quote|code|spoiler|strike)\]/gi, ' ')
+      .replace(/<[^>]*>/g, ' ')
+      .replace(/&amp;/g, '&')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'")
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  app.get('/api/news/2026', async (_req, res) => {
+    const now = Date.now();
+    if (cachedNews2026 && now - cachedNews2026.fetchedAt < 10 * 60 * 1000) {
+      res.json({
+        ok: true,
+        year: new Date().getUTCFullYear(),
+        items: cachedNews2026.items,
+        cached: true,
+      });
+      return;
+    }
+
+    const currentYear = new Date().getUTCFullYear();
+    const trackedApps = [
+      { appid: 730, gameTitle: 'Counter-Strike 2' },
+      { appid: 2694490, gameTitle: 'Path of Exile 2' },
+      { appid: 1091500, gameTitle: 'Cyberpunk 2077' },
+      { appid: 2246340, gameTitle: 'Monster Hunter Wilds' },
+      { appid: 892970, gameTitle: 'Valheim' },
+      { appid: 1245620, gameTitle: 'ELDEN RING' },
+      { appid: 1145350, gameTitle: 'Hades II' },
+      { appid: 1030300, gameTitle: 'Hollow Knight: Silksong' },
+      { appid: 1086940, gameTitle: "Baldur's Gate 3" },
+    ];
+
+    try {
+      const results = await Promise.allSettled(
+        trackedApps.map(async (appInfo) => {
+          const apiUrl = `https://api.steampowered.com/ISteamNews/GetNewsForApp/v0002/?appid=${appInfo.appid}&count=4&maxlength=360&feeds=steam_community_announcements,pcgamer,eurogamer,rockpapershotgun&format=json`;
+          const r = await fetch(apiUrl, {
+            headers: {
+              'User-Agent': 'GlobalFlameColombia/1.0 (soporte@globalflame.co)',
+              Accept: 'application/json',
+            },
+          });
+          if (!r.ok) return [];
+          const data = (await r.json()) as {
+            appnews?: {
+              newsitems?: Array<{
+                gid: string;
+                title: string;
+                url: string;
+                author: string;
+                contents: string;
+                feedlabel: string;
+                date: number;
+                appid: number;
+              }>;
+            };
+          };
+          const items = data.appnews?.newsitems ?? [];
+          return items
+            .filter((item) => new Date(item.date * 1000).getUTCFullYear() >= currentYear)
+            .slice(0, 2)
+            .map((item) => ({
+              id: `${appInfo.appid}-${item.gid}`,
+              appid: appInfo.appid,
+              gameTitle: appInfo.gameTitle,
+              title: item.title,
+              summary: cleanNewsBody(item.contents),
+              url: item.url,
+              author: item.author || appInfo.gameTitle,
+              source: item.feedlabel || 'Anuncio Oficial',
+              publishedAt: new Date(item.date * 1000).toISOString(),
+              image: `https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/${appInfo.appid}/header.jpg`,
+            }));
+        })
+      );
+
+      const collected: Array<{
+        id: string;
+        appid: number;
+        gameTitle: string;
+        title: string;
+        summary: string;
+        url: string;
+        author: string;
+        source: string;
+        publishedAt: string;
+        image: string;
+      }> = [];
+
+      for (const r of results) {
+        if (r.status === 'fulfilled') {
+          collected.push(...r.value);
+        }
+      }
+
+      collected.sort(
+        (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+      );
+
+      // Prioritize variety across games for the first 9 cards
+      const picked: typeof collected = [];
+      const seenGames = new Set<number>();
+      for (const item of collected) {
+        if (!seenGames.has(item.appid)) {
+          picked.push(item);
+          seenGames.add(item.appid);
+        }
+        if (picked.length >= 9) break;
+      }
+      if (picked.length < 9) {
+        const pickedIds = new Set(picked.map((p) => p.id));
+        for (const item of collected) {
+          if (!pickedIds.has(item.id)) {
+            picked.push(item);
+            if (picked.length >= 9) break;
+          }
+        }
+      }
+
+      cachedNews2026 = { fetchedAt: now, items: picked };
+      res.json({ ok: true, year: currentYear, items: picked, cached: false });
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'Error consultando noticias 2026.';
+      res.status(502).json({ ok: false, error: message, items: [] });
+    }
+  });
+
+  // ==========================================
   // Multi-Page Vite / Static Serving
   // ==========================================
+  app.get('/novedades-rawg.html', (_req, res) => {
+    res.sendFile(path.resolve(__dirname, 'public', 'novedades-rawg.html'));
+  });
+
   const isProd = process.env.NODE_ENV === 'production';
   if (!isProd) {
     const { createServer: createViteServer } = await import('vite');
