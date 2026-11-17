@@ -13,6 +13,7 @@ import { ToastContainer } from './components/ToastContainer';
 import {
   addGameReviewAsync,
   deleteGameReviewAsync,
+  deleteOwnAccountAsync,
   getAllGames,
   getCurrentUser,
   getGameById,
@@ -34,6 +35,7 @@ import {
   toggleUserFavorite,
   triggerCheapSharkLiveSync,
   updateQAState,
+  updateUserAvatarAsync,
 } from './services/databaseService';
 import {
   CatalogFilters,
@@ -329,6 +331,42 @@ export default function App({ initialView = 'home' }: AppProps) {
     }
   }, [pushToast]);
 
+  const handleUpdateAvatar = useCallback(
+    async (avatarUrl: string | null) => {
+      if (!user) return false;
+      const res = await updateUserAvatarAsync(user.id, avatarUrl);
+      if (!res.ok) {
+        pushToast('No se pudo actualizar la foto', res.error, 'error');
+        return false;
+      }
+      setUser(res.user);
+      pushToast(
+        avatarUrl ? 'Foto de perfil actualizada' : 'Foto de perfil eliminada',
+        avatarUrl
+          ? 'Tu nueva imagen ya está guardada en tu cuenta.'
+          : 'Se restauraron tus iniciales de perfil.',
+        'success'
+      );
+      return true;
+    },
+    [user, pushToast]
+  );
+
+  const handleDeleteAccount = useCallback(async () => {
+    if (!user) return false;
+    const res = await deleteOwnAccountAsync(user.id);
+    if (!res.ok) {
+      pushToast('No se pudo eliminar la cuenta', res.error, 'error');
+      return false;
+    }
+    setUser(null);
+    setFavoriteIds([]);
+    setAlerts([]);
+    pushToast('Cuenta eliminada', 'Tu cuenta fue eliminada permanentemente.', 'info');
+    window.location.href = '/index.html';
+    return true;
+  }, [user, pushToast]);
+
   const handleSubmitReview = useCallback(
     async (gameId: string, rating: number, comment: string) => {
       if (!user) return false;
@@ -574,6 +612,8 @@ export default function App({ initialView = 'home' }: AppProps) {
               onMarkAlertRead={handleMarkAlertRead}
               onMarkAllAlertsRead={handleMarkAllAlertsRead}
               onLogout={handleLogout}
+              onUpdateAvatar={handleUpdateAvatar}
+              onDeleteAccount={handleDeleteAccount}
               onNavigate={navigateTo}
               onRefreshBootstrap={refreshFromServer}
               onSyncCheapShark={handleSyncCheapShark}

@@ -268,6 +268,82 @@ export function logoutUser(): void {
   localStorage.removeItem(STORAGE_KEYS.SESSION);
 }
 
+export async function updateUserAvatarAsync(
+  userId: string,
+  avatarUrl: string | null
+): Promise<{ ok: true; user: User } | { ok: false; error: string }> {
+  try {
+    const res = await fetch('/api/users/me/avatar', {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-user-id': userId,
+      },
+      body: JSON.stringify({ avatarUrl }),
+    });
+    const data = (await res.json()) as { ok: boolean; user?: User; error?: string };
+    if (!res.ok || !data.ok || !data.user) {
+      return { ok: false, error: data.error || 'No se pudo actualizar la foto de perfil.' };
+    }
+
+    const rawSession = localStorage.getItem(STORAGE_KEYS.SESSION);
+    if (rawSession) {
+      try {
+        const session = JSON.parse(rawSession) as Session & { user?: User };
+        writeTable(STORAGE_KEYS.SESSION, { ...session, user: data.user });
+      } catch {
+        // ignore parse error
+      }
+    }
+
+    const cachedUsers = readTable<User[]>(STORAGE_KEYS.USERS, SEED_USERS);
+    writeTable(
+      STORAGE_KEYS.USERS,
+      cachedUsers.map((u) => (u.id === data.user!.id ? data.user! : u))
+    );
+
+    return { ok: true, user: data.user };
+  } catch {
+    return { ok: false, error: 'Error de conexión al guardar la foto de perfil.' };
+  }
+}
+
+export async function deleteOwnAccountAsync(
+  userId: string
+): Promise<{ ok: true } | { ok: false; error: string }> {
+  try {
+    const res = await fetch('/api/users/me', {
+      method: 'DELETE',
+      headers: { 'x-user-id': userId },
+    });
+    const data = (await res.json()) as { ok: boolean; error?: string };
+    if (!res.ok || !data.ok) {
+      return { ok: false, error: data.error || 'No se pudo eliminar la cuenta.' };
+    }
+
+    localStorage.removeItem(STORAGE_KEYS.SESSION);
+
+    const favs = readTable<Favorite[]>(STORAGE_KEYS.FAVORITES, SEED_FAVORITES).filter(
+      (f) => f.userId !== userId
+    );
+    writeTable(STORAGE_KEYS.FAVORITES, favs);
+
+    const alerts = readTable<PriceAlert[]>(STORAGE_KEYS.ALERTS, SEED_ALERTS).filter(
+      (a) => a.userId !== userId
+    );
+    writeTable(STORAGE_KEYS.ALERTS, alerts);
+
+    const cachedUsers = readTable<User[]>(STORAGE_KEYS.USERS, SEED_USERS).filter(
+      (u) => u.id !== userId
+    );
+    writeTable(STORAGE_KEYS.USERS, cachedUsers);
+
+    return { ok: true };
+  } catch {
+    return { ok: false, error: 'Error de conexión al intentar eliminar la cuenta.' };
+  }
+}
+
 // ==========================================
 // Games & Store Offers Queries
 // ==========================================

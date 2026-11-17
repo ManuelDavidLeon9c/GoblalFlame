@@ -84,6 +84,7 @@ function syncExcelWorkbook(db: ServerDB): void {
       Correo: u.email,
       Contrasena: u.passwordHash,
       Rol: u.role,
+      FotoPerfil: u.avatarUrl ? 'Foto cargada' : 'Iniciales',
       Plataformas: u.preferredPlatforms.join(', '),
       FechaCreacion: u.createdAt,
     }));
@@ -502,6 +503,79 @@ async function startServer() {
     db.users.push(newUser);
     saveDB(db);
     res.json({ ok: true, user: newUser });
+  });
+
+  app.put('/api/users/me/avatar', (req, res) => {
+    const requesterId = req.header('x-user-id');
+    if (!requesterId) {
+      res.status(401).json({ ok: false, error: 'Debes iniciar sesión para actualizar tu foto.' });
+      return;
+    }
+
+    const db = loadDB();
+    const idx = db.users.findIndex((u) => u.id === requesterId);
+    if (idx === -1) {
+      res.status(404).json({ ok: false, error: 'Usuario no encontrado.' });
+      return;
+    }
+
+    const { avatarUrl } = req.body as { avatarUrl?: string | null };
+    if (avatarUrl === null || avatarUrl === '') {
+      delete db.users[idx].avatarUrl;
+      saveDB(db);
+      res.json({ ok: true, user: db.users[idx] });
+      return;
+    }
+
+    if (
+      typeof avatarUrl !== 'string' ||
+      !/^data:image\/(png|jpeg|jpg|webp|gif);base64,[a-zA-Z0-9+/=]+$/.test(avatarUrl)
+    ) {
+      res.status(400).json({ ok: false, error: 'Formato de imagen no válido (usa PNG, JPG, WEBP o GIF).' });
+      return;
+    }
+
+    if (avatarUrl.length > 450_000) {
+      res.status(400).json({
+        ok: false,
+        error: 'La imagen es demasiado pesada. Intenta con una foto más ligera.',
+      });
+      return;
+    }
+
+    db.users[idx].avatarUrl = avatarUrl;
+    saveDB(db);
+    res.json({ ok: true, user: db.users[idx] });
+  });
+
+  app.delete('/api/users/me', (req, res) => {
+    const requesterId = req.header('x-user-id');
+    if (!requesterId) {
+      res.status(401).json({ ok: false, error: 'Debes iniciar sesión para eliminar tu cuenta.' });
+      return;
+    }
+
+    const db = loadDB();
+    const target = db.users.find((u) => u.id === requesterId);
+    if (!target) {
+      res.status(404).json({ ok: false, error: 'La cuenta ya no existe.' });
+      return;
+    }
+
+    if (target.role === 'administrador') {
+      const adminCount = db.users.filter((u) => u.role === 'administrador').length;
+      if (adminCount <= 1) {
+        res.status(400).json({
+          ok: false,
+          error: 'No puedes eliminar la única cuenta de Administrador activa del sistema.',
+        });
+        return;
+      }
+    }
+
+    db.users = db.users.filter((u) => u.id !== target.id);
+    saveDB(db);
+    res.json({ ok: true, deletedUserId: target.id });
   });
 
   // ==========================================
@@ -1197,6 +1271,11 @@ async function startServer() {
   // ==========================================
   // Multi-Page Vite / Static Serving
   // ==========================================
+  app.get('/favicon.svg', (_req, res) => {
+    res.type('image/svg+xml');
+    res.sendFile(path.resolve(__dirname, 'public', 'favicon.svg'));
+  });
+
   app.get('/novedades-rawg.html', (_req, res) => {
     res.sendFile(path.resolve(__dirname, 'public', 'novedades-rawg.html'));
   });

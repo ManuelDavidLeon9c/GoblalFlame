@@ -236,9 +236,17 @@ export const Navbar: React.FC<NavbarProps> = ({
                   : 'border-[#33251D] bg-[#1D1511] text-[#FAF5F0] hover:border-[#EA580C]'
               }`}
             >
-              <span className="flex h-6 w-6 items-center justify-center rounded-md bg-[#EA580C] text-xs font-bold text-white">
-                {user.role === 'administrador' ? <Shield className="h-3.5 w-3.5" /> : user.avatarInitials}
-              </span>
+              {user.avatarUrl ? (
+                <img
+                  src={user.avatarUrl}
+                  alt={user.name}
+                  className="h-6 w-6 rounded-md object-cover border border-[#F59E0B]/40"
+                />
+              ) : (
+                <span className="flex h-6 w-6 items-center justify-center rounded-md bg-[#EA580C] text-xs font-bold text-white">
+                  {user.role === 'administrador' ? <Shield className="h-3.5 w-3.5" /> : user.avatarInitials}
+                </span>
+              )}
               <span className="hidden sm:inline max-w-[120px] truncate">
                 {user.role === 'administrador' ? 'Admin' : user.name.split(' ')[0]}
               </span>

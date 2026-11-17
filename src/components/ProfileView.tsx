@@ -1,5 +1,18 @@
-import React from 'react';
-import { Bell, Check, Heart, LogOut, ShieldCheck, Sparkles, UserCheck } from 'lucide-react';
+import React, { useRef, useState } from 'react';
+import {
+  AlertTriangle,
+  Bell,
+  Camera,
+  Check,
+  Heart,
+  Loader2,
+  LogOut,
+  ShieldCheck,
+  Sparkles,
+  Trash2,
+  UserCheck,
+  X,
+} from 'lucide-react';
 import { Game, NewsItem, PriceAlert, User, ViewRoute } from '../types';
 import { formatCOP, formatDateCO, formatTimeCO } from '../utils/formatters';
 import { AdminDashboard } from './AdminDashboard';
@@ -17,10 +30,45 @@ interface ProfileViewProps {
   onMarkAlertRead: (alertId: string) => void;
   onMarkAllAlertsRead: () => void;
   onLogout: () => void;
+  onUpdateAvatar: (avatarUrl: string | null) => Promise<boolean>;
+  onDeleteAccount: () => Promise<boolean>;
   onNavigate: (view: ViewRoute) => void;
   onRefreshBootstrap: () => Promise<void>;
   onSyncCheapShark: () => Promise<void>;
   onNotify: (title: string, description?: string, type?: 'success' | 'info' | 'warning' | 'error') => void;
+}
+
+async function resizeImageToDataUrl(file: File): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onerror = () => reject(new Error('No se pudo leer el archivo seleccionado.'));
+    reader.onload = () => {
+      const img = new Image();
+      img.onerror = () => reject(new Error('El archivo no corresponde a una imagen válida.'));
+      img.onload = () => {
+        const size = 220;
+        const canvas = document.createElement('canvas');
+        canvas.width = size;
+        canvas.height = size;
+        const ctx = canvas.getContext('2d');
+        if (!ctx) {
+          reject(new Error('Tu navegador no permite procesar imágenes.'));
+          return;
+        }
+
+        // Center-crop square fit
+        const minSide = Math.min(img.width, img.height);
+        const sx = (img.width - minSide) / 2;
+        const sy = (img.height - minSide) / 2;
+        ctx.drawImage(img, sx, sy, minSide, minSide, 0, 0, size, size);
+
+        const output = canvas.toDataURL('image/jpeg', 0.85);
+        resolve(output);
+      };
+      img.src = String(reader.result);
+    };
+    reader.readAsDataURL(file);
+  });
 }
 
 export const ProfileView: React.FC<ProfileViewProps> = ({
@@ -35,6 +83,8 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
   onMarkAlertRead,
   onMarkAllAlertsRead,
   onLogout,
+  onUpdateAvatar,
+  onDeleteAccount,
   onNavigate,
   onRefreshBootstrap,
   onSyncCheapShark,
@@ -43,14 +93,108 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
   const unreadCount = alerts.filter((a) => !a.isRead).length;
   const isAdmin = user.role === 'administrador';
 
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [uploadingAvatar, setUploadingAvatar] = useState(false);
+
+  const [deleteModalOpen, setDeleteModalOpen] = useState(false);
+  const [deleteConfirmed, setDeleteConfirmed] = useState(false);
+  const [deletingAccount, setDeletingAccount] = useState(false);
+
+  const handleFileSelected = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    e.target.value = '';
+    if (!file) return;
+
+    if (!file.type.startsWith('image/')) {
+      onNotify('Archivo no válido', 'Selecciona una imagen PNG, JPG, WEBP o GIF.', 'error');
+      return;
+    }
+    if (file.size > 5 * 1024 * 1024) {
+      onNotify('Imagen muy grande', 'El archivo debe pesar menos de 5 MB.', 'error');
+      return;
+    }
+
+    setUploadingAvatar(true);
+    try {
+      const dataUrl = await resizeImageToDataUrl(file);
+      await onUpdateAvatar(dataUrl);
+    } catch (err) {
+      onNotify(
+        'Error al subir foto',
+        err instanceof Error ? err.message : 'Intenta con otra imagen.',
+        'error'
+      );
+    } finally {
+      setUploadingAvatar(false);
+    }
+  };
+
+  const handleRemoveAvatar = async () => {
+    setUploadingAvatar(true);
+    try {
+      await onUpdateAvatar(null);
+    } finally {
+      setUploadingAvatar(false);
+    }
+  };
+
+  const handleConfirmDeleteAccount = async () => {
+    if (!deleteConfirmed) return;
+    setDeletingAccount(true);
+    try {
+      const ok = await onDeleteAccount();
+      if (ok) {
+        setDeleteModalOpen(false);
+      }
+    } finally {
+      setDeletingAccount(false);
+    }
+  };
+
   return (
     <div className="space-y-10">
-      {/* User Profile Header */}
+      {/* User Profile Header with Photo Upload */}
       <section className="flex flex-col gap-5 rounded-2xl border border-[#33251D] bg-[#1D1511] p-6 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex items-center gap-4">
-          <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#EA580C] to-[#F59E0B] text-xl font-extrabold text-[#120D0A]">
-            {user.avatarInitials}
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+          <div className="relative flex items-center gap-4">
+            <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl border border-[#EA580C]/40 bg-gradient-to-br from-[#EA580C] to-[#F59E0B] shadow-lg shadow-[#EA580C]/20">
+              {user.avatarUrl ? (
+                <img
+                  src={user.avatarUrl}
+                  alt={`Foto de perfil de ${user.name}`}
+                  className="h-full w-full object-cover"
+                />
+              ) : (
+                <div className="flex h-full w-full items-center justify-center text-2xl font-extrabold text-[#120D0A]">
+                  {user.avatarInitials}
+                </div>
+              )}
+
+              <button
+                type="button"
+                onClick={() => fileInputRef.current?.click()}
+                disabled={uploadingAvatar}
+                aria-label="Subir o cambiar foto de perfil"
+                title="Cambiar foto de perfil"
+                className="absolute inset-0 flex items-center justify-center bg-black/55 opacity-0 transition-opacity hover:opacity-100 focus-visible:opacity-100 disabled:opacity-60"
+              >
+                {uploadingAvatar ? (
+                  <Loader2 className="h-5 w-5 animate-spin text-white" />
+                ) : (
+                  <Camera className="h-5 w-5 text-white" />
+                )}
+              </button>
+            </div>
+
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept="image/png,image/jpeg,image/webp,image/gif"
+              onChange={handleFileSelected}
+              className="hidden"
+            />
           </div>
+
           <div>
             <div className="flex items-center gap-2 text-xs font-medium text-[#F59E0B]">
               {isAdmin ? (
@@ -69,17 +213,42 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
             <p className="text-sm text-[#A89789]">
               {user.email} · Plataformas: {user.preferredPlatforms.join(', ')}
             </p>
+
+            <div className="mt-3 flex flex-wrap items-center gap-2">
+              <button
+                type="button"
+                onClick={() => fileInputRef.current?.click()}
+                disabled={uploadingAvatar}
+                className="inline-flex items-center gap-1.5 rounded-lg border border-[#33251D] bg-[#150F0B] px-3 py-1.5 text-xs font-medium text-[#FAF5F0] hover:border-[#F59E0B] transition-colors disabled:opacity-60"
+              >
+                <Camera className="h-3.5 w-3.5 text-[#F59E0B]" />
+                {user.avatarUrl ? 'Cambiar foto de perfil' : 'Subir foto de perfil'}
+              </button>
+
+              {user.avatarUrl && (
+                <button
+                  type="button"
+                  onClick={handleRemoveAvatar}
+                  disabled={uploadingAvatar}
+                  className="inline-flex items-center gap-1 rounded-lg border border-[#33251D] bg-[#150F0B] px-2.5 py-1.5 text-xs font-medium text-[#A89789] hover:text-white transition-colors disabled:opacity-60"
+                >
+                  Quitar foto
+                </button>
+              )}
+            </div>
           </div>
         </div>
 
-        <button
-          type="button"
-          onClick={onLogout}
-          className="inline-flex h-10 items-center justify-center gap-2 rounded-xl border border-[#33251D] bg-[#150F0B] px-4 text-sm font-medium text-[#D6C7BA] hover:border-red-500/60 hover:text-red-300 transition-colors self-start sm:self-auto"
-        >
-          <LogOut className="h-4 w-4" />
-          Cerrar sesión
-        </button>
+        <div className="flex flex-wrap items-center gap-2.5 self-start sm:self-auto">
+          <button
+            type="button"
+            onClick={onLogout}
+            className="inline-flex h-10 items-center justify-center gap-2 rounded-xl border border-[#33251D] bg-[#150F0B] px-4 text-sm font-medium text-[#D6C7BA] hover:border-[#F59E0B] hover:text-white transition-colors"
+          >
+            <LogOut className="h-4 w-4" />
+            Cerrar sesión
+          </button>
+        </div>
       </section>
 
       {/* Admin Dashboard (Excel / AppSheet + Games/News CRUD) */}
@@ -252,6 +421,117 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
           </div>
         )}
       </section>
+
+      {/* Account Danger Zone (Delete Account with Warning) */}
+      <section className="rounded-2xl border border-red-500/35 bg-[#1D1511] p-6">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex items-start gap-3">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-red-500/15 text-red-400">
+              <AlertTriangle className="h-5 w-5" />
+            </div>
+            <div>
+              <h2 className="font-display text-lg font-bold text-white">Eliminar cuenta</h2>
+              <p className="mt-1 text-sm text-[#A89789]">
+                Esta acción eliminará permanentemente tu acceso, tus favoritos, tus alertas y tu
+                registro en la base de datos y el archivo Excel de Global Flame.
+              </p>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            onClick={() => {
+              setDeleteConfirmed(false);
+              setDeleteModalOpen(true);
+            }}
+            className="inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-xl border border-red-500/50 bg-red-600/15 px-4 text-sm font-semibold text-red-300 hover:bg-red-600 hover:text-white transition-colors"
+          >
+            <Trash2 className="h-4 w-4" />
+            Eliminar mi cuenta
+          </button>
+        </div>
+      </section>
+
+      {/* Warning Confirmation Modal before Deleting Account */}
+      {deleteModalOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="delete-account-title"
+        >
+          <div className="w-full max-w-md rounded-2xl border border-red-500/45 bg-[#1D1511] p-6 shadow-2xl space-y-5">
+            <div className="flex items-start justify-between gap-3">
+              <div className="flex items-center gap-3">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-red-500/20 text-red-400">
+                  <AlertTriangle className="h-6 w-6" />
+                </div>
+                <div>
+                  <h2 id="delete-account-title" className="font-display text-lg font-bold text-white">
+                    ¿Eliminar tu cuenta permanentemente?
+                  </h2>
+                  <p className="text-xs text-[#A89789]">{user.email}</p>
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={() => setDeleteModalOpen(false)}
+                className="rounded-lg p-1 text-[#A89789] hover:bg-[#261A14] hover:text-white"
+                aria-label="Cancelar"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+
+            <div className="rounded-xl border border-red-500/30 bg-red-500/10 p-4 text-xs leading-relaxed text-red-200 space-y-1.5">
+              <p className="font-semibold text-red-300">
+                Advertencia: esta acción no se puede deshacer.
+              </p>
+              <p>
+                Se borrará tu usuario de la base de datos y del registro Excel, junto con tu foto de
+                perfil, tu lista de videojuegos favoritos y tus alertas de precio guardadas.
+              </p>
+            </div>
+
+            <label className="flex items-start gap-2.5 text-xs text-[#D6C7BA] cursor-pointer select-none">
+              <input
+                type="checkbox"
+                checked={deleteConfirmed}
+                onChange={(e) => setDeleteConfirmed(e.target.checked)}
+                className="mt-0.5 h-4 w-4 rounded border-[#33251D] bg-[#150F0B] accent-red-600"
+              />
+              <span>
+                Entiendo que perderé acceso a esta cuenta y que mis datos serán eliminados de forma
+                permanente.
+              </span>
+            </label>
+
+            <div className="flex items-center justify-end gap-3 border-t border-[#33251D] pt-4">
+              <button
+                type="button"
+                onClick={() => setDeleteModalOpen(false)}
+                disabled={deletingAccount}
+                className="rounded-xl border border-[#33251D] px-4 py-2 text-xs font-semibold text-[#D6C7BA] hover:text-white"
+              >
+                Cancelar
+              </button>
+              <button
+                type="button"
+                onClick={handleConfirmDeleteAccount}
+                disabled={!deleteConfirmed || deletingAccount}
+                className="inline-flex items-center gap-2 rounded-xl bg-red-600 px-4 py-2 text-xs font-semibold text-white hover:bg-red-700 disabled:opacity-50"
+              >
+                {deletingAccount ? (
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                ) : (
+                  <Trash2 className="h-4 w-4" />
+                )}
+                {deletingAccount ? 'Eliminando...' : 'Sí, eliminar mi cuenta'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

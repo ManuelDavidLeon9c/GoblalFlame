@@ -90,6 +90,7 @@ export interface User {
   passwordHash: string;
   role: UserRole;
   avatarInitials: string;
+  avatarUrl?: string;
   preferredPlatforms: Platform[];
   createdAt: string;
 }
