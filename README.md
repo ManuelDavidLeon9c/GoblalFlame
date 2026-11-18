@@ -1,8 +1,6 @@
 # 🔥 Global Flame - Game Deals Platform
 Plataforma web enfocada en videojuegos que permite a los usuarios descubrir títulos, consultar ofertas y filtrar precios reales en Pesos Colombianos (COP). 
 
-- **Repositorio Oficial:** [Pegar_URL_de_tu_repositorio_aquí]
-
 ---
 
 ## 🛠️ 1. Requisitos Previos (Software y Hardware)
